@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Onux-Orange
+Type=X-GNOME-Metatheme
+Comment=
+
+[X-GNOME-Metatheme]
+GtkTheme=Onux-Orange
+MetacityTheme=Onux-Orange
+IconTheme=
+CursorTheme=
+ButtonLayout=:minimize,maximize,close

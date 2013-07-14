@@ -1,0 +1,19 @@
+theme: DkGreen
+By: Heriberto Alor Tadeo
+
+------------
+------------
+*Important
+Based on the theme: DarkCold
+Created by: originalseed
+http://gnome-look.org/content/show.php/DarkCold?content=143165
+
+------------
+------------
+
+
+* The metacity theme is a modification of the original theme ambiance, this has been adapted to gtk+ theme.
+
+In order to fix the issues with dark themes in some applications,  the following considerations must be taken:
+
+* Fixes for libreoffice, firefox,software center and other applications are in the folder named "workaround".

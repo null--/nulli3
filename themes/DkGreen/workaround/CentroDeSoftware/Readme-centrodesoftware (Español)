@@ -1,0 +1,15 @@
+Solucion para el centro de software:
+
+abrir la carpeta /usr/share/software-center/ui/gtk3/css
+
+*comandos:
+sudo su
+nautilus /usr/share/software-center/ui/gtk3/css
+
+ver: http://www.mediafire.com/view/?nzlfspuydo49n#7n31kbzbijchh84
+
+en la carpeta recien abierta renombrar o respaldar el archivo softwarecenter.css 
+
+ver: http://www.mediafire.com/view/?nzlfspuydo49n#avv0a5kddt7v8df
+
+copiar el archivo softwarecenter.css incluido en esta carpeta /DkGreen/workaround/CentroDeSoftware y pegarlo en la a carpeta /usr/share/software-center/ui/gtk3/css

@@ -1,0 +1,23 @@
+style "panelbg"
+{
+  xthickness            			= 0
+  ythickness            			= 1
+  bg_pixmap[NORMAL]		= "panelbg.png"
+}
+class "*Panel*" style "panelbg"
+#widget_class "*Mail*" style "panelbg"
+#class "*notif*" style "panelbg"
+#class "*Notif*" style "panelbg"
+#class "*Tray*" style "panelbg"
+#class "*tray*" style "panelbg"
+
+style "panelbuttons" = "default"
+{
+xthickness            			= 3
+ythickness            			= 3
+GtkWidget::focus_padding 	= 2
+fg[PRELIGHT]     	 		= "#88b031"
+fg[ACTIVE]        			= "#88b031"
+}
+widget_class "*Panel*GtkToggleButton*GtkLabel" style "panelbuttons"
+widget_class "*Panel*GtkButton" style "panelbuttons"

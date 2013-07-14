@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=DkGreen
+Comment=The Ubuntu Ambiance theme, modified Version.
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=DkGreen
+MetacityTheme=DkGreen
+IconTheme=ubuntu-mono-dark
+CursorTheme=DMZ-White
+ButtonLayout=close,minimize,maximize:

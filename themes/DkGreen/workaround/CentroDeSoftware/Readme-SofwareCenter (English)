@@ -1,0 +1,17 @@
+Hi! sorry but my english is not good, i hope you can understand te instructions
+
+Fix Software Center:
+
+open the folder /usr/share/software-center/ui/gtk3/css
+
+*commands:
+sudo su
+nautilus /usr/share/software-center/ui/gtk3/css
+
+see: http://www.mediafire.com/view/?nzlfspuydo49n#7n31kbzbijchh84
+
+rename o backup the file softwarecenter.css 
+
+see: http://www.mediafire.com/view/?nzlfspuydo49n#avv0a5kddt7v8df
+
+copy the file softwarecenter.css from /DkGreen/workaround/CentroDeSoftware and paste the file in the folder /usr/share/software-center/ui/gtk3/css

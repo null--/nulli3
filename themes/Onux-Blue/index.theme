@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Onux-Blue
+Type=X-GNOME-Metatheme
+Comment=
+
+[X-GNOME-Metatheme]
+GtkTheme=Onux-Blue
+MetacityTheme=Onux-Blue
+IconTheme=
+CursorTheme=
+ButtonLayout=:minimize,maximize,close

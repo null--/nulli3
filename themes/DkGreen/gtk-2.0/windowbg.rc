@@ -1,0 +1,18 @@
+style "windowbg" = "default"
+{  
+   engine "pixmap"
+   {
+        image
+        {
+                function = FLAT_BOX
+		recolorable		= TRUE
+                file = "bg.png"
+                border = {0, 0, 0, 0}
+		stretch = FALSE
+         }
+   
+     }
+
+ }
+
+class "GtkWindow" style "windowbg"

@@ -1,0 +1,16 @@
+use esta solución si tiene problemas con netbeans
+
+ir a
+/home/your_user_name/netbeans-x.x/etc/
+
+ver: http://www.mediafire.com/view/?7jlnvd584qlgvcd
+
+PD: 
+netbeans-x.x = varia dependiendo de la versión, por ejemplo:
+netbeans-6.5, netbeans-7.1, etc.
+
+renombrar o respaldar el archivo :
+
+netbeans.conf
+
+copia el archivo netbeans.conf de DkGreen/workaround/Netbeans y pegalo en la carpeta /home/your_user_name/netbeans-x.x/etc/

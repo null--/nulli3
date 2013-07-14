@@ -1,0 +1,104 @@
+@define-color light-aubergine #121212;
+@define-color super-light-aubergine #202020;
+
+
+
+#featured-star {
+    border-color: #F89516;  /* yellow */
+    color: #FFC51D;         /* orange */
+}
+
+.grid-lines {
+    border-color: shade (@light-aubergine, 1.025);
+}
+
+#screenshot-preview {
+    border-color: #000;
+    color: #000;
+    border-width: 2px;
+    border-radius: 3px;
+}
+
+.backforward-left-button {
+    background-image: none;
+    border-image: none;
+    border: solid;
+    border-width: 2px;
+    border-color: #202020;
+    border-radius: 0px;
+}
+
+.backforward-right-button {
+    background-image: none;
+    border-image: none;
+    border: solid;
+    border-width: 2px;
+    border-color: #202020;
+    border-radius: 0px;
+}
+
+.subtle,
+#subtle-label {
+    -GtkWidget-link-color: shade (#6A9C6B, 0.8);
+    -GtkWidget-visited-link-color: shade (#6A9C6B, 0.9);
+    color: shade ( #3E8753, 0.8); /* non-link text color */
+    text-shadow: none;
+}
+
+.cellrenderer-button {
+    border-radius: 0px;
+}
+
+.cellrenderer-avgrating-label {
+    color: #202020; /* dark gray */
+}
+
+.cellrenderer-avgrating-label:selected {
+    color: #505050;
+}
+
+.more-link {
+    -GtkButton-inner-border: 0;
+    -GtkButton-default-border: 0;
+    -GtkButton-default-outside-border: 0;
+    color: darker (@light-aubergine);
+    background-color: shade (@super-light-aubergine,3.5);
+    border-color: shade (@super-light-aubergine, 2.5);
+    text-shadow: none;
+}
+
+.frame-header-title {
+    text-shadow: none;
+}
+
+.item-view-separator {
+    border-color: shade (@light-aubergine, 0.9);
+    border-width: 1px;
+}
+
+.light-aubergine-bg {
+    background-color: @light-aubergine;
+}
+
+.super-light-aubergine-bg {
+    background-color: @super-light-aubergine;
+    border-color: shade (@super-light-aubergine, 0.975)
+}
+
+GtkViewport {
+    background-color: transparent;
+    border-width: 0;
+    padding: 0;
+}
+
+GtkTreeView {
+    background-color: transparent;
+}
+
+GtkTreeView:selected {
+    background-color: @selected_bg_color;
+}
+
+#toolbar-popup {
+    padding: 0;
+}

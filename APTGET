@@ -1,0 +1,4 @@
+sudo apt-get install dwm nitrogen dzen2 conky git xkbset acpi
+sudo apt-get install vim wicd-gtk pulseaudio-module-x11 xscreensaver blueman-applet disper-indicator aumix synaptic xdotool volumeicon-alsa
+sudo apt-get install scrot gtk-recordmydesktop gtk-theme-switch gtk2-engines gtk2-engines-pixbuf qtconfig-qt4 gtk-chtheme
+sudo apt-get install dolphin ark geany geany-plugins terminator emacs gwenview gpicview goldendict okular fbreader iceweasel pidgin clementine vlc tomboy glipper xcalib brasero xchat scrot pango-graphite ksysguard synapse fbxkb

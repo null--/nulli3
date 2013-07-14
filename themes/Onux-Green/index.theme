@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Onux-Green
+Type=X-GNOME-Metatheme
+Comment=
+
+[X-GNOME-Metatheme]
+GtkTheme=Onux-Green
+MetacityTheme=Onux-Green
+IconTheme=
+CursorTheme=
+ButtonLayout=:minimize,maximize,close

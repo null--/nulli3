@@ -1,0 +1,46 @@
+Hi! sorry but my english is not good, i hope you can understand te instructions
+
+Fix libre office:
+
+Go to TOOLS>OPTIONS>LIBREOFFICE>ACCESSIBILITY
+in the section of "Options for high contrast appearance"
+unchek all options
+
+see: http://www.mediafire.com/view/?nzlfspuydo49n#v4jv7kndq2uawqe
+
+#########################################
+
+Go to TOOLS>OPTIONS>LIBREOFFICE>APAERANCE
+
+Change the following colors:
+
+    Document background: white
+    Application background: gray 10%
+    Text boundaries: gray 80%
+    Font color: black (optional, only if you can't see the text )
+
+see: http://www.mediafire.com/view/?nzlfspuydo49n#8llo9z71dwtcd2l
+
+#########################################
+
+Open the folder /usr/lib/libreoffice/program/shell
+
+*Commands:
+
+sudo su
+nautilus /usr/lib/libreoffice/program/shell
+
+see: http://www.mediafire.com/view/?nzlfspuydo49n#2wk1bsp3cfhca1p
+
+rename o backup the following images:
+
+* backing_left
+* backing_right
+* backing_space 
+
+see: http://www.mediafire.com/view/?nzlfspuydo49n#j8fk1axfbo31mcc
+
+copy the images from /DkGreen/workaround/libreoffice and paste in the folder /usr/lib/libreoffice/program/shell
+
+finally this is how it looks: http://www.mediafire.com/view/?nzlfspuydo49n#6lclmip5n0uebkt
+

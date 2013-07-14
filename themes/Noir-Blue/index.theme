@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Noir-Blue
+Type=X-GNOME-Metatheme
+Comment=
+
+[X-GNOME-Metatheme]
+GtkTheme=Noir-Blue
+MetacityTheme=Noir-Blue
+IconTheme=
+CursorTheme=
+ButtonLayout=:minimize,maximize,close
