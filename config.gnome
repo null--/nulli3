@@ -93,9 +93,6 @@ set $w9 9
 # - Turn off bell (Debian)
 exec xset b off
 
-# - Background: run 'nitrogen --save' to set the background
-exec nitrogen --restore
-
 # - Font
 font xft:Droid Sans Mono:antialias=true:hinting=true 10
 
