@@ -1,0 +1,332 @@
+# _null_ i3wm Configuration
+# i3wm rocks!
+
+# unicode section is not working with wine apps
+
+# NOTE: NEVER BIND Alt+f !!!
+
+# -------------------------------------- KEYCODE -------------------------------------- #
+# use: xmodmap -pke
+set $key_f1	   67
+set $key_f2    68
+set $key_f3	   69
+set $key_f4    70
+set $key_f5    71
+set $key_f6    72
+set $key_f7    73
+set $key_f8    74
+set $key_f9    75
+set $key_f10   76
+set $key_f11   95
+set $key_f12   96
+
+set $key_1 10
+set $key_2 11
+set $key_3 12
+set $key_4 13
+set $key_5 14
+set $key_6 15
+set $key_7 16
+set $key_8 17
+set $key_9 18
+set $key_0 19
+
+set $key_q 24
+set $key_w 25
+set $key_e 26
+set $key_r 27
+set $key_t 28
+set $key_y 29
+set $key_u 30
+set $key_i 31
+set $key_o 32
+set $key_p 33
+
+set $key_a 38
+set $key_s 39
+set $key_d 40
+set $key_f 41
+set $key_g 42
+set $key_h 43
+set $key_j 44
+set $key_k 45
+set $key_l 46
+
+set $key_z 52
+set $key_x 53
+set $key_c 54
+set $key_v 55
+set $key_b 56
+set $key_n 57
+set $key_m 58
+
+set $key_shift_l 50
+set $key_shift_r 62
+
+# -------------------------------------- DEFINE -------------------------------------- #
+set $alt Mod1
+set $super Mod4
+
+# - Action Mod
+set $mod Mod4
+
+# - Workspace name
+set $w0 0
+set $w1 1
+set $w2 2
+set $w3 3
+set $w4 4
+set $w5 5
+set $w6 6
+set $w7 7
+set $w8 8
+set $w9 9
+
+# -------------------------------------- GENERAL -------------------------------------- #
+
+# - Turn off bell (Debian)
+exec xset b off
+
+# - Background: run 'nitrogen --save' to set the background
+exec nitrogen --restore
+
+# - Font
+font xft:Droid Sans Mono:antialias=true:hinting=true 10
+
+# - Disable Mouse Focus
+focus_follows_mouse no
+workspace_auto_back_and_forth yes
+
+# -------------------------------------- BIND KEY -------------------------------------- #
+# - Floating Mod
+floating_modifier $mod
+
+# - Test message
+bindcode $mod+Ctrl+$key_t exec "i3-nagbar -x -t warning -m 'TEST' -b 'OK' 'i3-msg exec terminator'"
+
+# - Powert Control
+# - - Poweroff
+bindcode $mod+Ctrl+$key_p exec "i3-nagbar -t error -m 'Confirm Poweroff Action:' -b 'PROCEED' 'exec dbus-send --system --print-reply --dest=org.freedesktop.Hal /org/freedesktop/Hal/devices/computer org.freedesktop.Hal.Device.SystemPowerManagement.Shutdown'"
+# - - Reboot
+bindcode $mod+Ctrl+$key_r exec "i3-nagbar -t error -m 'Confirm Reboot Action:' -b 'PROCEED' 'exec dbus-send --system --print-reply --dest=org.freedesktop.Hal /org/freedesktop/Hal/devices/computer org.freedesktop.Hal.Device.SystemPowerManagement.Reboot'"
+# - - Suspend
+bindcode $mod+Ctrl+$key_s exec "i3-nagbar -x -t error -m 'Confirm Suspend Action:' -b 'PROCEED' 'exec dbus-send --system --print-reply --dest=org.freedesktop.Hal /org/freedesktop/Hal/devices/computer org.freedesktop.Hal.Device.SystemPowerManagement.Suspend int32:1'"
+# - - Hibernate
+bindcode $mod+Ctrl+$key_h exec "i3-nagbar -x -t error -m 'Confirm Hibernate Action:' -b 'PROCEED' 'exec dbus-send --system --print-reply --dest=org.freedesktop.Hal /org/freedesktop/Hal/devices/computer org.freedesktop.Hal.Device.SystemPowerManagement.Hibernate'"
+
+# - Change KBD Layout
+# bindsym $mod+F1 exec --no-startup-id ~/i3/change-keymap.sh
+# bindcode $alt+$key_shift_r exec --no-startup-id ~/i3/change-keymap.sh
+
+# - Menu
+bindsym $alt+F1 exec lxpanelctl menu
+
+# - Volume Settings
+# You can set this hotkeys at 'volumeicon'
+# bindsym XF86AudioRaiseVolume exec aumix -v +3.5
+# bindsym XF86AudioLowerVolume exec aumix -v -3.5
+# bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# - Print Screen
+# - - Active Workspace
+bindsym Print exec scrot -e 'mv $f ~/Pictures && gpicview ~/Pictures/$f'
+# - - Active Window
+bindsym $alt+Print exec scrot -s -e 'mv $f ~/Pictures && gpicview ~/Pictures/$f'
+
+# - Invert Screen
+bindcode $mod+Shift+$key_i exec xcalib -i -a
+
+# - i3wm Console
+bindsym $mod+Ctrl+Escape exec i3-input
+
+# - Lock screen
+# bindcode $alt+Ctrl+$key_l exec xscreensaver-command -l
+bindcode $alt+Ctrl+$key_l exec i3lock -d -c 000000
+
+# - start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# - kill focused window
+bindcode $mod+Shift+$key_q kill
+bindsym $alt+F4 kill
+
+# - start program
+bindsym $mod+Escape exec dmenu_run -b -sb '#000000' -nf '#0099E6' -sf '#00FFFF' -nb '#000000' -fn "Monospace-8" -p "eXeCuTe: "
+# bindcode $mod+Shift+$key_p exec synapse
+
+# - File manager
+# bindcode $mod+$key_o exec dolphin
+bindcode $mod+$key_o exec pcmanfm
+
+# - Web browser
+# bindcode $mod+$key_w exec firefox
+# bindcode $mod+$key_w exec iceape
+bindcode $mod+$key_w exec iceweasel
+
+# - Music player
+bindcode $mod+$key_a exec rhytmbox
+
+# - System Monitor
+# bindsym $alt+Ctrl+Delete exec ksysguard
+bindsym $alt+Ctrl+Delete exec gnome-system-monitor
+
+# - run emacs daemon
+bindcode $mod+Ctrl+$key_x exec "i3-nagbar -x -t warning -m 'Do you want to run emacs' -b 'PROCEED' 'exec emacs --daemon'"
+
+# - emacs client
+bindcode $mod+$key_e exec emacsclient -c
+
+# - change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $alt+Tab focus right
+
+# - alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# - split in horizontal orientation
+bindcode $mod+Shift+$key_h split h
+
+# - split in vertical orientation
+bindcode $mod+Shift+$key_v split v
+
+# - enter fullscreen mode for the focused container
+bindcode $mod+Shift+$key_f fullscreen
+
+# - change container layout (stacked, tabbed, toggle split)
+bindcode $mod+Shift+$key_s layout stacking
+bindcode $mod+Shift+$key_w layout tabbed
+bindcode $mod+Shift+$key_e layout toggle split
+
+# - toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# - change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# - focus the parent container
+bindcode $mod+Shift+$key_a focus parent
+
+# - focus the child container
+bindcode $mod+Shift+$key_c focus child
+
+# - switch to workspace
+bindcode $mod+$key_1 workspace $w1
+bindcode $mod+$key_2 workspace $w2
+bindcode $mod+$key_3 workspace $w3
+bindcode $mod+$key_4 workspace $w4
+bindcode $mod+$key_5 workspace $w5
+bindcode $mod+$key_6 workspace $w6
+bindcode $mod+$key_7 workspace $w7
+bindcode $mod+$key_8 workspace $w8
+bindcode $mod+$key_9 workspace $w9
+bindcode $mod+$key_0 workspace $w0
+
+# - move focused container to workspace
+bindcode $mod+Shift+$key_1 move container to workspace $w1
+bindcode $mod+Shift+$key_2 move container to workspace $w2
+bindcode $mod+Shift+$key_3 move container to workspace $w3
+bindcode $mod+Shift+$key_4 move container to workspace $w4
+bindcode $mod+Shift+$key_5 move container to workspace $w5
+bindcode $mod+Shift+$key_6 move container to workspace $w6
+bindcode $mod+Shift+$key_7 move container to workspace $w7
+bindcode $mod+Shift+$key_8 move container to workspace $w8
+bindcode $mod+Shift+$key_9 move container to workspace $w9
+bindcode $mod+Shift+$key_0 move container to workspace $w0
+
+
+# - reload the configuration file
+# bindcode $mod+Shift+$key_r reload
+
+# - restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindcode $mod+Shift+$key_r restart
+
+# - exit i3 (logs you out of your X session)
+bindcode $mod+Ctrl+$key_e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'exec i3-msg exit'"
+
+# - resize window (you can also use the mouse for that)
+bindcode $mod+$key_r mode "resize"
+mode "resize" 
+{
+        # These bindings trigger as soon as you enter the resize mode
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# -------------------------------------- BAR -------------------------------------- #
+bar 
+{
+	# output				DFP-0
+	position 			top
+	# position			bottom
+	
+	# status_command	i3status -c ~/i3/i3status.conf | dzen2 -ta c -sa c -w $status_width -x $status_x -fn 'DejaVu Sans Mono-9'
+	status_command	~/i3/status.sh
+
+	# mode				hide
+	tray_output			primary
+	# tray_output			none
+
+	colors {
+		background #000000
+		statusline #00CC00
+
+		focused_workspace  #000000 #0099e6
+		active_workspace   #e69900 #000000
+		inactive_workspace #0099e6 #000000
+		urgent_workspace   #000000 #00CC00
+	}
+}
+
+# -------------------------------------- COLORS -------------------------------------- #
+# class                  border  backgr. text
+client.focused           #000000 #004499 #FFFFFF
+client.focused_inactive  #004499 #000000 #0099e6
+client.unfocused         #004499 #000000 #AAAAAA 
+client.urgent            #00CC00 #00CC00 #ffffff
+client.background        #000000
+
+# -------------------------------------- STARTUP --------------------------------------- #
+# exec --no-startup-id setxkbmap -rules evdev -model pc105 -layout "us,ru,ir" -option "grp:alt_shift_toggle"
+exec --no-startup-id setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
+exec --no-startup-id lxpanel
+exec --no-startup-id start-pulseaudio-x11
+exec --no-startup-id nm-applet
+exec --no-startup-id glipper
+exec --no-startup-id blueman-applet
+exec --no-startup-id disper-indicator
+exec --no-startup-id tomboy --panel-applet
+exec --no-startup-id emacs --daemon
+exec --no-startup-id wicd-gtk -t
+exec --no-startup-id goldendict
+
+# - A little help from gnome-control-center
+# exec --no-startup-id gnome-settings-daemon
+# exec --no-startup-id gnome-keyring-daemon --start --com
+# exec --no-startup-id gnome-sound-applet
+# exec --no-startup-id /usr/lib/notification-daemon/notification-daemon
+# exec --no-startup-id gsettings-data-convert
+# exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-fallback-mount-helper
+# exec --no-startup-id system-config-printer-applet
+# exec --no-startup-id gnome-screensaver
+# exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+
+# - without gnome
+exec --no-startup-id fbxkb
+exec --no-startup-id volumeicon
+exec --no-startup-id xscreensaver -no-splash
+
+exec --no-startup-id espeak -p 40 -s 150 -a 200 -v'!v/whisper' "I'm lock n load"
