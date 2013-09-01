@@ -133,17 +133,17 @@ bindcode $mod+Shift+$key_q kill
 bindsym $alt+F4 kill
 
 # - start program
-bindsym $mod+Escape exec dmenu_run -b -sb '#101010' -nf '#0099E6' -sf '#00FFFF' -nb '#101010' -fn "Monospace-8" -p "eXeCuTe: "
+bindsym $mod+Escape exec dmenu_run -b -sb '#000000' -nf '#0099E6' -sf '#00FFFF' -nb '#000000' -fn "Monospace-8" -p "eXeCuTe: "
 # bindcode $mod+Shift+$key_p exec synapse
 
 # - open application menu
 bindsym $alt+F1 exec lxpanelctl menu
 
 # - File manager
-bindcode $mod+$key_o exec nautilus
+bindcode $mod+$key_o exec nautilus --no-desktop
 
 # - Web browser
-bindcode $mod+$key_w exec iceweasel
+bindcode $mod+$key_w exec firefox
 
 # - Music player
 bindcode $mod+$key_a exec rhythmbox

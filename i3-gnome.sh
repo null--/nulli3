@@ -6,4 +6,5 @@ gnome-session &
 gsettings-data-convert &
 /usr/lib/notification-daemon/notification-daemon &
 gnome-sound-applet &
+gnome-screensaver &
 
