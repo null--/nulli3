@@ -310,19 +310,8 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id disper-indicator
 exec --no-startup-id tomboy --panel-applet
 exec --no-startup-id emacs --daemon
-exec --no-startup-id wicd-gtk -t
+# exec --no-startup-id wicd-gtk -t
 exec --no-startup-id goldendict
-
-# - A little help from gnome-control-center
-# exec --no-startup-id gnome-settings-daemon
-# exec --no-startup-id gnome-keyring-daemon --start --com
-# exec --no-startup-id gnome-sound-applet
-# exec --no-startup-id /usr/lib/notification-daemon/notification-daemon
-# exec --no-startup-id gsettings-data-convert
-# exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-fallback-mount-helper
-# exec --no-startup-id system-config-printer-applet
-# exec --no-startup-id gnome-screensaver
-# exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
 # - without gnome
 exec --no-startup-id fbxkb
