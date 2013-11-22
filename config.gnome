@@ -79,7 +79,7 @@ set $mod Mod4
 
 # - Workspace name
 set $w0 0
-set $w1 1: DESKOTP
+set $w1 1:DESKOTP
 set $w2 2
 set $w3 3
 set $w4 4
@@ -271,7 +271,7 @@ client.urgent            #00CC00 #00CC00 #ffffff
 client.background        #000000
 
 # -------------------------------------- i3 + gnome STARTUP -------------------------------- #
-exec --no-startup-id emacs --daemon
+# exec --no-startup-id emacs --daemon
 exec --no-startup-id lxpanel
 # Install i3wm.session first
 exec --no-startup-id ~/i3/i3-gnome.sh
