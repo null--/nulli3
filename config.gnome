@@ -273,6 +273,8 @@ client.background        #000000
 # -------------------------------------- i3 + gnome STARTUP -------------------------------- #
 # exec --no-startup-id emacs --daemon
 exec --no-startup-id lxpanel
+# TODO: gnome 3.8: change background wallpaper is not functional! using nitrogen instead...
+exec --no-startup-id nitrogen --restore
 # Install i3wm.session first
 exec --no-startup-id ~/i3/i3-gnome.sh
 

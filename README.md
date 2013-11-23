@@ -26,7 +26,9 @@ Basic setups:
 # ------------------ GNOME MODE -------------------- #
 conf file: i3/config.gnome
 sudo cp -r ./usr /usr
-restart gnome
+restart gdm (or lightdm or whatever)
+change your desktop to 'i3 GNOME'
+login
 
 # ------------------- PURE MODE -------------------- #
 conf file: i3/config.pure

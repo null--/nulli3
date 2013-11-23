@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=i3 GNOME
+Comment=i3 window manager
+Exec=gnome-session-i3
+TryExec=i3-gnome
+Type=Application
+X-LightDM-DesktopName=i3wm GNOME
+# X-Ubuntu-Gettext-Domain=gnome-session-3.0
