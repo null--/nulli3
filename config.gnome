@@ -248,8 +248,8 @@ bar
 	status_command	~/i3/status-gnome.sh
 
 	# mode				hide
-	tray_output			primary
-	# tray_output			none
+	# tray_output			primary
+	tray_output			none
 
 	colors {
 		background #000000

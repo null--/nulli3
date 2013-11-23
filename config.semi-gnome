@@ -129,9 +129,10 @@ bindsym $alt+F1 exec lxpanelctl menu
 
 # - Print Screen
 # - - Active Workspace
-bindsym Print exec scrot -e 'mv $f ~/Pictures && gpicview ~/Pictures/$f'
+# bindsym Print exec scrot -e 'mv $f ~/Pictures && gpicview ~/Pictures/$f'
+bindsym Print exec gnome-screenshot
 # - - Active Window
-bindsym $alt+Print exec scrot -s -e 'mv $f ~/Pictures && gpicview ~/Pictures/$f'
+# bindsym $alt+Print exec scrot -s -e 'mv $f ~/Pictures && gpicview ~/Pictures/$f'
 
 # - Invert Screen
 bindcode $mod+Shift+$key_i exec xcalib -i -a
@@ -140,8 +141,8 @@ bindcode $mod+Shift+$key_i exec xcalib -i -a
 bindsym $mod+Ctrl+Escape exec i3-input
 
 # - Lock screen
-# bindcode $alt+Ctrl+$key_l exec xscreensaver-command -l
-bindcode $alt+Ctrl+$key_l exec i3lock -d -c 000000
+bindcode $alt+Ctrl+$key_l exec gnome-screensaver-command -l
+# bindcode $alt+Ctrl+$key_l exec i3lock -d -c 000000
 
 # - start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -151,7 +152,7 @@ bindcode $mod+Shift+$key_q kill
 bindsym $alt+F4 kill
 
 # - start program
-# bindsym $mod+Escape exec dmenu_run -b -sb '#000000' -nf '#0099E6' -sf '#00FFFF' -nb '#000000' -fn "Monospace-8" -p "eXeCuTe: "
+bindsym $mod+Escape exec dmenu_run -b -sb '#000000' -nf '#0099E6' -sf '#00FFFF' -nb '#000000' -fn "Monospace-8" -p "eXeCuTe: "
 # bindcode $mod+Shift+$key_p exec synapse
 
 # - File manager
@@ -161,7 +162,7 @@ bindcode $mod+$key_o exec nautilus --no-desktop
 bindcode $mod+$key_w exec firefox
 
 # - Music player
-bindcode $mod+$key_a exec rhytmbox
+bindcode $mod+$key_a exec amarok
 
 # - System Monitor
 # bindsym $alt+Ctrl+Delete exec ksysguard
@@ -296,9 +297,22 @@ client.unfocused         #004499 #000000 #AAAAAA
 client.urgent            #00CC00 #00CC00 #ffffff
 client.background        #000000
 
+# -------------------------------------- STARTUP --------------------------------------- #
+exec --no-startup-id lxpanel
+exec --no-startup-id start-pulseaudio-x11
+exec --no-startup-id nm-applet
+exec --no-startup-id glipper
+exec --no-startup-id blueman-applet
+exec --no-startup-id disper-indicator
+exec --no-startup-id tomboy --panel-applet
+# exec --no-startup-id emacs --daemon
+# exec --no-startup-id wicd-gtk -t
+exec --no-startup-id goldendict
+exec --no-startup-id fbxkb
+exec --no-startup-id volumeicon
+
 # -------------------------------------- THE GNOME PART -------------------------------------- #
 # - A little help from gnome-control-center
-exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id gnome-keyring-daemon --start --com
 exec --no-startup-id gnome-sound-applet
 exec --no-startup-id /usr/lib/notification-daemon/notification-daemon
@@ -307,21 +321,11 @@ exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-fallback-mount-helper
 exec --no-startup-id system-config-printer-applet
 exec --no-startup-id gnome-screensaver
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id gnome-settings-daemon
 
-# -------------------------------------- STARTUP --------------------------------------- #
-# exec --no-startup-id setxkbmap -rules evdev -model pc105 -layout "us,ru,ir" -option "grp:alt_shift_toggle"
-exec --no-startup-id setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
-exec --no-startup-id lxpanel
-exec --no-startup-id start-pulseaudio-x11
-exec --no-startup-id nm-applet
-exec --no-startup-id glipper
-exec --no-startup-id blueman-applet
-exec --no-startup-id disper-indicator
-exec --no-startup-id tomboy --panel-applet
-exec --no-startup-id emacs --daemon
-# exec --no-startup-id wicd-gtk -t
-exec --no-startup-id goldendict
-exec --no-startup-id fbxkb
-exec --no-startup-id volumeicon
-
+# -------------------------------------- The Last Part ------------------------------------- #
+### make sure setxkbmap will be run after gnome-settings-daemon
+# exec setxkbmap -rules evdev -model pc105 -layout "us,ru,ir" -option "grp:alt_shift_toggle"
+exec --no-startup-id sleep 3 && setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
 exec --no-startup-id espeak -p 40 -s 150 -a 200 -v'!v/whisper' "I'm lock n load"
+
