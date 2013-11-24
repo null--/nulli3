@@ -9,6 +9,8 @@ Basic setups:
              GNOME MODE: exec dbus-launch --exit-with-session i3 -c ~/i3/config.gnome
              PURE MODE:  exec dbus-launch --exit-with-session i3 -c ~/i3/config.pure
 
+	logout and login with 'Default X Session' 
+
       1- install dependencies:
          # take a look inside i3/APTGET file
 
@@ -29,7 +31,7 @@ Basic setups:
         exec --no-startup-id setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
         and change the -layout option
 
-# ------------------ SEMI-GNOME MODE -------------------- #
+# ------------------ SEMI-GNOME MODE (RECOMMENDED MODE) -------------------- #
 Best of both worlds.
 Keybindings:
     take a look inside ~/i3/config.semi-gnome
