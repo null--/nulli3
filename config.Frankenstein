@@ -173,8 +173,7 @@ bindcode $mod+$key_w exec firefox
 bindcode $mod+$key_a exec amarok
 
 # - System Monitor
-# bindsym $alt+Ctrl+Delete exec ksysguard
-bindsym $alt+Ctrl+Delete exec gnome-system-monitor
+bindsym $alt+Ctrl+Delete exec ksysguard
 
 # - run emacs daemon
 bindcode $mod+Ctrl+$key_x exec "i3-nagbar -x -t warning -m 'Do you want to run emacs' -b 'PROCEED' 'exec emacs --daemon'"
@@ -328,6 +327,7 @@ exec --no-startup-id system-config-printer-applet
 exec --no-startup-id gnome-screensaver
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id gnome-settings-daemon
+exec --no-startup-id kdeinit4
 
 # exec --no-startup-id /usr/lib/notification-daemon/notification-daemon
 exec --no-startup-id razor-notificationd
