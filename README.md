@@ -68,3 +68,5 @@ change your desktop to 'i3 GNOME'
 login
 
 
+# -------------------------------------------------- #
+TRY META+ESC!

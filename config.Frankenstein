@@ -110,9 +110,9 @@ bindcode $mod+Ctrl+$key_p exec "i3-nagbar -t error -m 'Confirm Poweroff Action:'
 # - - Reboot
 bindcode $mod+Ctrl+$key_r exec "i3-nagbar -t error -m 'Confirm Reboot Action:' -b 'PROCEED' 'exec dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart'"
 # - - Suspend
-bindcode $mod+Ctrl+$key_s exec "i3-nagbar -x -t error -m 'Confirm Suspend Action:' -b 'PROCEED' 'exec dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend'"
+bindcode $mod+Ctrl+$key_s exec "i3-nagbar -x -t error -m 'Confirm Suspend Action:' -b 'PROCEED' 'exec gnome-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend'"
 # - - Hibernate
-bindcode $mod+Ctrl+$key_h exec "i3-nagbar -x -t error -m 'Confirm Hibernate Action:' -b 'PROCEED' 'exec dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Hibernate'"
+bindcode $mod+Ctrl+$key_h exec "i3-nagbar -x -t error -m 'Confirm Hibernate Action:' -b 'PROCEED' 'exec gnome-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Hibernate'"
 
 # - Gnome Control Center
 bindcode $mod+Ctrl+$key_c exec gnome-control-center
@@ -282,7 +282,7 @@ bar
 	status_command	~/i3/status.sh
 
 	# mode				hide
-	tray_output			primary
+	# tray_output			primary
 	# tray_output			none
 
 	colors {
@@ -336,5 +336,5 @@ exec --no-startup-id razor-notificationd
 ### make sure setxkbmap will be run after gnome-settings-daemon
 # exec setxkbmap -rules evdev -model pc105 -layout "us,ru,ir" -option "grp:alt_shift_toggle"
 exec --no-startup-id sleep 3 && setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
-exec --no-startup-id espeak -p 40 -s 150 -a 200 -v'!v/whisper' "I'm lock n load"
+exec --no-startup-id espeak -p 40 -s 150 -a 200 -v'!v/whisper' "lock n load"
 
