@@ -158,7 +158,10 @@ bindcode $mod+Shift+$key_q kill
 bindsym $alt+F4 kill
 
 # - start program
-bindsym $mod+Escape exec dmenu_run -b -sb '#000000' -nf '#0099E6' -sf '#00FFFF' -nb '#000000' -fn "Monospace-8" -p "eXeCuTe: "
+# - - bottom
+bindsym $mod+Escape exec dmenu_run -b -sb '#000000' -nf '#0099E6' -sf '#00FFFF' -nb '#000000' -fn "Monospace-8" -p "X: "
+# - - top
+# bindsym $mod+Escape exec dmenu_run -sb '#000000' -nf '#0099E6' -sf '#00FFFF' -nb '#000000' -fn "Monospace-8" -p "X: "
 # bindcode $mod+Shift+$key_p exec synapse
 
 # - File manager
@@ -327,7 +330,7 @@ exec --no-startup-id system-config-printer-applet
 exec --no-startup-id gnome-screensaver
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id gnome-settings-daemon
-exec --no-startup-id kdeinit4
+# exec --no-startup-id kdeinit4
 
 # exec --no-startup-id /usr/lib/notification-daemon/notification-daemon
 exec --no-startup-id razor-notificationd
