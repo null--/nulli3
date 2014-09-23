@@ -3,3 +3,4 @@
 # exec dbus-launch --exit-with-session i3 -c ~/i3/config.gnome
 # exec dbus-launch --exit-with-session i3 -c ~/i3/config.mate
 exec dbus-launch --exit-with-session i3 -c ~/i3/config.Frankenstein
+

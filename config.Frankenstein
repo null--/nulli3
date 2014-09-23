@@ -110,15 +110,20 @@ bindcode $mod+Ctrl+$key_p exec "i3-nagbar -t error -m 'Confirm Poweroff Action:'
 # - - Reboot
 bindcode $mod+Ctrl+$key_r exec "i3-nagbar -t error -m 'Confirm Reboot Action:' -b 'PROCEED' 'exec dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart'"
 # - - Suspend
-bindcode $mod+Ctrl+$key_s exec "i3-nagbar -x -t error -m 'Confirm Suspend Action:' -b 'PROCEED' 'exec gnome-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend'"
+# bindcode $mod+Ctrl+$key_s exec "i3-nagbar -x -t error -m 'Confirm Suspend Action:' -b 'PROCEED' 'exec gnome-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend'"
+bindcode $mod+Ctrl+$key_s exec "i3-nagbar -x -t error -m 'Confirm Suspend Action:' -b 'PROCEED' 'exec cinnamon-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend'"
 # - - Hibernate
-bindcode $mod+Ctrl+$key_h exec "i3-nagbar -x -t error -m 'Confirm Hibernate Action:' -b 'PROCEED' 'exec gnome-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Hibernate'"
+# bindcode $mod+Ctrl+$key_h exec "i3-nagbar -x -t error -m 'Confirm Hibernate Action:' -b 'PROCEED' 'exec gnome-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Hibernate'"
+bindcode $mod+Ctrl+$key_h exec "i3-nagbar -x -t error -m 'Confirm Hibernate Action:' -b 'PROCEED' 'exec cinnamon-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Hibernate'"
 
 # - Gnome Control Center
-bindcode $mod+Ctrl+$key_c exec gnome-control-center
+# bindcode $mod+Ctrl+$key_c exec gnome-control-center
 
 # - Gnome Advanced Settings
 bindcode $mod+Ctrl+$key_a exec gnome-tweak-tool
+
+# - Cinnamon Control Center
+bindcode $mod+Ctrl+$key_c exec cinnamon-control-center
 
 # - Change KBD Layout
 # bindsym $mod+F1 exec --no-startup-id ~/i3/change-keymap.sh
@@ -147,7 +152,8 @@ bindcode $mod+Shift+$key_i exec xcalib -i -a
 bindsym $mod+Ctrl+Escape exec i3-input
 
 # - Lock screen
-bindcode $alt+Ctrl+$key_l exec gnome-screensaver-command -l
+# bindcode $alt+Ctrl+$key_l exec gnome-screensaver-command -l
+bindcode $alt+Ctrl+$key_l exec cinnamon-screensaver-command -l
 # bindcode $alt+Ctrl+$key_l exec i3lock -d -c 000000
 
 # - start a terminal
@@ -307,8 +313,28 @@ client.unfocused         #004499 #000000 #AAAAAA
 client.urgent            #00CC00 #00CC00 #ffffff
 client.background        #000000
 
+# -------------------------------------- THE GNOME PART -------------------------------------- #
+# - A little help from gnome-control-center
+exec --no-startup-id gnome-keyring-daemon --start --com
+exec --no-startup-id gsettings-data-convert
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-fallback-mount-helper
+exec --no-startup-id system-config-printer-applet
+exec --no-startup-id gnome-screensaver
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id gnome-settings-daemon
+exec --no-startup-id /usr/lib/notification-daemon/notification-daemon
+
+# -------------------------------------- THE RAZOR PART -------------------------------------- #
+exec --no-startup-id razor-notificationd
+
+# -------------------------------------- THE CINNAMON PART -------------------------------------- #
+# exec --no-startup-id cinnamon-polkit-gnome-authentication-agent-1
+# exec --no-startup-id cinnamon-settings-daemon
+# exec --no-startup-id cinnamon-screensaver
+# exec --no-startup-id system-config-printer-applet
+
 # -------------------------------------- STARTUP --------------------------------------- #
-exec --no-startup-id lxpanel
+# exec --no-startup-id lxpanel
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id nm-applet
 exec --no-startup-id glipper
@@ -321,23 +347,9 @@ exec --no-startup-id goldendict
 exec --no-startup-id fbxkb
 exec --no-startup-id volumeicon
 
-# -------------------------------------- THE GNOME PART -------------------------------------- #
-# - A little help from gnome-control-center
-exec --no-startup-id gnome-keyring-daemon --start --com
-exec --no-startup-id gsettings-data-convert
-exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-fallback-mount-helper
-exec --no-startup-id system-config-printer-applet
-exec --no-startup-id gnome-screensaver
-exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id gnome-settings-daemon
-# exec --no-startup-id kdeinit4
-
-# exec --no-startup-id /usr/lib/notification-daemon/notification-daemon
-exec --no-startup-id razor-notificationd
-
 # -------------------------------------- The Last Part ------------------------------------- #
 ### make sure setxkbmap will be run after gnome-settings-daemon
 # exec setxkbmap -rules evdev -model pc105 -layout "us,ru,ir" -option "grp:alt_shift_toggle"
 exec --no-startup-id sleep 3 && setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
-exec --no-startup-id espeak -p 40 -s 150 -a 200 -v'!v/whisper' "lock n load"
+# exec --no-startup-id espeak -p 40 -s 150 -a 200 -v'!v/whisper' "lock n load"
 
