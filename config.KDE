@@ -1,4 +1,4 @@
-# _null_ i3wm Configuration
+# _null_ i3wm Configuration for KDE
 # i3wm rocks!
 
 # unicode section is not working with wine apps
@@ -87,12 +87,6 @@ set $w9 9
 # - Turn off bell (Debian)
 exec xset b off
 
-# - Background: run 'nitrogen --save' to set the background
-exec nitrogen --restore
-
-# - Font
-font xft:Droid Sans Mono:antialias=true:hinting=true 10
-
 # - Disable Mouse Focus
 focus_follows_mouse no
 workspace_auto_back_and_forth yes
@@ -104,54 +98,11 @@ floating_modifier $mod
 # - Test message
 bindcode $mod+Ctrl+$key_t exec "i3-nagbar -x -t warning -m 'TEST' -b 'OK' 'i3-msg exec terminator'"
 
-# - Powert Control
-# - - Poweroff
-bindcode $mod+Ctrl+$key_p exec "i3-nagbar -t error -m 'Confirm Poweroff Action:' -b 'PROCEED' 'exec dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop'"
-# - - Reboot
-bindcode $mod+Ctrl+$key_r exec "i3-nagbar -t error -m 'Confirm Reboot Action:' -b 'PROCEED' 'exec dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart'"
-# - - Suspend
-# bindcode $mod+Ctrl+$key_s exec "i3-nagbar -x -t error -m 'Confirm Suspend Action:' -b 'PROCEED' 'exec gnome-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend'"
-bindcode $mod+Ctrl+$key_s exec "i3-nagbar -x -t error -m 'Confirm Suspend Action:' -b 'PROCEED' 'exec cinnamon-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend'"
-# - - Hibernate
-# bindcode $mod+Ctrl+$key_h exec "i3-nagbar -x -t error -m 'Confirm Hibernate Action:' -b 'PROCEED' 'exec gnome-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Hibernate'"
-bindcode $mod+Ctrl+$key_h exec "i3-nagbar -x -t error -m 'Confirm Hibernate Action:' -b 'PROCEED' 'exec cinnamon-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Hibernate'"
-
-# - Gnome Control Center
-bindcode $mod+Ctrl+$key_c exec gnome-control-center
-
-# - Gnome Advanced Settings
-bindcode $mod+Ctrl+$key_a exec gnome-tweak-tool
-
-# - Change KBD Layout
-# bindsym $mod+F1 exec --no-startup-id ~/i3/change-keymap.sh
-# bindcode $alt+$key_shift_r exec --no-startup-id ~/i3/change-keymap.sh
-
-# - Menu
-bindsym $alt+F1 exec lxpanelctl menu
-
-# - Volume Settings
-# You can set this hotkeys at 'volumeicon'
-# bindsym XF86AudioRaiseVolume exec aumix -v +3.5
-# bindsym XF86AudioLowerVolume exec aumix -v -3.5
-# bindsym XF86AudioMute exec amixer -q set Master toggle
-
-# - Print Screen
-# - - Active Workspace
-# bindsym Print exec scrot -e 'mv $f ~/Pictures && gpicview ~/Pictures/$f'
-bindsym Print exec gnome-screenshot
-# - - Active Window
-# bindsym $alt+Print exec scrot -s -e 'mv $f ~/Pictures && gpicview ~/Pictures/$f'
-
 # - Invert Screen
 bindcode $mod+Shift+$key_i exec xcalib -i -a
 
 # - i3wm Console
 bindsym $mod+Ctrl+Escape exec i3-input
-
-# - Lock screen
-# bindcode $alt+Ctrl+$key_l exec gnome-screensaver-command -l
-bindcode $alt+Ctrl+$key_l exec cinnamon-screensaver-command -l
-# bindcode $alt+Ctrl+$key_l exec i3lock -d -c 000000
 
 # - start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -168,18 +119,13 @@ bindsym $mod+Escape exec dmenu_run -b -sb '#000000' -nf '#0099E6' -sf '#00FFFF' 
 # bindcode $mod+Shift+$key_p exec synapse
 
 # - File manager
-# thunar is faster
-# bindcode $mod+$key_o exec nautilus --no-desktop
-bindcode $mod+$key_o exec thunar
+bindcode $mod+$key_o exec dolphin
 
 # - Web browser
 bindcode $mod+$key_w exec firefox
 
 # - Music player
 bindcode $mod+$key_a exec amarok
-
-# - System Monitor
-bindsym $alt+Ctrl+Delete exec ksysguard
 
 # - run emacs daemon
 bindcode $mod+Ctrl+$key_x exec "i3-nagbar -x -t warning -m 'Do you want to run emacs' -b 'PROCEED' 'exec emacs --daemon'"
@@ -284,12 +230,13 @@ bar
 	position 			top
 	# position			bottom
 	
-	# status_command	i3status -c ~/i3/i3status.conf | dzen2 -ta c -sa c -w $status_width -x $status_x -fn 'DejaVu Sans Mono-9'
-	status_command	~/i3/status.sh
+	# - Use the plasma in KDE
+	# status_command	~/i3/status.sh
 
 	# mode				hide
 	# tray_output			primary
-	# tray_output			none
+	# - Let the KDE handle tray.
+	tray_output			none
 
 	colors {
 		background #000000
@@ -310,43 +257,5 @@ client.unfocused         #004499 #000000 #AAAAAA
 client.urgent            #00CC00 #00CC00 #ffffff
 client.background        #000000
 
-# -------------------------------------- THE GNOME PART -------------------------------------- #
-# - A little help from gnome-control-center
-exec --no-startup-id gnome-keyring-daemon --start --com
-exec --no-startup-id gsettings-data-convert
-exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-fallback-mount-helper
-exec --no-startup-id system-config-printer-applet
-exec --no-startup-id gnome-screensaver
-exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id gnome-settings-daemon
-exec --no-startup-id /usr/lib/notification-daemon/notification-daemon
 
-# -------------------------------------- THE RAZOR PART -------------------------------------- #
-exec --no-startup-id razor-notificationd
-
-# -------------------------------------- THE CINNAMON PART -------------------------------------- #
-# exec --no-startup-id cinnamon-polkit-gnome-authentication-agent-1
-# exec --no-startup-id cinnamon-settings-daemon
-# exec --no-startup-id cinnamon-screensaver
-# exec --no-startup-id system-config-printer-applet
-
-# -------------------------------------- STARTUP --------------------------------------- #
-# exec --no-startup-id lxpanel
-exec --no-startup-id start-pulseaudio-x11
-exec --no-startup-id nm-applet
-exec --no-startup-id glipper
-exec --no-startup-id blueman-applet
-exec --no-startup-id disper-indicator
-exec --no-startup-id tomboy --panel-applet
-# exec --no-startup-id emacs --daemon #Use Mod+Ctrl+X instead.
-# exec --no-startup-id wicd-gtk -t
-exec --no-startup-id goldendict
-exec --no-startup-id fbxkb
-exec --no-startup-id volumeicon
-
-# -------------------------------------- The Last Part ------------------------------------- #
-### make sure setxkbmap will be run after gnome-settings-daemon
-# exec setxkbmap -rules evdev -model pc105 -layout "us,ru,ir" -option "grp:alt_shift_toggle"
-exec --no-startup-id sleep 3 && setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
-# exec --no-startup-id espeak -p 40 -s 150 -a 200 -v'!v/whisper' "lock n load"
 

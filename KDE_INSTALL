@@ -1,0 +1,22 @@
+copy contents of this folder to ~/i3
+copy i3-kde to /usr/bin/i3-kde
+then
+	chmod 755 /usr/bin/i3-kde
+
+create this file:
+	/usr/share/kde4/apps/ksmserver/windowmanagers/i3.desktop
+
+and copy-pate the following text into it:
+	[Desktop Entry]
+	Encoding=UTF-8 
+	Name=i3
+	Comment=Highly configurable framework window manager 
+	Type=Application
+	Exec=i3-kde
+	TryExec=i3
+
+now, you should be able to choose i3 as your window manager for KDE in
+	System Settings-Default Applications->Window Manager
+
+ENJOY!
+

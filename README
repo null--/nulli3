@@ -31,12 +31,12 @@ Basic setups:
         exec --no-startup-id setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
         and change the -layout option
 
-# ------------------ SEMI-GNOME MODE (RECOMMENDED MODE) -------------------- #
+------------------ FRANKENSTEIN MODE (RECOMMENDED MODE) --------------------
 Best of both worlds.
 Keybindings:
-    take a look inside ~/i3/config.semi-gnome
+    take a look inside ~/i3/config.Frankenstein
 
-# ------------------- PURE MODE -------------------- #
+------------------- PURE MODE --------------------
 conf file: i3/config.pure
 
 Keybindings:
@@ -57,16 +57,5 @@ pcmanfm mount failiure:
 	and replace it with
 	<allow_active>yes</allow_active>
 
-# ------------------ GNOME MODE -------------------- #
-# NOTE:
-#   stable: gnome-session = 3.4.*
-#   UNSTABLE (not recommended): gnome-session >= 3.8 
-conf file: i3/config.gnome
-sudo cp -r ./usr /usr
-restart gdm (or lightdm or whatever)
-change your desktop to 'i3 GNOME'
-login
-
-
-# -------------------------------------------------- #
-TRY META+ESC!
+--------------------------------------------------
+PRESS META+ESC!
