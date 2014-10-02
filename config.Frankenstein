@@ -110,11 +110,11 @@ bindcode $mod+Ctrl+$key_p exec "i3-nagbar -t error -m 'Confirm Poweroff Action:'
 # - - Reboot
 bindcode $mod+Ctrl+$key_r exec "i3-nagbar -t error -m 'Confirm Reboot Action:' -b 'PROCEED' 'exec dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart'"
 # - - Suspend
-# bindcode $mod+Ctrl+$key_s exec "i3-nagbar -x -t error -m 'Confirm Suspend Action:' -b 'PROCEED' 'exec gnome-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend'"
-bindcode $mod+Ctrl+$key_s exec "i3-nagbar -x -t error -m 'Confirm Suspend Action:' -b 'PROCEED' 'exec cinnamon-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend'"
+bindcode $mod+Ctrl+$key_s exec "i3-nagbar -x -t error -m 'Confirm Suspend Action:' -b 'PROCEED' 'exec gnome-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend'"
+# bindcode $mod+Ctrl+$key_s exec "i3-nagbar -x -t error -m 'Confirm Suspend Action:' -b 'PROCEED' 'exec cinnamon-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend'"
 # - - Hibernate
-# bindcode $mod+Ctrl+$key_h exec "i3-nagbar -x -t error -m 'Confirm Hibernate Action:' -b 'PROCEED' 'exec gnome-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Hibernate'"
-bindcode $mod+Ctrl+$key_h exec "i3-nagbar -x -t error -m 'Confirm Hibernate Action:' -b 'PROCEED' 'exec cinnamon-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Hibernate'"
+bindcode $mod+Ctrl+$key_h exec "i3-nagbar -x -t error -m 'Confirm Hibernate Action:' -b 'PROCEED' 'exec gnome-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Hibernate'"
+# bindcode $mod+Ctrl+$key_h exec "i3-nagbar -x -t error -m 'Confirm Hibernate Action:' -b 'PROCEED' 'exec cinnamon-screensaver-command -l & dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Hibernate'"
 
 # - Gnome Control Center
 bindcode $mod+Ctrl+$key_c exec gnome-control-center
