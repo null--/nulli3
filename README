@@ -27,7 +27,7 @@ Basic setups:
       # mv ~/.config/lxpanle ~/.config/lxpanel.old
       # cp -r ~/i3/lxpanel  ~/.config/
 
-    3- Set wallpaper (on pure and semi-gnome mode):
+    3- Set wallpaper (on pure and Frankenstein mode):
       # nitrogen
       and, preferences > add
       then, pick a wallpaper and <apply>
@@ -35,7 +35,7 @@ Basic setups:
     4- change statusbar by editing:
       ~/i3/status.sh
 
-    5- change keyboard layout(pure and semi-gnome):
+    5- change keyboard layout(pure and Frankenstein):
       Look for this line:
       
       exec --no-startup-id setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
