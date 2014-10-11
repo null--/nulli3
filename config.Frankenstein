@@ -172,6 +172,9 @@ bindsym $mod+Escape exec dmenu_run -b -sb '#000000' -nf '#0099E6' -sf '#00FFFF' 
 # bindcode $mod+$key_o exec nautilus --no-desktop
 bindcode $mod+$key_o exec thunar
 
+# - Root File manager
+bindcode $mod+$key_p exec gksu thunar
+
 # - Web browser
 bindcode $mod+$key_w exec firefox
 
