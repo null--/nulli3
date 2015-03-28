@@ -2,5 +2,6 @@
 # exec dbus-launch --exit-with-session i3 -c ~/i3/config.semi-gnome
 # exec dbus-launch --exit-with-session i3 -c ~/i3/config.gnome
 # exec dbus-launch --exit-with-session i3 -c ~/i3/config.mate
-exec dbus-launch --exit-with-session i3 -c ~/i3/config.Frankenstein
+# exec dbus-launch --exit-with-session i3 -c ~/i3/config.Frankenstein
+exec dbus-launch --exit-with-session i3 -c ~/i3/config.Anarchy
 
