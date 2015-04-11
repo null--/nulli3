@@ -1,7 +1,3 @@
-# exec dbus-launch --exit-with-session i3 -c ~/i3/config.pure
-# exec dbus-launch --exit-with-session i3 -c ~/i3/config.semi-gnome
-# exec dbus-launch --exit-with-session i3 -c ~/i3/config.gnome
-# exec dbus-launch --exit-with-session i3 -c ~/i3/config.mate
-# exec dbus-launch --exit-with-session i3 -c ~/i3/config.Frankenstein
-exec dbus-launch --exit-with-session i3 -c ~/i3/config.Anarchy
-
+# exec dbus-launch --exit-with-session i3 --force-xinerama -c ~/.i3/config 
+# exec cinnamon-session --session=i3-cinnamon
+exec ck-launch-session cinnamon-session --session=i3-cinnamon

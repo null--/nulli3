@@ -1,0 +1,61 @@
+# unicode section is not working with wine apps
+
+# NOTE: NEVER BIND Alt+f !!!
+
+# -------------------------------------- KEYCODE -------------------------------------- #
+# use: xmodmap -pke
+set $key_f1    67
+set $key_f2    68
+set $key_f3    69
+set $key_f4    70
+set $key_f5    71
+set $key_f6    72
+set $key_f7    73
+set $key_f8    74
+set $key_f9    75
+set $key_f10   76
+set $key_f11   95
+set $key_f12   96
+
+set $key_1 10
+set $key_2 11
+set $key_3 12
+set $key_4 13
+set $key_5 14
+set $key_6 15
+set $key_7 16
+set $key_8 17
+set $key_9 18
+set $key_0 19
+
+set $key_q 24
+set $key_w 25
+set $key_e 26
+set $key_r 27
+set $key_t 28
+set $key_y 29
+set $key_u 30
+set $key_i 31
+set $key_o 32
+set $key_p 33
+
+set $key_a 38
+set $key_s 39
+set $key_d 40
+set $key_f 41
+set $key_g 42
+set $key_h 43
+set $key_j 44
+set $key_k 45
+set $key_l 46
+
+set $key_z 52
+set $key_x 53
+set $key_c 54
+set $key_v 55
+set $key_b 56
+set $key_n 57
+set $key_m 58
+
+set $key_shift_l 50
+set $key_shift_r 62

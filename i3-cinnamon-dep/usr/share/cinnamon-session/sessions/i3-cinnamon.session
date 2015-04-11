@@ -1,0 +1,4 @@
+[Cinnamon Session]
+Name=i3 Session
+RequiredComponents=cinnamon-settings-daemon;i3-cinnamon;
+DesktopName=i3-cinnamon

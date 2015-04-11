@@ -1,72 +1,37 @@
-Basic setups:
-  0- 101:
-    # cp -r <path-to-null-i3-git-clone>/i3 ~/
-    # mv ~/.xsession ~/.xsession.old
-    # ln -s ~/i3/xsession ~/.xsession
+Push i3 to its limits!
 
-  Notes on .xsession:
-    (Logout and login with 'Default X Session')
+READ CONFIG FILE FIRST
+
+Requirements:
+  Apps:
+    cinnamon or cinnamon-desktop-environment
+    dwmenu 
+    nitrogen
+    aumix
+    volumeicon
+    cinnamon-screensaver-command
     
-    FRANKENSTEIN MODE (RECOMMENDED): 
-      exec dbus-launch --exit-with-session i3 -c ~/i3/config.Frankenstein
-             
-    GNOME MODE:
-      exec dbus-launch --exit-with-session i3 -c ~/i3/config.gnome
+Additional
+    gnome-system-monitor
+    gedit
+    amarok
+    xcalib
+
+Install i3-cinnamon Manually
+    * i3-cinnamon files are inside i3-cinnamon-dep directory
+    # sudo cp -r i3-cinnamon-dep/usr/* /usr/
+    # sudo chmod 755 /usr/bin/i3-cinnamon
+    # sudo chmod 755 /usr/bin/cinnamon-session-i3
+    # sudo chmod 644 /usr/share/applications/i3-cinnamon.desktop 
+    # sudo chmod 644 /usr/share/xsessions/i3-cinnamon.desktop 
+    # sudo chmod 644 /usr/share/cinnamon-session/sessions/i3-cinnamon.session 
+    # ln -s xsession ~/.xsession
     
-    PURE MODE:
-      exec dbus-launch --exit-with-session i3 -c ~/i3/config.pure
-             
-  Notes on KDE MODE:
-      cat i3/KDE_INSTALL
-      
-  Remember:
-    1- install dependencies:
-      # take a look inside i3/APTGET file
+Run i3-cinnamon:
+    After
+      # ln -s xsession ~/.xsession
+    You can log into "Default Xsession" profile or just do
+      # startx
 
-    2- lxpanel setup:
-      # mv ~/.config/lxpanle ~/.config/lxpanel.old
-      # cp -r ~/i3/lxpanel  ~/.config/
+Use "nitrogen" to set wallpaper
 
-    3- Set wallpaper (on pure and Frankenstein mode):
-      # nitrogen
-      and, preferences > add
-      then, pick a wallpaper and <apply>
-
-    4- change statusbar by editing:
-      ~/i3/status.sh
-
-    5- change keyboard layout(pure and Frankenstein):
-      Look for this line:
-      
-      exec --no-startup-id setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
-      
-      and change the -layout option
-
--------- FRANKENSTEIN MODE (RECOMMENDED) ---------
-Best of both worlds.
-Keybindings:
-    take a look inside ~/i3/config.Frankenstein
-
-------------------- PURE MODE --------------------
-conf file: i3/config.pure
-
-Keybindings:
-    take a look inside ~/i3/config.pure
-
-Add/Remove Keyboard Layout:
-    change this line:
-    exec --no-startup-id setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
-
-    inside ~/i3/config
-    
-pcmanfm mount failiure:
-	sudo nano /usr/share/polkit-1/actions/org.freedesktop.udisks.policy
-	Find the id:
-	org.freedesktop.devicekit.disks.filesystem-mount-system-internal
-	Look for the line
-	<allow_active>auth_admin_keep</allow_active>
-	and replace it with
-	<allow_active>yes</allow_active>
-
---------------------------------------------------
-PRESS META+ESC!
