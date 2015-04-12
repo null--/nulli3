@@ -138,6 +138,10 @@ bindsym $mod+Ctrl+x exec "i3-nagbar -x -t warning -m 'Do you want to run emacs' 
 # bindsym $mod+Shift+x exec emacsclient -c
 bindsym $mod+Shift+e exec $editor
 
+# --------------------------------- _null_ BINDINGS ------------------------------------ #
+bindsym $alt+F4 kill
+bindsym $alt+Tab focus right
+
 # ------------------------------------ COOL BINDINGS ----------------------------------- #
 # ---- Invert Screen ---- #
 bindsym $mod+Shift+i exec xcalib -i -a
@@ -151,7 +155,6 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
-bindsym $alt+F4 kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run -b # -sb '#000000' -nf '#0099E6' -sf '#00FFFF' -nb '#000000' -fn "Monospace-8" -p "X: "
@@ -324,7 +327,7 @@ exec nitrogen --restore
 
 # -------------------------------------- The Last Part ------------------------------------- #
 # ---- US/Persian Keyboard ---- #
-exec --no-startup-id sleep 3 && setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
+exec --no-startup-id setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
 # ---- Startup Sound ---- #
 # exec --no-startup-id espeak -p 40 -s 150 -a 200 -v'!v/whisper' "lock n load"
 

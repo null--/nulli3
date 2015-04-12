@@ -1,37 +1,81 @@
-Push i3 to its limits!
+Let's push i3 to its limits!
 
-READ CONFIG FILE FIRST
+---- Bindings ----
+  * This "config" supports almost every default bindings of i3.
+  * It's recommended for you to read "config" file at least once, line-by-line!
+    
+  * E=Esc, M=Meta, A=Alt, C=Ctrl, S=Shift, T=Tab, D=Del
+  * Example: ACc is Alt + Ctrl + c
 
-Requirements:
-  Apps:
+  * Remeber these two bindings!  
+  Terminal:             M<Enter>
+  Execute:              ME or Md
+  i3 Console:           MCE
+  
+  * Power and Display Control
+  Poweroff:             MCp
+  Reboot:               MCr
+  Suspend:              MCs
+  Hibernate:            MCh
+  Lock:                 ACl
+  Logout:               MCe
+
+  * Frequently Used Applications
+  Control Center:       MCc
+  File Manager:         MSo
+  File Manager (root):  MSp
+  Web Browser:          MSw
+  Music Player:         MSa
+  Editor:               MSe
+  System Monitor:       ACD
+  
+  * Window Management
+  Focus right:          AT
+  Kill a window:          A<F4>
+  
+  * Other Bindings
+  Emacs Daemon:         MCx
+  Invert Screen:        MSi
+  
+---- Requirements ----
+  Core:
     cinnamon or cinnamon-desktop-environment
     dwmenu 
     nitrogen
     aumix
     volumeicon
     cinnamon-screensaver-command
+    xcalib
     
-Additional
+  Additional:
     gnome-system-monitor
     gedit
     amarok
-    xcalib
 
-Install i3-cinnamon Manually
-    * i3-cinnamon files are inside i3-cinnamon-dep directory
-    # sudo cp -r i3-cinnamon-dep/usr/* /usr/
-    # sudo chmod 755 /usr/bin/i3-cinnamon
-    # sudo chmod 755 /usr/bin/cinnamon-session-i3
-    # sudo chmod 644 /usr/share/applications/i3-cinnamon.desktop 
-    # sudo chmod 644 /usr/share/xsessions/i3-cinnamon.desktop 
-    # sudo chmod 644 /usr/share/cinnamon-session/sessions/i3-cinnamon.session 
+---- Install i3-cinnamon Manually ----
+  * Copy everything to ~/.i3
+  * i3-cinnamon files are inside i3-cinnamon-dep directory
+  # sudo cp -r i3-cinnamon-dep/usr/* /usr/
+  # sudo chmod 755 /usr/bin/cinnamon-session-i3
+  # sudo chmod 644 /usr/share/applications/i3-cinnamon.desktop 
+  # sudo chmod 644 /usr/share/xsessions/i3-cinnamon.desktop 
+  # sudo chmod 644 /usr/share/cinnamon-session/sessions/i3-cinnamon.session 
+
+---- Post Installatoin ----
+  * You may want to set your default programs under the "Default Programs" part at "DEFINE" section inside "config" file.
+  * You can change i3 coloring profile by uncommenting color schemes at "COLORSET" section, uncommenting entire "COLORS" section
+    and finally uncommenting "Workspace Colors" part of "BAR" section.
+  * If you want to add program to your startup do it from "Cinnamon Settings" (bindkey= MCc).
+  * Take a look at "STARTUP" and "The Last Part" sections at the end of "config" file, you may want to change them
+    to suit your needs.
+  
+---- Run i3 + cinnamon ----
+  Start with startx or as "Default Xsession" profile (Preferred):
     # ln -s xsession ~/.xsession
-    
-Run i3-cinnamon:
-    After
-      # ln -s xsession ~/.xsession
-    You can log into "Default Xsession" profile or just do
-      # startx
-
-Use "nitrogen" to set wallpaper
+  
+  GDM or Lightdm or other Desktop Managers:
+    set "i3 + Cinnamon" as your desktop profile then login.
+  
+---- FAQ ----
+1. How can I set a wallpaper? Use "nitrogen" (Press Md then type "nitrogen" and hit "Enter").
 

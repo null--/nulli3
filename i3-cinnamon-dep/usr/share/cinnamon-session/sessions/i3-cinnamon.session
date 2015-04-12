@@ -1,4 +1,7 @@
 [Cinnamon Session]
 Name=i3 Session
-RequiredComponents=cinnamon-settings-daemon;i3-cinnamon;
+RequiredComponents=i3-cinnamon;cinnamon-polkit-gnome-authentication-agent-1;cinnamon-settings-daemon;cinnamon-screensaver;nm-applet;
 DesktopName=i3-cinnamon
+RequiredProviders=windowmanager;notifications;
+DefaultProvider-windowmanager=i3-cinnamon
+DefaultProvider-notifications=notification-daemon
