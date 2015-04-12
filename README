@@ -2,7 +2,8 @@ Let's push i3 to its limits!
 
 ---- Bindings ----
   * This "config" supports almost every default bindings of i3.
-  * It's recommended for you to read "config" file at least once, line-by-line!
+  * It's recommended for you to read "config" file at least once,
+    line-by-line!
     
   * E=Esc, M=Meta, A=Alt, C=Ctrl, S=Shift, T=Tab, D=Del
   * Example: ACc is Alt + Ctrl + c
@@ -66,12 +67,16 @@ Let's push i3 to its limits!
   # sudo chmod 644 /usr/share/cinnamon-session/sessions/i3-cinnamon.session 
 
 ---- Post Installatoin ----
-  * You may want to set your default programs under the "Default Programs" part at "DEFINE" section inside "config" file.
-  * You can change i3 coloring profile by uncommenting color schemes at "COLORSET" section, uncommenting entire "COLORS" section
+  * You may want to set your default programs under the 
+    "Default Programs" part at "DEFINE" section inside "config" file.
+  * You can change i3 coloring profile by uncommenting color schemes 
+    at "COLORSET" section, uncommenting entire "COLORS" section
     and finally uncommenting "Workspace Colors" part of "BAR" section.
-  * If you want to add program to your startup do it from "Cinnamon Settings" (bindkey= MCc).
-  * Take a look at "STARTUP" and "The Last Part" sections at the end of "config" file, you may want to change them
-    to suit your needs.
+  * If you want to add program to your startup do it from 
+    "Cinnamon Settings" (bindkey= MCc).
+  * Take a look at "STARTUP" and "The Last Part" sections at 
+    the end of "config" file, you may want to change them to suit your
+    needs.
   
 ---- Run i3 + cinnamon ----
   Start with startx or as "Default Xsession" profile (Preferred):
@@ -83,9 +88,14 @@ Let's push i3 to its limits!
 ---- FAQ ----
 1. How can I set a wallpaper?
     Use "nitrogen" (Press Md then type "nitrogen" and hit "Enter").
-    
-2. Is it possible to change my desktop theme?
-    Ofcourse!
-    Hit MCc then choose "Theme" and change your cinnamon theme under "Othe Settings".
-    Hit Md (or ME) type "gtk-chtheme" and hit "Enter", now change your gtk2 theme. 
+
+2. How can I change status bar?
+    Just edit status.sh!
+        
+3. Is it possible to change my desktop theme?
+    Of course!
+    a) Cinnamon: Hit MCc then choose "Theme" and change your cinnamon theme under 
+        "Othe Settings".
+    b) GTK: Hit Md (or ME) type "gtk-chtheme" and hit "Enter", now change 
+        your gtk theme. 
 
