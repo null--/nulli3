@@ -40,15 +40,19 @@ Let's push i3 to its limits!
   
 ---- Requirements ----
   Core:
+    i3
     cinnamon or cinnamon-desktop-environment
-    dwmenu 
+    dwm
     nitrogen
     aumix
     volumeicon
     cinnamon-screensaver-command
     xcalib
     gtk-chtheme
-    
+    fbxkb
+    dzen2
+    conky
+  
   Additional:
     gnome-system-monitor
     gedit
