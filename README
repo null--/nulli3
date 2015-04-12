@@ -1,5 +1,14 @@
 Let's push i3 to its limits!
 
+---- Dowload nulli3 ----
+  git clone --depth=1 https://github.com/null--/nulli3
+
+---- More About i3 ----
+Check this guides and liberate your Desktop:
+  https://www.youtube.com/watch?v=yAq_Enj_d2Q
+  https://www.youtube.com/watch?v=pSPcQ7Sdoh4
+  https://i3wm.org/docs/userguide.html
+
 ---- Bindings ----
   * This "config" supports almost every default bindings of i3.
   * It's recommended for you to read "config" file at least once,
@@ -32,7 +41,7 @@ Let's push i3 to its limits!
   
   * Window Management
   Focus right:          AT
-  Kill a window:          A<F4>
+  Kill a window:        A<F4>
   
   * Other Bindings
   Emacs Daemon:         MCx
