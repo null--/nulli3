@@ -46,6 +46,7 @@ Let's push i3 to its limits!
     volumeicon
     cinnamon-screensaver-command
     xcalib
+    gtk-chtheme
     
   Additional:
     gnome-system-monitor
@@ -80,5 +81,11 @@ Let's push i3 to its limits!
     set "i3 + Cinnamon" as your desktop profile then login.
   
 ---- FAQ ----
-1. How can I set a wallpaper? Use "nitrogen" (Press Md then type "nitrogen" and hit "Enter").
+1. How can I set a wallpaper?
+    Use "nitrogen" (Press Md then type "nitrogen" and hit "Enter").
+    
+2. Is it possible to change my desktop theme?
+    Ofcourse!
+    Hit MCc then choose "Theme" and change your cinnamon theme under "Othe Settings".
+    Hit Md (or ME) type "gtk-chtheme" and hit "Enter", now change your gtk2 theme. 
 
