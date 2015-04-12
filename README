@@ -54,8 +54,11 @@ Let's push i3 to its limits!
 
 ---- Install i3-cinnamon Manually ----
   * Copy everything to ~/.i3
-  * i3-cinnamon files are inside i3-cinnamon-dep directory
+  
+  # cd ~/.i3/
   # sudo cp -r i3-cinnamon-dep/usr/* /usr/
+  
+  # sudo chmod 755 ~/.i3/status.sh
   # sudo chmod 755 /usr/bin/cinnamon-session-i3
   # sudo chmod 644 /usr/share/applications/i3-cinnamon.desktop 
   # sudo chmod 644 /usr/share/xsessions/i3-cinnamon.desktop 
