@@ -107,7 +107,10 @@ Check this guides and liberate your Desktop:
   
   GDM or Lightdm or other Desktop Managers:
     set "i3 + Cinnamon" as your desktop profile then login.
-  
+
+---- Read Status Bar!1 ----
+    <date> <time> x b<battery> c<cpu> m<mem> d<root disk> e<eth0><Down/Up rate>
+
 ---- FAQ ----
 1. How can I set a wallpaper?
     Use "nitrogen" (Press Md then type "nitrogen" and hit "Enter").
