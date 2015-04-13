@@ -20,6 +20,7 @@ Liberate your Desktop and push i3 to its limits!
   Terminal:             M<Enter>
   Execute:              ME or Md
   i3 Console:           MCE
+  Run emacs Daemon:	MCx
   
   * Power and Display Control
   Poweroff:             MCp
@@ -73,7 +74,7 @@ Liberate your Desktop and push i3 to its limits!
   
   Additional:
     gnome-system-monitor
-    gedit
+    emacs
     amarok
 
 ---- Install nulli3 Manually ----
@@ -107,9 +108,6 @@ Liberate your Desktop and push i3 to its limits!
   Startx:
     # ln -s xsession ~/.xsession
     # startx
-  
----- Read the status bar!!1 ----
-    <date> <time> x b<battery> c<cpu> m<mem> d<root disk> e<eth0><Down/Up rate>
 
 ---- FAQ ----
 1. How can I set a wallpaper?
