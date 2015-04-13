@@ -40,8 +40,18 @@ Check this guides and liberate your Desktop:
   System Monitor:       ACD
   
   * Window Management
-  Focus right:          AT
-  Kill a window:        A<F4>
+  Kill a window:                        A<F4> or MSq
+  Switch to another Workspace:          M<0-9>
+  Send A Window to another Workspace:   MS<0-9>
+  Move Between Windows:                 M<arrows>
+  Move a Window:                        MS<arrows>
+  Focus right:                          AT
+  Fullscreen:                           Mf
+  Floating mode:                        MS<space>
+  Change Focus (floating <-> tiling):   M<space>
+  Tabbed mode:                          Mw
+  Split mode:                           Me
+  Stack mode:                           Ms
   
   * Other Bindings
   Emacs Daemon:         MCx
