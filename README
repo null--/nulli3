@@ -76,17 +76,17 @@ Liberate your Desktop and push i3 to its limits!
     gedit
     amarok
 
----- Install i3-cinnamon Manually ----
+---- Install nulli3 Manually ----
   * Copy everything to ~/.i3
   
   # cd ~/.i3/
-  # sudo cp -r i3-cinnamon-dep/usr/* /usr/
+  # sudo cp -r nulli3-dep/usr/* /usr/
   
   # sudo chmod 755 ~/.i3/status.sh
-  # sudo chmod 755 /usr/bin/cinnamon-session-i3
-  # sudo chmod 644 /usr/share/applications/i3-cinnamon.desktop 
-  # sudo chmod 644 /usr/share/xsessions/i3-cinnamon.desktop 
-  # sudo chmod 644 /usr/share/cinnamon-session/sessions/i3-cinnamon.session 
+  # sudo chmod 755 /usr/bin/nulli3-session
+  # sudo chmod 644 /usr/share/applications/nulli3.desktop 
+  # sudo chmod 644 /usr/share/xsessions/nulli3.desktop 
+  # sudo chmod 644 /usr/share/cinnamon-session/sessions/nulli3.session 
 
 ---- Post Installatoin ----
   * You may want to set your default programs under the 
@@ -100,14 +100,15 @@ Liberate your Desktop and push i3 to its limits!
     the end of "config" file, you may want to change them to suit your
     needs.
   
----- Run i3 + cinnamon ----
-  Start with startx or as "Default Xsession" profile (Preferred):
-    # ln -s xsession ~/.xsession
-  
+---- Launch nulli3 ----
   GDM or Lightdm or other Desktop Managers:
-    set "i3 + Cinnamon" as your desktop profile then login.
+    Set "nulli3" as your desktop profile then login.
 
----- Read Status Bar!1 ----
+  Startx:
+    # ln -s xsession ~/.xsession
+    # startx
+  
+---- Read the status bar!!1 ----
     <date> <time> x b<battery> c<cpu> m<mem> d<root disk> e<eth0><Down/Up rate>
 
 ---- FAQ ----

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=i3-cinnamon
-Comment=i3cinnamon Rocks!
+Name=nulli3
+Comment="https://github.com/null--/nulli3"
 Exec=/usr/bin/i3
 TryExec=/usr/bin/i3

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=nulli3
+Comment="https://github.com/null--/nulli3"
+TryExec=cinnamon-session
+Exec=nulli3-session
+Type=XSession

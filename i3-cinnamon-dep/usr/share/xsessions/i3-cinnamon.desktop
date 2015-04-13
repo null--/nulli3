@@ -1,7 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=i3 + Cinnamon
-Comment=i3 with cinnamon-session and cinnamon-settings-daemon
-TryExec=cinnamon-session
-Exec=cinnamon-session-i3
-Type=XSession
