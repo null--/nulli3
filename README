@@ -68,7 +68,7 @@ Liberate your Desktop and push i3 to its limits!
     cinnamon-screensaver-command
     xcalib
     gtk-chtheme
-    fbxkb
+    gxneur (Arch users may need to install it from aur)
     dzen2
     conky
   
@@ -123,3 +123,6 @@ Liberate your Desktop and push i3 to its limits!
     b) GTK: Hit Md (or ME) then type "gtk-chtheme" and hit "Enter", now change 
         your gtk theme. 
 
+4. How to change keyboard layout?
+   You can either use "Cinnamon Control Center (MCc) > Keyboard" or R-Click
+   on gxneur (the "US" flag on tray bar) and choose preferences.

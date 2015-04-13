@@ -314,7 +314,7 @@ exec --no-startup-id volumeicon
 # exec --no-startup-id wicd-gtk -t
 
 # ---- Keyboard ---- #
-exec --no-startup-id fbxkb
+exec --no-startup-id gxneur
 
 # ---- Background ---- #
 exec nitrogen --restore
@@ -327,7 +327,8 @@ exec nitrogen --restore
 
 # -------------------------------------- The Last Part ------------------------------------- #
 # ---- US/Persian Keyboard ---- #
-exec --no-startup-id setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
+# To Add a new layout use cinnamon-settings
+# exec --no-startup-id setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
 # ---- Startup Sound ---- #
 # exec --no-startup-id espeak -p 40 -s 150 -a 200 -v'!v/whisper' "lock n load"
 
