@@ -7,6 +7,6 @@ then
     
     # ---- Init ----
     # -- Set Wallpaper
-    nitrogen --set-auto ~/.i3/wallpaper/anarchy-g.jpg
+    nitrogen --save --set-auto ~/.i3/wallpaper/anarchy-g.jpg
 fi
 
