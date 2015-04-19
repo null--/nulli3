@@ -14,9 +14,12 @@ Liberate your Desktop and push i3 to its limits!
     line-by-line!
     
   * E=Esc, M=Meta, A=Alt, C=Ctrl, S=Shift, T=Tab, D=Del
-  * Example: ACc is Alt + Ctrl + c
+  * >>> CaSe SeNsItIvE: C==Ctrl, c="The letter 'c'" <<<
+  * Examples:
+  *  ACc means Alt + Ctrl + c
+  *  ACD means MSm means Meta + Shift + m
 
-  * Remeber these two bindings!  
+  * Remeber these 4 bindings!  
   Terminal:             M<Enter>
   Execute:              ME or Md
   i3 Console:           MCE
@@ -68,7 +71,6 @@ Liberate your Desktop and push i3 to its limits!
     cinnamon-screensaver-command
     xcalib
     gtk-chtheme
-    gxneur (Arch users may need to install it from aur)
     dzen2
     conky
   
@@ -76,6 +78,7 @@ Liberate your Desktop and push i3 to its limits!
     gnome-system-monitor
     emacs
     amarok
+    gxneur (Arch users may need to install it from aur)
 
 ---- Install nulli3 Manually ----
   * Copy everything to ~/.i3

@@ -323,7 +323,7 @@ exec --no-startup-id volumeicon
 # exec --no-startup-id wicd-gtk -t
 
 # ---- Keyboard ---- #
-exec --no-startup-id gxneur
+# exec --no-startup-id gxneur
 
 # ---- Background ---- #
 exec_always nitrogen --restore
