@@ -11,7 +11,8 @@ set $mod Mod4
 set $terminal       i3-sensible-terminal
 set $file           "nemo --no-desktop"
 set $browser        firefox
-set $editor         "emacsclient -c"   
+set $emacs          "emacsclient -c"
+set $editor	    "/opt/eclipse/eclipse"
 set $sysmon         gnome-system-monitor
 set $audio          amarok
 
@@ -137,6 +138,9 @@ bindsym $mod+Ctrl+x exec "i3-nagbar -x -t warning -m 'Do you want to run emacs' 
 # - Editor
 # bindsym $mod+Shift+x exec emacsclient -c
 bindsym $mod+Shift+e exec $editor
+
+# - Emacs Client
+bindsym $mod+Shift+x exec $emacs
 
 # --------------------------------- _null_ BINDINGS ------------------------------------ #
 bindsym $alt+F4 kill

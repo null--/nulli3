@@ -23,7 +23,7 @@ Liberate your Desktop and push i3 to its limits!
   Terminal:             M<Enter>
   Execute:              ME or Md
   i3 Console:           MCE
-  Run emacs Daemon:	MCx
+  Emacs Daemon:         MCx
   
   * Power and Display Control
   Poweroff:             MCp
@@ -40,6 +40,7 @@ Liberate your Desktop and push i3 to its limits!
   Web Browser:          MSw
   Music Player:         MSa
   Editor:               MSe
+  Emacs Client:         MSx
   System Monitor:       ACD
   
   * Window Management
