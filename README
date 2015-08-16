@@ -82,6 +82,9 @@ GPLv3
     amarok
     gxneur (Arch users may need to install it from aur)
 
+  My apt-get:
+    sudo apt-get install i3 cinnamon dwm nitrogen aumix volumeicon-alsa cinnamon-screensaver xcalib gtk-chtheme dzen2 conky gnome-system-monitor emacs vlc nemo terminator
+
 ---- Install nulli3 Manually ----
   * Copy everything to ~/.i3
   

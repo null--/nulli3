@@ -14,7 +14,7 @@ set $browser        firefox
 set $emacs          "emacsclient -c"
 set $editor         "gedit"
 set $sysmon         gnome-system-monitor
-set $audio          amarok
+set $audio          vlc
 
 # ------------------------------------- COLORSET ------------------------------------- #
 # ---- ANARCHY RED ---- #
