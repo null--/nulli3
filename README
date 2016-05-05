@@ -88,7 +88,7 @@ GPLv3
   * Copy everything to ~/.i3
   
   # cd ~/.i3/
-  # mv config.cinn config
+  # cp config.cinn config
 
   * Logout and login to "i3"
 
@@ -96,7 +96,7 @@ GPLv3
   * Copy everything to ~/.i3
   
   # cd ~/.i3/
-  # mv config.cinn config
+  # cp config.cinn config
   # sudo cp -r nulli3-dep/usr/* /usr/
   
   # sudo chmod 755 ~/.i3/status.sh
