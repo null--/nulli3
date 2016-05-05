@@ -84,28 +84,19 @@ GPLv3
   My apt-get:
     sudo apt-get install i3 cinnamon dwm nitrogen aumix volumeicon-alsa cinnamon-screensaver xcalib gtk-chtheme dzen2 conky gnome-system-monitor vlc nemo terminator notification-daemon blueman
 
----- Install nulli3 beside Cinnamon ----
+---- Install nulli3 and nulli3cinn ----
+
   * Copy everything to ~/.i3
   
   # cd ~/.i3/
-  # ln -s config.pure config
-
-  * Logout and login to "i3"
-
----- Install nulli3 on top of Cinnamon ----
-  * Copy everything to ~/.i3
-  
-  # cd ~/.i3/
-  # ln -s config.cinn config
   # sudo cp -r nulli3-dep/usr/* /usr/
   
   # sudo chmod 755 ~/.i3/status.sh
   # sudo chmod 755 /usr/bin/nulli3-session
+  # sudo chmod 755 /usr/bin/nulli3-pure
   # sudo chmod 644 /usr/share/applications/nulli3.desktop 
   # sudo chmod 644 /usr/share/xsessions/nulli3.desktop 
-  # sudo chmod 644 /usr/share/cinnamon-session/sessions/nulli3.session 
-
-  * Logout and login to "nulli3"
+  # sudo chmod 644 /usr/share/cinnamon-session/sessions/nulli3.session
 
 ---- Post Installatoin ----
   * You may want to set your default programs under the 
