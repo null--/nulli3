@@ -1,2 +1,2 @@
 #! /bin/sh
-exec cinnamon-session --session nulli3 "$@"
+exec cinnamon-session --session=nulli3 "$@"
