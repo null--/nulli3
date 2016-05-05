@@ -91,23 +91,22 @@ bindsym $mod+Ctrl+t exec "i3-nagbar -x -t warning -m 'TEST' -b 'OK' 'i3-msg exec
 
 # ------------------------------------ POWER AND DISPLAY CONTROL ----------------------- #
 # -- Poweroff --#
-bindsym $mod+Ctrl+p exec cinnamon-session-quit --power-off
+bindsym $mod+Ctrl+p exec "i3-nagbar -x -t error -m 'Power Off' -b 'OK' 'systemctl poweroff'"
 
 # -- Reboot -- #
-bindsym $mod+Ctrl+r exec cinnamon-session-quit --reboot
+bindsym $mod+Ctrl+r exec "i3-nagbar -x -t error -m 'Reboot' -b 'OK' 'systemctl reboot'"
 
 # -- Suspend -- #
-bindsym $mod+Ctrl+s exec cinnamon-session-quit --power-off
+bindsym $mod+Ctrl+s exec "i3-nagbar -x -t error -m 'Suspend' -b 'OK' 'systemctl suspend'"
 
 # -- Hibernate -- #
-bindsym $mod+Ctrl+h exec cinnamon-session-quit --power-off
+bindsym $mod+Ctrl+h exec "i3-nagbar -x -t error -m 'Hibernate' -b 'OK' 'systemctl hibernte'"
 
 # ---- Lock screen ---- #
 bindsym $alt+Ctrl+l exec cinnamon-screensaver-command -l
 
 # ---- Logout ---- #
-# bindsym $mod+Ctrl+e exec "i3-nagbar -t warning -m 'Confirm Logout Action: ' -b 'PROCEED' 'exec cinnamon-session-quit --logout'"
-bindsym $mod+Ctrl+e exec cinnamon-session-quit --logout
+bindsym $mod+Ctrl+e exec "i3-nagbar -t error -m 'Log Out?' -b 'OK' 'i3-msg exit'"
 
 # -------------------------------- CINNAMON BINDINGS ----------------------------------- #
 # ---- Cinnamon Settings ---- #
@@ -321,6 +320,11 @@ bar
 exec --no-startup-id cinnamon-settings-daemon
 exec --no-startup-id cinnamon-screensaver
 exec --no-startup-id notification-daemon
+exec --no-startup-id cinnamon-killer-daemon
+
+# Auto Open Fix
+exec --no-startup-id gsettings set org.gnome.desktop.media-handling automount false
+exec --no-startup-id gsettings set org.cinnamon.desktop.media-handling automount false
 
 # -------------------------------------- STARTUP --------------------------------------- #
 # Managee your startup inside gnome-tweak-tool > Startup Applications
