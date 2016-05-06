@@ -3,8 +3,8 @@ if [[ -n "$PS1" ]]; then
 
 HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=99999
+HISTFILESIZE=20000
 
 shopt -s checkwinsize
 
@@ -60,7 +60,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -alF --block-size=M'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -83,4 +83,3 @@ fi
 fi
 
 export PATH=$PATH:/etc/alternatives/gem-bin
-

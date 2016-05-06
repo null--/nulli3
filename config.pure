@@ -316,10 +316,11 @@ bar
 
 # ---------------------------------- THE CINNAMON PART --------------------------------------- #
 # Cinnamon Desktop
-# exec --no-startup-id i3-msg "workspace $w9; exec nemo; workspace $w1"
+# exec --no-startup-id i3-msg "workspace $w9; exec gnome-session; workspace $w1"
 exec --no-startup-id cinnamon-settings-daemon
 exec --no-startup-id cinnamon-screensaver
-exec --no-startup-id notification-daemon
+# exec --no-startup-id /usr/lib/notification-daemon/notification-daemon
+exec --no-startup-id sleep 30 && killall -9 gnome-screensaver
 exec --no-startup-id cinnamon-killer-daemon
 
 # Auto Open Fix
@@ -333,9 +334,9 @@ exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id volumeicon
 
 # ---- Network ---- #
+# exec --no-startup-id wicd-gtk -t
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
-# exec --no-startup-id wicd-gtk -t
 
 # ---- Keyboard ---- #
 # exec --no-startup-id gxneur
@@ -344,9 +345,9 @@ exec --no-startup-id blueman-applet
 exec_always nitrogen --restore
 
 # ---- Other Apps ---- #
-exec --no-startup-id disper-indicator
+# exec --no-startup-id disper-indicator
+# exec --no-startup-id tomboy --panel-applet
 exec --no-startup-id goldendict
-exec --no-startup-id tomboy --panel-applet
 exec --no-startup-id glipper
 
 # -------------------------------------- The Last Part ------------------------------------- #
