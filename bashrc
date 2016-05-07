@@ -29,16 +29,16 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 # Anarchy Red
-# clr1="\[\033[0;37m\]"
-# clr2="\[\033[1;33m\]"
-# clr3="\[\033[1;31m\]" 
-# noclr="\[\033[00m\]"
+clr1="\[\033[0;37m\]"
+clr2="\[\033[1;33m\]"
+clr3="\[\033[1;31m\]" 
+noclr="\[\033[00m\]"
 
 # Cool Gray
-clr1="\[\033[2;49;97m\]"
-clr2="\[\033[4;49;90m\]"
-clr3="\[\033[2;49;37m\]"
-noclr="\[\033[00m\]"
+# clr1="\[\033[2;49;97m\]"
+# clr2="\[\033[4;49;90m\]"
+# clr3="\[\033[2;49;37m\]"
+# noclr="\[\033[00m\]"
 
 if [ "$color_prompt" = yes ]; then
     PS1="$clr3/─$clr3(A)"$clr1"narchy$clr3───($clr1\u$clr3)───($clr1\W$clr3)───o\n$clr3\─"$clr3"0"$clr1"rders$clr3─── $noclr"

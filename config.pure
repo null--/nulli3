@@ -52,6 +52,7 @@ set $audio          vlc
 # set $urgent_win_txt     "#FFFFFF"
 
 # -------------------------------------- COLORS -------------------------------------- #
+# UNCOMMENT TO SET THEME
 # class                  border         backgr.         text
 # client.focused           $bg                $focused_win_bg $focused_win_txt
 # client.focused_inactive  $inactive_win_brd  $inactive_ws_bg $inactive_win_txt
@@ -284,6 +285,7 @@ bar
 	# output LVDS-1
 
 	position top
+	# position bottom
 	
 	# status_command i3status -c ~/i3/i3status.conf | dzen2 -ta c -sa c -w $status_width -x $status_x -fn 'DejaVu Sans Mono-9'
 	status_command "~/.i3/status.sh"
@@ -295,14 +297,14 @@ bar
 
 # ---- Workspace Colors ---- #
 # Uncomment the following lines in order to change default colors
-	# colors {
-	# 	background $bg
-	# 	statusline $status
-	# 	focused_workspace  $bg                  $focused_ws
-	# 	active_workspace   $active_ws           $bg
-	# 	inactive_workspace $inactive_ws_bg      $bg
-	# 	urgent_workspace   $bg                  $urgent_ws
-	# }
+# colors {
+# 	background $bg
+#  	statusline $status
+#  	focused_workspace  $bg                  $focused_ws
+#  	active_workspace   $active_ws           $bg
+#  	inactive_workspace $inactive_ws_bg      $bg
+#  	urgent_workspace   $bg                  $urgent_ws
+#  }
 }
 
 #bar
