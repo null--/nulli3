@@ -17,6 +17,16 @@ function conky_pad( number )
   return string.format( '%3i' , conky_parse( number ) )
 end
 
+function conky_getbat( )
+  bat = conky_parse("${battery_percent BAT1}")
+  
+  if bat == "0" then
+    bat = conky_parse("${battery_percent BAT0}")
+  end
+  
+  return string.format( '%3i' , bat )
+end
+
 function conky_spad( str )
   return string.format( '%10s' , conky_parse( str ) )
 end
