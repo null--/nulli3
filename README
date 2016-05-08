@@ -41,7 +41,6 @@ GPLv3
   Web Browser:          MSw
   Music Player:         MSa
   Editor:               MSe
-  Emacs Client:         MSx
   System Monitor:       ACD
   
   * Window Management
@@ -82,7 +81,10 @@ GPLv3
     gxneur (Arch users may need to install it from aur)
 
   My apt-get:
-    sudo apt-get install i3 cinnamon dwm nitrogen aumix volumeicon-alsa cinnamon-screensaver xcalib gtk-chtheme dzen2 conky gnome-system-monitor vlc nemo terminator notification-daemon blueman lua5.2 acpi
+    sudo apt-get install i3 cinnamon dwm nitrogen aumix volumeicon-alsa \
+      cinnamon-screensaver xcalib gtk-chtheme dzen2 conky \
+      gnome-system-monitor vlc nemo terminator notification-daemon \
+      blueman lua5.2 acpi gnome-screenshot
 
 ---- Install "nulli3: pure" and "nulli3: cinnamon" ----
   * Copy everything to ~/.i3
@@ -109,8 +111,8 @@ GPLv3
     "Cinnamon Settings" (bindkey= MCc).
     
   * Take a look at "STARTUP" and "The Last Part" sections at 
-    the end of "config" file, you may want to change them to suit your
-    needs.
+    the end of "config" or "config.pure" file, you may want to change them
+    to suit your needs.
 
 ---- FAQ ----
 0. How can I log in?!

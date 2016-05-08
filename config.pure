@@ -114,7 +114,7 @@ bindsym $mod+Ctrl+e exec "i3-nagbar -t error -m 'Log Out?' -b 'OK' 'i3-msg exit'
 bindsym $mod+Ctrl+c exec cinnamon-settings
 
 # ---- Print Screen ---- #
-# bindsym Print exec gnome-screenshot
+bindsym Print exec gnome-screenshot
 
 # ------------------------------------ FAST RUN ---------------------------------------- #
 # - File manager
@@ -133,7 +133,7 @@ bindsym $mod+Shift+a exec $music
 bindsym $alt+Ctrl+Delete exec $sysmon
 
 # - run emacs daemon
-bindsym $mod+Ctrl+x exec "i3-nagbar -x -t warning -m 'Do you want to run emacs' -b 'Oh, Yeah!' 'exec emacs --daemon'"
+# bindsym $mod+Ctrl+x exec "i3-nagbar -x -t warning -m 'Do you want to run emacs' -b 'Oh, Yeah!' 'exec emacs --daemon'"
 
 # - Editor
 bindsym $mod+Shift+e exec $editor
