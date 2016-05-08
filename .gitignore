@@ -6,7 +6,7 @@
 *.sqlite3
 bup/*
 help/*
-initialized
+*initialized*
 
 # EDITOR
 ######################
