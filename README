@@ -22,7 +22,8 @@ GPLv3
 
   * Remeber these 4 bindings!  
   Terminal:             M<Enter>
-  Execute:              ME or Md
+  Run a Command:        ME
+  Run an App:           Md
   i3 Console:           MCE
   Emacs Daemon:         MCx
   
@@ -58,7 +59,6 @@ GPLv3
   Stack mode:                           Ms
   
   * Other Bindings
-  Emacs Daemon:         MCx
   Invert Screen:        MSi
   
 ---- Requirements ----
