@@ -114,7 +114,7 @@ bindsym $mod+Ctrl+e exec cinnamon-session-quit --logout
 bindsym $mod+Ctrl+c exec cinnamon-settings
 
 # ---- Print Screen ---- #
-# bindsym Print exec gnome-screenshot
+bindsym Print exec gnome-screenshot
 
 # ------------------------------------ FAST RUN ---------------------------------------- #
 # - File manager

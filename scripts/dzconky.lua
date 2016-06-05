@@ -5,16 +5,30 @@
 -- Cool Gray
 --   #6a6a6a #9a9a9a
 
+-- High Contrast
+--   #afafaf #F9F9F9
+
+
 function conky_dark( )
-  return "^fg(\\#6a6a6a)"
+  return "^fg(\\#afafaf)"
 end
 
 function conky_light( )
-  return "^fg(\\#9a9a9a)"
+  return "^fg(\\#F9F9F9)"
 end
 
 function conky_pad( number )
   return string.format( '%3i' , conky_parse( number ) )
+end
+
+function conky_gettemp( )
+  tmp = conky_parse("${exec cat /sys/class/hwmon/hwmon0/temp1_input | cut -c-2 }")
+  
+  if tmp == "" then
+    tmp = conky_parse("${hwmon 1 temp 1}")
+  end
+  
+  return string.format( '%3i' , tmp )
 end
 
 function conky_getbat( )

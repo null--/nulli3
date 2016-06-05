@@ -7,7 +7,7 @@ gap=16
 # conky -c ~/.i3/dzconky.cfg | dzen2 -ta l -sa c -w $status_width -x $status_x -y $status_y -fg white -bg '#050505' -m -fn '-*-lucidatypewriter-medium-*-*-*-12-*-*-*-*-*-*-*' || exit 1
 
 # - bottom
-conky -c ~/.i3/scripts/dzconky.cfg | dzen2 -dock -ta l -sa c -x 0 -y 9999 -fg white -bg '#000000' -m -fn '-*-monospace-bold-*-*-*-12-*-*-*-*-*-*-*' || exit 1
+conky -c ~/.i3/scripts/dzconky.cfg | dzen2 -dock -ta l -sa c -x 0 -y 9999 -fg white -bg '#000000' -m -fn '-*-monospace-bold-*-*-*-16-*-*-*-*-*-*-*' || exit 1
 # - top/center
 # conky -c ~/.i3/dzconky.cfg | dzen2 -ta l -sa c -w 820 -x 250 -y 0 -fg white -bg '#000000' -m -fn '-*-lucidatypewriter-medium-*-*-*-12-*-*-*-*-*-*-*' || exit 1
 # - top/left

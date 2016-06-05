@@ -77,8 +77,8 @@ set $w0 "λ"
 exec xset b off
 
 # - Font
-font pango:monospace 8
-# font pango:DejaVu Sans Mono 8
+# font pango:monospace 12
+font pango:DejaVu Sans 12
 
 # - Disable Mouse Focus
 focus_follows_mouse no
@@ -92,22 +92,22 @@ bindsym $mod+Ctrl+t exec "i3-nagbar -x -t warning -m 'TEST' -b 'OK' 'i3-msg exec
 
 # ------------------------------------ POWER AND DISPLAY CONTROL ----------------------- #
 # -- Poweroff --#
-bindsym $mod+Ctrl+p exec "i3-nagbar -x -t error -m 'Power Off' -b 'OK' 'systemctl poweroff'"
+bindsym $mod+Ctrl+p exec "mate-session-save --shutdown-dialog"
 
 # -- Reboot -- #
-bindsym $mod+Ctrl+r exec "i3-nagbar -x -t error -m 'Reboot' -b 'OK' 'systemctl reboot'"
+bindsym $mod+Ctrl+r exec "mate-session-save --shutdown-dialog"
 
 # -- Suspend -- #
-bindsym $mod+Ctrl+s exec "i3-nagbar -x -t error -m 'Suspend' -b 'OK' 'systemctl suspend'"
+bindsym $mod+Ctrl+s exec "mate-session-save --shutdown-dialog"
 
 # -- Hibernate -- #
-bindsym $mod+Ctrl+h exec "i3-nagbar -x -t error -m 'Hibernate' -b 'OK' 'systemctl hibernte'"
+bindsym $mod+Ctrl+h exec "mate-session-save --shutdown-dialog"
 
 # ---- Lock screen ---- #
 bindsym $alt+Ctrl+l exec mate-screensaver-command -l
 
 # ---- Logout ---- #
-bindsym $mod+Ctrl+e exec "i3-nagbar -t error -m 'Log Out?' -b 'OK' 'i3-msg exit'"
+bindsym $mod+Ctrl+e exec "mate-session-save --logout-dialog"
 
 # -------------------------------- MATE BINDINGS ----------------------------------- #
 # ---- MATE Settings ---- #
@@ -291,9 +291,9 @@ bar
 	status_command "~/.i3/scripts/status.sh"
 
 	# tray
-	# tray_output none
+	tray_output none
 	# tray_output LVDS-1
-	tray_output primary
+	# tray_output primary
 
 # ---- Workspace Colors ---- #
 # Uncomment the following lines in order to change default colors
@@ -317,11 +317,13 @@ bar
 #}
 
 # ---------------------------------- THE MATE PART --------------------------------------- #
-exec --no-startup-id mate-session
+exec --no-startup-id gsettings set org.mate.background show-desktop-icons false
 
+exec --no-startup-id mate-session
 # Auto Open Fix
 # exec --no-startup-id gsettings set org.gnome.desktop.media-handling automount false
 # exec --no-startup-id gsettings set org.cinnamon.desktop.media-handling automount false
+exec --no-startup-id bash ~/.i3/scripts/logut-after-mate.sh
 
 # -------------------------------------- STARTUP --------------------------------------- #
 exec --no-startup-id bash ~/.i3/scripts/init.sh
