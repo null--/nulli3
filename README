@@ -94,7 +94,7 @@ Version: 0.9.1b
       mate-tweak mate-desktop-environment nitrogen aumix volumeicon-alsa pcmanfm \
       mate-screensaver xcalib gtk-chtheme dzen2 conky mate-tweak tree mate-optimus \
       mate-system-monitor vlc terminator mate-tweak topmenu-gtk2 topmenu-gtk3 \
-      blueman lua5.2 acpi gnome-screenshot
+      blueman lua5.2 acpi mate-screenshot lightdm-gtk-greeter lightdm-gtk-greeter-settings
 
   Note: You can also apt the mate-desktop-environment-extras
 

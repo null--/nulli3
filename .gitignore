@@ -13,6 +13,7 @@ help/*
 *.*~
 *.#*
 *.swp
+*.save
 
 # OS X generated files #
 ######################

@@ -44,3 +44,11 @@ end
 function conky_spad( str )
   return string.format( '%10s' , conky_parse( str ) )
 end
+
+function conky_geteth( )
+  return "enp9s0"
+end
+
+function conky_getwlan( )
+  return "wlp8s0"
+end
