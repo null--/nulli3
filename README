@@ -92,8 +92,8 @@ Version: 0.9.1b
   My apt-get (MATE):
     sudo apt-get install i3 caja-gksu caja-open-terminal caja-extensions-common dwm \
       mate-tweak mate-desktop-environment nitrogen aumix volumeicon-alsa pcmanfm \
-      mate-screensaver xcalib gtk-chtheme dzen2 conky mate-tweak \
-      mate-system-monitor vlc terminator mate-tweak \
+      mate-screensaver xcalib gtk-chtheme dzen2 conky mate-tweak tree mate-optimus \
+      mate-system-monitor vlc terminator mate-tweak topmenu-gtk2 topmenu-gtk3 \
       blueman lua5.2 acpi gnome-screenshot
 
   Note: You can also apt the mate-desktop-environment-extras

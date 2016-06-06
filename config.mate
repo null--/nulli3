@@ -9,9 +9,9 @@ set $mod Mod4
 
 # ---- Default Programs ---- #
 set $terminal       i3-sensible-terminal
-#set $file           "caja"
-#set $file           "caja --no-desktop"
-set $file           "pcmanfm"
+set $file           "unset DESKTOP_AUTOSTART_ID && caja --no-desktop"
+set $rootfile       "caja --no-desktop"
+#set $file           "pcmanfm"
 set $browser        firefox
 set $editor         "pluma"
 set $sysmon         mate-system-monitor
@@ -112,7 +112,7 @@ bindsym Print exec mate-screenshot
 # - File manager
 bindsym $mod+Shift+o exec $file
 # - Root File manager
-bindsym $mod+Shift+p exec gksu $file
+bindsym $mod+Shift+p exec gksu $rootfile
 
 # - Web browser
 bindsym $mod+Shift+w exec $browser
