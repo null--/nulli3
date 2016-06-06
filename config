@@ -106,7 +106,7 @@ bindsym $mod+Ctrl+h exec "i3-nagbar -x -t error -m 'Hibernate' -b 'OK' 'systemct
 bindsym $alt+Ctrl+l exec i3lock
 
 # ---- Logout ---- #
-bindsym $mod+Ctrl+e exec "i3-nagbar -t error -m 'Log Out?' -b 'OK' 'i3-msg exit'"
+bindsym $mod+Ctrl+l exec "i3-nagbar -t error -m 'Log Out?' -b 'OK' 'i3-msg exit'"
 
 # ------------------------------------ FAST RUN ---------------------------------------- #
 # - File manager
@@ -274,7 +274,7 @@ bar
 	status_command "~/.i3/scripts/status.sh"
 
 	# tray
-	# tray_output none
+	# tray_output primary
 	# tray_output eDP1
 	# tray_output primary
 

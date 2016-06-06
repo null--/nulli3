@@ -45,7 +45,7 @@ Version: 0.9.1b
   Suspend:              MCs
   Hibernate:            MCh
   Lock:                 ACl
-  Logout:               MCe
+  Logout:               MCl
 
   * Frequently Used Applications
   Control Center:       MCc
@@ -93,7 +93,7 @@ Version: 0.9.1b
     sudo apt-get install i3 caja-gksu caja-open-terminal caja-extensions-common dwm \
       mate-tweak mate-desktop-environment nitrogen aumix volumeicon-alsa pcmanfm \
       mate-screensaver xcalib gtk-chtheme dzen2 conky mate-tweak \
-      mate-system-monitor vlc terminator notification-daemon \
+      mate-system-monitor vlc terminator mate-tweak \
       blueman lua5.2 acpi gnome-screenshot
 
   Note: You can also apt the mate-desktop-environment-extras
@@ -142,3 +142,11 @@ Version: 0.9.1b
    nulli3 will do it automatically for you AFTER the first run. You can also do 
    it yourself by using mate-tweak and check the "disable show desktop icons".
 
+5. Notifications are shown unthemed
+   Try these:
+   # sudo apt-get purge dunst
+   # killall -9 dunst
+   # notify-send "Hello"
+   If these doesn't fixed it try
+   # sudo apt-get remove notification-daemon
+   # sudo dpkg-reconfigure notify-osd
