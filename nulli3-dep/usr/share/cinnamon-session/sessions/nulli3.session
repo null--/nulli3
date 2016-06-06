@@ -1,7 +1,0 @@
-[Cinnamon Session]
-Name=nulli3 Session
-RequiredComponents=nulli3;nulli3-polkit;cinnamon-settings-daemon;cinnamon-screensaver;nm-applet;cinnamon-killer-daemon;cinnamon-polkit-gnome-authentication-agent-1;
-DesktopName=nulli3
-RequiredProviders=windowmanager;notifications;
-DefaultProvider-windowmanager=nulli3
-DefaultProvider-notifications=notification-daemon

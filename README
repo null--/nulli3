@@ -1,7 +1,19 @@
 Liberate your Desktop and push i3 to its limits!
 GPLv3
 
----- Dowload nulli3 ----
+Version: 0.9.1b
+
+---- Before you do anything ----
+  I'm using nulli3 at 2560x1440 resolution so things might seem
+  a little magnified at the lower resolutions. At this moment I'm
+  using the config.mate, which means I'm going to focus on the i3/mate
+  version. However since i3 is extremely simple feel free to hack it
+  for your own needs (Don't forget to take a look at "nulli3/scripts/" 
+  folder too).
+  After all, All that I'm offering is just a config and a couple of
+  scripts, Nothing more, Nothing less.
+
+---- Download nulli3 ----
   # git clone --depth=1 https://github.com/null--/nulli3
 
 ---- More About i3 ----
@@ -20,7 +32,7 @@ GPLv3
   *  ACc means Alt + Ctrl + c
   *  ACD means MSm means Meta + Shift + m
 
-  * Remeber these 4 bindings!  
+  * Remember these 4 bindings!  
   Terminal:             M<Enter>
   Run a Command:        ME
   Run an App:           Md
@@ -64,7 +76,7 @@ GPLv3
 ---- Requirements ----
   Core:
     i3
-    cinnamon or cinnamon-desktop-environment
+    mate-desktop-environment or mate-desktop-environment-extras
     notification-daemon
     dwm
     nitrogen
@@ -75,43 +87,25 @@ GPLv3
     gtk-chtheme
     dzen2
     conky
-  
-  Additional:
-    gnome-system-monitor
-    gxneur (Arch users may need to install it from aur)
+	pcmanfm
 
   My apt-get (MATE):
     sudo apt-get install i3 caja-gksu caja-open-terminal caja-extensions-common dwm \
-      mate-tweak mate-desktop-environment nitrogen aumix volumeicon-alsa \
+      mate-tweak mate-desktop-environment nitrogen aumix volumeicon-alsa pcmanfm \
       mate-screensaver xcalib gtk-chtheme dzen2 conky mate-tweak \
       mate-system-monitor vlc terminator notification-daemon \
       blueman lua5.2 acpi gnome-screenshot
 
   Note: You can also apt the mate-desktop-environment-extras
 
-  My apt-get (Cinnamon):
-    sudo apt-get install i3 cinnamon dwm nitrogen aumix volumeicon-alsa \
-      cinnamon-screensaver xcalib gtk-chtheme dzen2 conky \
-      gnome-system-monitor vlc nemo terminator notification-daemon \
-      blueman lua5.2 acpi gnome-screenshot
+---- Install the nulli3 Desktop ----
+  * Link (ln -s) or copy ./nulli3 to ~/.i3
+  * If you're paranoid:
+  # cat ~/.i3/scripts/install.sh
+  * Finally:
+  # sh ~/.i3/scripts/install.sh
 
----- Install "nulli3: pure" and "nulli3: cinnamon" ----
-  * Copy everything to ~/.i3
-  
-  # cd ~/.i3/
-  # sudo cp -r nulli3-dep/usr/* /usr/
-  
-  # sudo chmod 755 ~/.i3/status.sh
-  # sudo chmod 755 /usr/bin/nulli3-session
-  # sudo chmod 755 /usr/bin/nulli3-pure
-  # sudo chmod 755 /usr/bin/nulli3-mate
-  # sudo chmod 644 /usr/share/applications/nulli3.desktop 
-  # sudo chmod 644 /usr/share/xsessions/nulli3cinn.desktop
-  # sudo chmod 644 /usr/share/xsessions/nulli3mate.desktop
-  # sudo chmod 644 /usr/share/xsessions/nulli3.desktop 
-  # sudo chmod 644 /usr/share/cinnamon-session/sessions/nulli3.session
-
----- Post Installatoin ----
+---- Post Installation ----
   * You may want to set your default programs under the 
     "Default Programs" part at "DEFINE" section inside "config" file.
     
@@ -120,32 +114,32 @@ GPLv3
     and finally uncommenting the "Workspace Colors" part of the "BAR" section.
     
   * If you want to add program to your startup do it from 
-    "Cinnamon Settings" (bindkey= MCc).
+    "System Settings" (bindkey= MCc) or add it at the bottom of the ".i3/config" file
+    you're currently using.
     
   * Take a look at "STARTUP" and "The Last Part" sections at 
-    the end of "config" or "config.pure" file, you may want to change them
+    the end of ".i3/config" or ".i3/config.mate" file, you may want to change them
     to suit your needs.
 
 ---- FAQ ----
 0. How can I log in?!
-    Log out and before logging in select "nulli3: pure" or
-    "nulli3: cinnamon" as your desktop. (I prefer the pure one!)
+    Log out and before logging in select "nulli3: mate" in the lightdm 
+    (or gdm or etc.) as your desktop.
     
 1. How can I set a wallpaper?
-    Use "nitrogen" (Press Md then type "nitrogen" and hit "Enter").
+    You can change it in your "Control Center".
+	Note: Use "nitrogen" in the startx mode.
 
 2. How can I change status bar?
-    Just edit status.sh!
+    Just edit ".i3/scripts/status.sh" or ".i3/scripts/status-mate.sh".
         
 3. Is it possible to change my desktop theme?
     Of course!
-    a) Cinnamon: Hit MCc then choose "Theme" and change your cinnamon theme
-        under "Othe Settings".
-    b) GTK: Hit Md (or ME) then type "gtk-chtheme" and hit "Enter", now change 
+    a) Do it in your control center (MCc)
+    b) GTK: Hit ME (or Md) then type "gtk-chtheme" and hit "Enter", now change 
         your gtk theme. 
 
-4. How to change keyboard layout?
-   You can either use "Cinnamon Control Center (MCc) > Keyboard" or R-Click
-   on gxneur (the "US" flag on tray bar) and choose preferences.
+4. How can I prevent caja from showing desktop in Mate?
+   nulli3 will do it automatically for you AFTER the first run. You can also do 
+   it yourself by using mate-tweak and check the "disable show desktop icons".
 
-5. Disable desktop in MATE: use mate-tweak and disabe show desktop icons

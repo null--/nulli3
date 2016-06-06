@@ -1,2 +1,0 @@
-#! /bin/sh
-exec i3 -c ~/.i3/config.pure "$@"

@@ -9,12 +9,11 @@ set $mod Mod4
 
 # ---- Default Programs ---- #
 set $terminal       i3-sensible-terminal
-set $file           "nemo --no-desktop"
+set $file           "pcmanfm"
 set $browser        firefox
-set $emacs          "emacsclient -c"
 set $editor         "gedit"
-set $sysmon         gnome-system-monitor
 set $audio          vlc
+set $screenshot		"mate-screenshot
 
 # ------------------------------------- COLORSET ------------------------------------- #
 # ---- ANARCHY RED ---- #
@@ -52,6 +51,7 @@ set $audio          vlc
 # set $urgent_win_txt     "#FFFFFF"
 
 # -------------------------------------- COLORS -------------------------------------- #
+# UNCOMMENT TO SET THEME
 # class                  border         backgr.         text
 # client.focused           $bg                $focused_win_bg $focused_win_txt
 # client.focused_inactive  $inactive_win_brd  $inactive_ws_bg $inactive_win_txt
@@ -91,30 +91,22 @@ bindsym $mod+Ctrl+t exec "i3-nagbar -x -t warning -m 'TEST' -b 'OK' 'i3-msg exec
 
 # ------------------------------------ POWER AND DISPLAY CONTROL ----------------------- #
 # -- Poweroff --#
-bindsym $mod+Ctrl+p exec cinnamon-session-quit --power-off
+bindsym $mod+Ctrl+p exec "i3-nagbar -x -t error -m 'Power Off' -b 'OK' 'systemctl poweroff'"
 
 # -- Reboot -- #
-bindsym $mod+Ctrl+r exec cinnamon-session-quit --reboot
+bindsym $mod+Ctrl+r exec "i3-nagbar -x -t error -m 'Reboot' -b 'OK' 'systemctl reboot'"
 
 # -- Suspend -- #
-bindsym $mod+Ctrl+s exec cinnamon-session-quit --power-off
+bindsym $mod+Ctrl+s exec "i3-nagbar -x -t error -m 'Suspend' -b 'OK' 'systemctl suspend'"
 
 # -- Hibernate -- #
-bindsym $mod+Ctrl+h exec cinnamon-session-quit --power-off
+bindsym $mod+Ctrl+h exec "i3-nagbar -x -t error -m 'Hibernate' -b 'OK' 'systemctl hibernte'"
 
 # ---- Lock screen ---- #
-bindsym $alt+Ctrl+l exec cinnamon-screensaver-command -l
+bindsym $alt+Ctrl+l exec i3lock
 
 # ---- Logout ---- #
-# bindsym $mod+Ctrl+e exec "i3-nagbar -t warning -m 'Confirm Logout Action: ' -b 'PROCEED' 'exec cinnamon-session-quit --logout'"
-bindsym $mod+Ctrl+e exec cinnamon-session-quit --logout
-
-# -------------------------------- CINNAMON BINDINGS ----------------------------------- #
-# ---- Cinnamon Settings ---- #
-bindsym $mod+Ctrl+c exec cinnamon-settings
-
-# ---- Print Screen ---- #
-bindsym Print exec gnome-screenshot
+bindsym $mod+Ctrl+e exec "i3-nagbar -t error -m 'Log Out?' -b 'OK' 'i3-msg exit'"
 
 # ------------------------------------ FAST RUN ---------------------------------------- #
 # - File manager
@@ -129,17 +121,8 @@ bindsym $mod+Shift+w exec $browser
 # - Music player
 bindsym $mod+Shift+a exec $music
 
-# - System Monitor
-bindsym $alt+Ctrl+Delete exec $sysmon
-
-# - run emacs daemon
-# bindsym $mod+Ctrl+x exec "i3-nagbar -x -t warning -m 'Do you want to run emacs' -b 'Oh, Yeah!' 'exec emacs --daemon'"
-
 # - Editor
 bindsym $mod+Shift+e exec $editor
-
-# - Emacs Client
-# bindsym $mod+Shift+x exec $emacs
 
 # --------------------------------- _null_ BINDINGS ------------------------------------ #
 bindsym $alt+F4 kill
@@ -285,25 +268,26 @@ bar
 	# output LVDS-1
 
 	position top
+	# position bottom
 	
 	# status_command i3status -c ~/i3/i3status.conf | dzen2 -ta c -sa c -w $status_width -x $status_x -fn 'DejaVu Sans Mono-9'
 	status_command "~/.i3/scripts/status.sh"
 
 	# tray
 	# tray_output none
-	# tray_output LVDS-1
-	tray_output primary
+	# tray_output eDP1
+	# tray_output primary
 
 # ---- Workspace Colors ---- #
 # Uncomment the following lines in order to change default colors
-	# colors {
-	#       background $bg
-	#       statusline $status
-	#       focused_workspace  $bg                  $focused_ws
-	#       active_workspace   $active_ws           $bg
-	#       inactive_workspace $inactive_ws_bg      $bg
-	#       urgent_workspace   $bg                  $urgent_ws
-	# }
+# colors {
+#       background $bg
+#       statusline $status
+#       focused_workspace  $bg                  $focused_ws
+#       active_workspace   $active_ws           $bg
+#       inactive_workspace $inactive_ws_bg      $bg
+#       urgent_workspace   $bg                  $urgent_ws
+#  }
 }
 
 #bar
@@ -315,41 +299,41 @@ bar
 #	binding_mode_indicator no
 #}
 
-# ---------------------------------- THE CINNAMON PART --------------------------------------- #
-# Cinnamon Desktop
-# exec --no-startup-id i3-msg "workspace $w9; exec nemo; workspace $w1"
-# exec --no-startup-id cinnamon-settings-daemon
-# exec --no-startup-id cinnamon-screensaver
-# exec --no-startup-id notification-daemon
+# ---------------------------------- Hot Fixes --------------------------------------- #
+# Auto Open Fix
+# exec --no-startup-id gsettings set org.gnome.desktop.media-handling automount false
+# exec --no-startup-id gsettings set org.cinnamon.desktop.media-handling automount false
 
 # -------------------------------------- STARTUP --------------------------------------- #
-# Managee your startup inside gnome-tweak-tool > Startup Applications
+# ---- Settings Daemon ---- #
+# exec --no-startup-id  mate-settings-daemon
+
 # ---- Audio ---- #
 # exec --no-startup-id start-pulseaudio-x11
-exec --no-startup-id volumeicon
+# exec --no-startup-id volumeicon
 
 # ---- Network ---- #
+# exec --no-startup-id wicd-gtk -t
 # exec --no-startup-id nm-applet
 # exec --no-startup-id blueman-applet
-# exec --no-startup-id wicd-gtk -t
 
 # ---- Keyboard ---- #
 # exec --no-startup-id gxneur
 
 # ---- Background ---- #
-exec --no-startup-id nitrogen --restore
+exec_always nitrogen --restore
 
 # ---- Other Apps ---- #
 # exec --no-startup-id disper-indicator
-# exec --no-startup-id goldendict
 # exec --no-startup-id tomboy --panel-applet
+# exec --no-startup-id goldendict
 # exec --no-startup-id glipper
 
-# -------------------------------------- The Last Part ------------------------------------- #
+exec --no-startup-id bash ~/.i3/scripts/init.sh
+
+# -------------------------------------- Add New Keyboard Layout ------------------------------------- #
 # ---- US/Persian Keyboard ---- #
-# To Add a new layout use cinnamon-settings
 # exec --no-startup-id setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
 # ---- Startup Sound ---- #
 # exec --no-startup-id espeak -p 40 -s 150 -a 200 -v'!v/whisper' "lock n load"
 
-exec --no-startup-id bash ~/.i3/scripts/init.sh

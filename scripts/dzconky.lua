@@ -28,7 +28,7 @@ function conky_gettemp( )
     tmp = conky_parse("${hwmon 1 temp 1}")
   end
   
-  return string.format( '%3i' , tmp )
+  return string.format( '%3s' , tostring(tmp))
 end
 
 function conky_getbat( )

@@ -11,7 +11,6 @@ set $mod Mod4
 set $terminal       i3-sensible-terminal
 set $file           "caja --no-desktop"
 set $browser        firefox
-set $emacs          "emacsclient -c"
 set $editor         "pluma"
 set $sysmon         mate-system-monitor
 set $audio          vlc
@@ -78,7 +77,7 @@ exec xset b off
 
 # - Font
 # font pango:monospace 12
-font pango:DejaVu Sans 12
+font pango:DejaVu Sans 11
 
 # - Disable Mouse Focus
 focus_follows_mouse no
@@ -137,9 +136,6 @@ bindsym $alt+Ctrl+Delete exec $sysmon
 
 # - Editor
 bindsym $mod+Shift+e exec $editor
-
-# - Emacs Client
-# bindsym $mod+Shift+x exec $emacs
 
 # --------------------------------- _null_ BINDINGS ------------------------------------ #
 bindsym $alt+F4 kill
@@ -284,11 +280,11 @@ bar
 	# output DFP-0
 	# output LVDS-1
 
-	position top
-	# position bottom
+	# position top
+	position bottom
 	
 	# status_command i3status -c ~/i3/i3status.conf | dzen2 -ta c -sa c -w $status_width -x $status_x -fn 'DejaVu Sans Mono-9'
-	status_command "~/.i3/scripts/status.sh"
+	status_command "~/.i3/scripts/status-mate.sh"
 
 	# tray
 	tray_output none
@@ -307,23 +303,25 @@ bar
 #  }
 }
 
+# Bottom Empty Bar
 #bar
 #{
 #	id bot-bar
 #	position bottom
 #	tray_output none
-#       workspace_buttons no
+#	workspace_buttons no
 #	binding_mode_indicator no
 #}
 
 # ---------------------------------- THE MATE PART --------------------------------------- #
+# Fix caja desktop issue
 exec --no-startup-id gsettings set org.mate.background show-desktop-icons false
-
+# Run Mate
 exec --no-startup-id mate-session
-# Auto Open Fix
-# exec --no-startup-id gsettings set org.gnome.desktop.media-handling automount false
-# exec --no-startup-id gsettings set org.cinnamon.desktop.media-handling automount false
 exec --no-startup-id bash ~/.i3/scripts/logut-after-mate.sh
+# Other fixes
+exec --no-startup-id gsettings set org.gnome.desktop.media-handling automount false
+exec --no-startup-id gsettings set org.cinnamon.desktop.media-handling automount false
 
 # -------------------------------------- STARTUP --------------------------------------- #
 exec --no-startup-id bash ~/.i3/scripts/init.sh
