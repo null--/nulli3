@@ -1,0 +1,17 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=nulli3: mate
+Comment="https://github.com/null--/nulli3"
+
+# Old Style
+# Exec=nulli3-mate
+# TryExec=nulli3-mate
+# Type=Application
+
+Exec=mate-session
+TryExec=mate-session
+Icon=
+Type=Application
+DesktopNames=MATE
+Keywords=launch;MATE;desktop;session;
+

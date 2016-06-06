@@ -1,5 +1,5 @@
 #!/bin/sh
-sleep 3
+#sleep 3
 
 gap=16
 # status_y= 50 `expr \`xwininfo -metric -root|sed -ne 's/.*geometry.*x\([0-9]*\)+.*/\1/p'\` - $gap`

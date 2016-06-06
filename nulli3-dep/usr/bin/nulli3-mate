@@ -1,3 +1,4 @@
 #!/bin/sh
-exec i3 -c ~/.i3/config.mate "$@"
+# exec dbus-launch --exit-with-session i3 -c ~/.i3/config.mate "$@"
+i3 -c ~/.i3/config.mate "$@"
 

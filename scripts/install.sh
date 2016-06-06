@@ -4,15 +4,25 @@ cd ~/.i3/
 sudo rm /usr/bin/nulli3*
 sudo rm /usr/share/applications/nulli3*
 sudo rm /usr/share/xsessions/nulli3*
-sudo rm /usr/share/applications/nulli3*
+sudo rm /usr/share/mate/wm-properties/nulli3*
 
 sudo cp -r nulli3-dep/usr/* /usr/
 
 chmod 755 ~/.i3/scripts/*.sh
-sudo chmod 755 /usr/bin/nulli3-mate
-sudo chmod 644 /usr/share/xsessions/nulli3mate.desktop
+sudo chmod 755 /usr/bin/nulli3*
+sudo chmod 644 /usr/share/xsessions/nulli3*
+sudo chmod 644 /usr/share/applications/nulli3*
+sudo chmod 644 /usr/share/mate/wm-properties/nulli3*
 
-ln -s ~/.i3/scripts/xsession .xsession
+gsettings set org.mate.background show-desktop-icons false
+gsettings set org.mate.session.required-components windowmanager nulli3-mate
+
+ln -s ~/.i3/scripts/xsession ~/.xsession
+
+echo "------------------------------ NOTE ------------------------------"
+echo "To uninstall don't forget to:"
+echo "# gsettings set org.mate.session.required-components windowmanager marco"
+echo "# gsettings set org.mate.background show-desktop-icons true"
 
 echo "------------------------------ DONE! ------------------------------"
 echo "--> Logout and login to nulli3: mate"

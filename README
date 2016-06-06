@@ -123,8 +123,7 @@ Version: 0.9.1b
 
 ---- FAQ ----
 0. How can I log in?!
-    Log out and before logging in select "nulli3: mate" in the lightdm 
-    (or gdm or etc.) as your desktop.
+    Log out and log into "MATE" or "nulli3: mate"
     
 1. How can I set a wallpaper?
     You can change it in your "Control Center".
