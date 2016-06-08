@@ -5,13 +5,15 @@ Version: 0.9.1b
 
 ---- Before you do anything ----
   I'm using nulli3 at 2560x1440 resolution so things might seem
-  a little magnified at the lower resolutions. At this moment I'm
+  a little magnified at lower resolutions. At this moment I'm
   using the config.mate, which means I'm going to focus on the i3/mate
   version. However since i3 is extremely simple feel free to hack it
   for your own needs (Don't forget to take a look at "nulli3/scripts/" 
   folder too).
   After all, All that I'm offering is just a config and a couple of
   scripts, Nothing more, Nothing less.
+
+  An introduction video: https://youtu.be/rBAgYa0zS30 
 
 ---- Download nulli3 ----
   # git clone --depth=1 https://github.com/null--/nulli3

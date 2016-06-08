@@ -274,8 +274,8 @@ bar
 
 	# position top
 	position bottom
-	
-	# status_command i3status -c ~/i3/i3status.conf | dzen2 -ta c -sa c -w $status_width -x $status_x -fn 'DejaVu Sans Mono-9'
+
+	# ---- MATE DZEN/CONKY STATUS BAR ---- #	
 	status_command "~/.i3/scripts/status-mate.sh"
 
 	# tray
