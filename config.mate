@@ -318,8 +318,9 @@ exec_always mate-panel --replace
 # Other fixes
 exec --no-startup-id gsettings set org.gnome.desktop.media-handling automount false
 exec --no-startup-id gsettings set org.cinnamon.desktop.media-handling automount false
-exec --no-startup-id  gsettings set org.gnome.desktop.screensaver lock-enabled false
-exec --no-startup-id  gsettings set org.gnome.desktop.screensaver ubuntu-lock-on-suspend false
+exec --no-startup-id gsettings set org.gnome.desktop.screensaver lock-enabled false
+exec --no-startup-id gsettings set org.gnome.desktop.screensaver ubuntu-lock-on-suspend false
+exec --no-startup-id gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
 
 # -------------------------------------- STARTUP --------------------------------------- #
 exec --no-startup-id bash ~/.i3/scripts/init.sh
