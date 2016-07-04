@@ -79,7 +79,7 @@ exec xset b off
 
 # - Font
 # font pango:monospace 12
-font pango:DejaVu Sans 11
+font pango:DejaVu Sans 10
 
 # - Disable Mouse Focus
 focus_follows_mouse no

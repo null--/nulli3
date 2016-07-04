@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #sleep 3
 
 gap=16
