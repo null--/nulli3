@@ -82,4 +82,5 @@ fi
   export HISTCONTROL=ignoreboth
 fi
 
-export PATH=$PATH:/etc/alternatives/gem-bin
+export ANDROID_HOME=/opt/android-sdk
+export PATH=$PATH:/etc/alternatives/gem-bin:/opt/android-studio/bin/:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools

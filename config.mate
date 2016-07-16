@@ -276,7 +276,9 @@ bar
 	position bottom
 
 	# ---- MATE DZEN/CONKY STATUS BAR ---- #
-	status_command "~/.i3/scripts/status-mate.sh"
+	# output_format = "dzen2"
+	# status_command "~/.i3/scripts/status-mate.sh"
+	status_command i3status -c ~/.i3/scripts/i3status.conf
 
 	# tray
 	tray_output none
