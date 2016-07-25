@@ -52,14 +52,31 @@ set $audio          vlc
 # set $urgent_win_bg      "#00CC00"
 # set $urgent_win_txt     "#FFFFFF"
 
+# ---- MR. ROBOT'S ORANGE ---- #
+set $bg                 "#000000"
+set $status             "#F9A825"
+set $focused_ws         "#F9A825"
+set $active_ws          "#F57F17"
+set $inactive_ws_bg     "#FFC107"
+set $urgent_ws          "#E64A19"
+set $focused_win_bg     "#F57F17"
+set $focused_win_txt    "#000000"
+set $inactive_win_brd   "#FFB74D"
+set $inactive_win_txt   "#000000"
+set $unfocused_win_brd  "#FFB74D"
+set $unfocused_win_txt  "#FFB74D"
+set $urgent_win_brd     "#e53935"
+set $urgent_win_bg      "#e53935"
+set $urgent_win_txt     "#000000"
+
 # -------------------------------------- COLORS -------------------------------------- #
 # UNCOMMENT TO SET THEME
 # class                  border         backgr.         text
-# client.focused           $bg                $focused_win_bg $focused_win_txt
-# client.focused_inactive  $inactive_win_brd  $inactive_ws_bg $inactive_win_txt
-# client.unfocused         $unfocused_win_brd $bg             $unfocused_win_txt
-# client.urgent            $urgent_win_brd    $urgent_win_bg  $urgent_win_txt
-# client.background        $bg
+client.focused           $bg                $focused_win_bg $focused_win_txt
+client.focused_inactive  $inactive_win_brd  $inactive_ws_bg $inactive_win_txt
+client.unfocused         $unfocused_win_brd $bg             $unfocused_win_txt
+client.urgent            $urgent_win_brd    $urgent_win_bg  $urgent_win_txt
+client.background        $bg
 
 # ---- Workspace name ---- #
 set $w1 "1"
@@ -289,14 +306,14 @@ bar
 
 # ---- Workspace Colors ---- #
 # Uncomment the following lines in order to change default colors
-# colors {
-#       background $bg
-#       statusline $status
-#       focused_workspace  $bg                  $focused_ws
-#       active_workspace   $active_ws           $bg
-#       inactive_workspace $inactive_ws_bg      $bg
-#       urgent_workspace   $bg                  $urgent_ws
-#  }
+colors {
+      background $bg
+      statusline $status
+      focused_workspace  $bg                  $focused_ws
+      active_workspace   $active_ws           $bg
+      inactive_workspace $inactive_ws_bg      $bg
+      urgent_workspace   $bg                  $urgent_ws
+  }
 }
 
 # Bottom Empty Bar
