@@ -347,3 +347,4 @@ exec --no-startup-id gsettings set org.gnome.desktop.screensaver idle-activation
 
 # -------------------------------------- STARTUP --------------------------------------- #
 exec --no-startup-id bash ~/.i3/scripts/init.sh
+exec --no-startup-id bash ~/.i3/scripts/healthy-bat.sh
