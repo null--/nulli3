@@ -19,11 +19,11 @@ do
     if ([ $BAT -gt $UP ] && [ $HIGH == false ]); then
         HIGH=true
         LOW=false
-        notify-send -u "critical" "nulli3" "Your battery is above ${UP}%, For a healty battery, please unplug your charger!" -t 5000
+        notify-send -u critical "nulli3 (battery health)" "\nplease <b>unplug</b> your charger.\n\n<i>Your battery's cahrge is above ${UP}%.</i>" -t 0 -i battery
     fi
     if ([ $BAT -lt $DOWN ] && [ $LOW == false ]); then
         LOW=true
         HIGH=false
-        notify-send -u "critical" "nulli3" "Your battery is below ${DOWN}%, For a healty battery, please plug in your charger!" -t 5000
+        notify-send -u critical "nulli3 (battery health)" "\nplease <b>plug</b> your charger back in.\n\n<i>Your battery's charge is below ${DOWN}%.</i>" -t 0 -i battery-low
     fi
 done
