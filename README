@@ -8,12 +8,12 @@ Version: 0.9.1b
   a little magnified at lower resolutions. At this moment I'm
   using the config.mate, which means I'm going to focus on the i3/mate
   version. However since i3 is extremely simple feel free to hack it
-  for your own needs (Don't forget to take a look at "nulli3/scripts/" 
+  for your own needs (Don't forget to take a look at "nulli3/scripts/"
   folder too).
   After all, All that I'm offering is just a config and a couple of
   scripts, Nothing more, Nothing less.
 
-  An introduction video: https://youtu.be/rBAgYa0zS30 
+  An introduction video: https://youtu.be/rBAgYa0zS30
 
 ---- Download nulli3 ----
   # git clone --depth=1 https://github.com/null--/nulli3
@@ -27,20 +27,20 @@ Version: 0.9.1b
   * This "config" supports almost every default bindings of i3.
   * It's recommended for you to read "config" file at least once,
     line-by-line!
-    
+
   * E=Esc, M=Meta, A=Alt, C=Ctrl, S=Shift, T=Tab, D=Del
   * >>> CaSe SeNsItIvE: C==Ctrl, c="The letter 'c'" <<<
   * Examples:
   *  ACc means Alt + Ctrl + c
   *  ACD means MSm means Meta + Shift + m
 
-  * Remember these 4 bindings!  
+  * Remember these 4 bindings!
   Terminal:             M<Enter>
   Run a Command:        ME
   Run an App:           Md
   i3 Console:           MCE
   Emacs Daemon:         MCx
-  
+
   * Power and Display Control
   Poweroff:             MCp
   Reboot:               MCr
@@ -57,7 +57,7 @@ Version: 0.9.1b
   Music Player:         MSa
   Editor:               MSe
   System Monitor:       ACD
-  
+
   * Window Management
   Kill a window:                        A<F4> or MSq
   Switch to another Workspace:          M<0-9>
@@ -71,10 +71,10 @@ Version: 0.9.1b
   Tabbed mode:                          Mw
   Split mode:                           Me
   Stack mode:                           Ms
-  
+
   * Other Bindings
   Invert Screen:        MSi
-  
+
 ---- Requirements ----
   Core:
     i3
@@ -108,40 +108,40 @@ Version: 0.9.1b
   # sh ~/.i3/scripts/install.sh
 
 ---- Post Installation ----
-  * You may want to set your default programs under the 
+  * You may want to set your default programs under the
     "Default Programs" part at "DEFINE" section inside "config" file.
-    
-  * You can change i3 coloring profile by uncommenting color schemes 
+
+  * You can change i3 coloring profile by uncommenting color schemes
     at "COLORSET" section, uncommenting the entire "COLORS" section
     and finally uncommenting the "Workspace Colors" part of the "BAR" section.
-    
-  * If you want to add program to your startup do it from 
+
+  * If you want to add program to your startup do it from
     "System Settings" (bindkey= MCc) or add it at the bottom of the ".i3/config" file
     you're currently using.
-    
-  * Take a look at "STARTUP" and "The Last Part" sections at 
+
+  * Take a look at "STARTUP" and "The Last Part" sections at
     the end of ".i3/config" or ".i3/config.mate" file, you may want to change them
     to suit your needs.
 
 ---- FAQ ----
 0. How can I log in?!
     Log out and log into "MATE" or "nulli3: mate"
-    
+
 1. How can I set a wallpaper?
     You can change it in your "Control Center".
 	Note: Use "nitrogen" in the startx mode.
 
 2. How can I change status bar?
     Just edit ".i3/scripts/status.sh" or ".i3/scripts/status-mate.sh".
-        
+
 3. Is it possible to change my desktop theme?
     Of course!
     a) Do it in your control center (MCc)
-    b) GTK: Hit ME (or Md) then type "gtk-chtheme" and hit "Enter", now change 
-        your gtk theme. 
+    b) GTK: Hit ME (or Md) then type "gtk-chtheme" and hit "Enter", now change
+        your gtk theme.
 
 4. How can I prevent caja from showing desktop in Mate?
-   nulli3 will do it automatically for you AFTER the first run. You can also do 
+   nulli3 will do it automatically for you AFTER the first run. You can also do
    it yourself by using mate-tweak and check the "disable show desktop icons".
 
 5. Notifications are shown unthemed
@@ -152,3 +152,18 @@ Version: 0.9.1b
    If these doesn't fixed it try
    # sudo apt-get remove notification-daemon
    # sudo dpkg-reconfigure notify-osd
+
+ 6. Custom resolution:
+   Device name:
+   # xrandr | grep -e " connected [^(]" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/"
+   Generate command line:
+   # cvt <Height> <Width> <Freq.>
+   New mode:
+   # sudo xrandr --newmode <CVT Command>
+   Apply:
+   # sudo xrandr --addmode <Device Name> <Config Name>
+
+   Example:
+   # cvt 2304 1296 60
+   # sudo xrandr --newmode "2304x1296_60.00"  251.25  2304 2464 2712 3120  1296 1299 1304 1344 -hsync +vsync
+   # sudo xrandr --addmode eDP-1 2304x1296_60.00
