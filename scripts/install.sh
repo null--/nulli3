@@ -18,6 +18,7 @@ gsettings set org.mate.background show-desktop-icons false
 gsettings set org.mate.session.required-components windowmanager nulli3-mate
 
 ln -s ~/.i3/scripts/xsession ~/.xsession
+ln -s ~/.i3/scripts/Xresources ~/.Xresources
 
 echo "------------------------------ NOTE ------------------------------"
 echo "To uninstall don't forget to:"
@@ -28,4 +29,3 @@ echo "------------------------------ DONE! ------------------------------"
 echo "--> Logout and login to nulli3: mate"
 echo "             or"
 echo '--> Logout to a tty and run "startx" (to start nulli3 in the "pure" mode)'
-
