@@ -162,6 +162,10 @@ Version: 0.9.1b
    # sudo xrandr --newmode <CVT Command>
    Apply:
    # sudo xrandr --addmode <Device Name> <Config Name>
+   Make it permanent:
+   # sudo nano /etc/X11/Xsession.d/45custom_xrandr
+   # xrandr --newmode <CVT Command>
+   # xrandr --addmode <Device Name> <Config Name>
 
    Example:
    # cvt 2304 1296 60
