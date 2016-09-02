@@ -10,7 +10,7 @@ set $mod Mod4
 # ---- Default Programs ---- #
 set $terminal       i3-sensible-terminal
 set $file           "unset DESKTOP_AUTOSTART_ID && caja --no-desktop"
-set $rootfile       "caja --no-desktop"
+set $rootfile       "unset DESKTOP_AUTOSTART_ID && caja --no-desktop"
 #set $file           "pcmanfm"
 set $browser        firefox
 set $editor         "pluma"
