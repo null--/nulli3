@@ -342,7 +342,7 @@ colors {
 # }
 
 
-
+# Command > xprop | grep -i name
 for_window [title="Desktop"] floating disable
 for_window [title="Desktop"] move window to workspace KDE
 for_window [title="Desktop — Plasma"] floating disable
