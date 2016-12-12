@@ -108,6 +108,9 @@ Version: 0.9.1b
   # sh ~/.i3/scripts/install.sh
 
 ---- Post Installation ----
+  * In kde add /usr/bin/nulli3-kde to your startup applications
+    System Settings > Startup and Shutdown > Autostart > [Add Program]
+
   * You may want to set your default programs under the
     "Default Programs" part at "DEFINE" section inside "config" file.
 

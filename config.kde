@@ -343,5 +343,9 @@ colors {
 
 
 
-# for_window [class="plasmashell"] tabbed enable
+for_window [title="Desktop"] floating disable
+for_window [title="Desktop"] move window to workspace KDE
+for_window [title="Desktop — Plasma"] floating disable
+for_window [title="Desktop — Plasma"] move window to workspace KDE
+
 exec --no-startup-id nitrogen --restore
