@@ -166,8 +166,11 @@ Version: 0.9.1b
    # sudo nano /etc/X11/Xsession.d/45custom_xrandr
    # xrandr --newmode <CVT Command>
    # xrandr --addmode <Device Name> <Config Name>
+   # xrandr --output <Device Name> --mode <Config Name>
 
    Example:
    # cvt 2304 1296 60
    # sudo xrandr --newmode "2304x1296_60.00"  251.25  2304 2464 2712 3120  1296 1299 1304 1344 -hsync +vsync
    # sudo xrandr --addmode eDP-1 2304x1296_60.00
+   # sudo xrandr --output eDP-1 --mode 2048x1152_60.00
+

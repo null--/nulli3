@@ -9,9 +9,12 @@ set $mod Mod4
 
 # ---- Default Programs ---- #
 set $terminal       i3-sensible-terminal
-set $file           "unset DESKTOP_AUTOSTART_ID && caja --no-desktop"
-set $rootfile       "unset DESKTOP_AUTOSTART_ID && caja --no-desktop"
-#set $file           "pcmanfm"
+#set $file           "unset DESKTOP_AUTOSTART_ID && caja --no-desktop"
+#set $rootfile       "unset DESKTOP_AUTOSTART_ID && caja --no-desktop"
+set $file           "unset DESKTOP_AUTOSTART_ID && dolphin"
+set $rootfile       "unset DESKTOP_AUTOSTART_ID && dolphin"
+# set $file           "pcmanfm"
+# set $rootfile       "pcmanfm"
 set $browser        firefox
 set $editor         "pluma"
 set $sysmon         mate-system-monitor

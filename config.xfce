@@ -9,15 +9,11 @@ set $mod Mod4
 
 # ---- Default Programs ---- #
 set $terminal       i3-sensible-terminal
-# set $file           "unset DESKTOP_AUTOSTART_ID && caja --no-desktop"
-# set $rootfile       "unset DESKTOP_AUTOSTART_ID && caja --no-desktop"
-# set $file           "unset DESKTOP_AUTOSTART_ID && nemo --no-desktop"
-# set $rootfile       "unset DESKTOP_AUTOSTART_ID && nemo --no-desktop"
-set $file           "pcmanfm"
-set $rootfile       "pcmanfm"
+set $file           "unset DESKTOP_AUTOSTART_ID && thunar"
+set $rootfile       "unset DESKTOP_AUTOSTART_ID && thunar"
 set $browser        firefox
 set $editor         "pluma"
-set $sysmon         mate-system-monitor
+set $sysmon         xfce4-taskmanager
 set $audio          vlc
 
 # ------------------------------------- COLORSET ------------------------------------- #
@@ -104,7 +100,7 @@ exec xset b off
 # font pango:DejaVu Sans Bold 11
 # font pango:Terminus Bold 11
 # font pango:DejaVu Terminus Semi-Condensed 10
-font pango:DejaVu Terminus Semi-Condensed 11
+font pango:DejaVu Terminus Bold 10
 
 # - Disable Mouse Focus
 focus_follows_mouse no
@@ -118,29 +114,18 @@ bindsym $mod+Ctrl+t exec "i3-nagbar -x -t warning -m 'TEST' -b 'OK' 'i3-msg exec
 
 # ------------------------------------ POWER AND DISPLAY CONTROL ----------------------- #
 # -- Poweroff --#
-bindsym $mod+Ctrl+p exec "i3-nagbar -x -t error -m 'Power Off' -b 'OK' 'systemctl poweroff'"
-
-# -- Reboot -- #
-bindsym $mod+Ctrl+r exec "i3-nagbar -x -t error -m 'Reboot' -b 'OK' 'systemctl reboot'"
-
-# -- Suspend -- #
-bindsym $mod+Ctrl+s exec "i3-nagbar -x -t error -m 'Suspend' -b 'OK' 'systemctl suspend'"
-
-# -- Hibernate -- #
-bindsym $mod+Ctrl+h exec "i3-nagbar -x -t error -m 'Hibernate' -b 'OK' 'systemctl hibernte'"
-
-# ---- Lock screen ---- #
-bindsym $alt+Ctrl+l exec i3lock
+bindsym $mod+Ctrl+p exec "xfce4-session-logout"
 
 # ---- Logout ---- #
-bindsym $mod+Ctrl+l exec "i3-nagbar -t error -m 'Log Out?' -b 'OK' 'i3-msg exit'"
+bindsym $mod+Ctrl+l exec "xfce4-session-logout"
+
 
 # -------------------------------- MATE BINDINGS ----------------------------------- #
 # ---- MATE Settings ---- #
-bindsym $mod+Ctrl+c exec mate-control-center
+bindsym $mod+Ctrl+c exec xfce4-settings-manager
 
 # ---- Print Screen ---- #
-bindsym Print exec mate-screenshot
+bindsym Print exec xfce4-screenshooter
 
 # ------------------------------------ FAST RUN ---------------------------------------- #
 # - File manager
@@ -306,8 +291,8 @@ bar
 	# output DFP-0
 	# output LVDS-1
 
-	position top
-	# position bottom
+	# position top
+	position bottom
 
 	# ---- MATE DZEN/CONKY STATUS BAR ---- #
 	# output_format = "dzen2"
@@ -341,37 +326,19 @@ colors {
 #	binding_mode_indicator no
 # }
 
+# ---------------------------------- THE XFCE PART --------------------------------------- #
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id xfsettingsd
+exec --no-startup-id xfce4-panel
+for_window [title="Desktop"] tabbed enable, move container to workspace 4
+
+# Other fixes
+exec --no-startup-id gsettings set org.gnome.desktop.media-handling automount false
+exec --no-startup-id gsettings set org.cinnamon.desktop.media-handling automount false
+exec --no-startup-id gsettings set org.gnome.desktop.screensaver lock-enabled false
+exec --no-startup-id gsettings set org.gnome.desktop.screensaver ubuntu-lock-on-suspend false
+exec --no-startup-id gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
+
 # -------------------------------------- STARTUP --------------------------------------- #
 exec --no-startup-id bash ~/.i3/scripts/init.sh
 exec --no-startup-id bash ~/.i3/scripts/healthy-bat.sh
-# ---- Settings Daemon ---- #
-# exec --no-startup-id  mate-settings-daemon
-
-# ---- Audio ---- #
-exec --no-startup-id start-pulseaudio-x11
-exec --no-startup-id volumeicon
-
-# ---- Network ---- #
-# exec --no-startup-id wicd-gtk -t
-exec --no-startup-id nm-applet
-exec --no-startup-id blueman-applet
-
-# ---- Keyboard ---- #
-# exec --no-startup-id gxneur
-
-# ---- Background ---- #
-# exec_always nitrogen --restore
-
-# ---- Other Apps ---- #
-# exec --no-startup-id disper-indicator
-# exec --no-startup-id tomboy --panel-applet
-exec --no-startup-id goldendict
-exec --no-startup-id glipper
-
-exec --no-startup-id bash ~/.i3/scripts/init.sh
-
-# -------------------------------------- Add New Keyboard Layout ------------------------------------- #
-# ---- US/Persian Keyboard ---- #
-# exec --no-startup-id setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
-# ---- Startup Sound ---- #
-# exec --no-startup-id espeak -p 40 -s 150 -a 200 -v'!v/whisper' "lock n load"

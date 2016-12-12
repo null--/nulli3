@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Application
+
+Name=nulli3-kde
+Exec=nulli3-kde
+
+NoDisplay=true
+
+X-MATE-WMSettingsModule=nulli3-kde
+X-MATE-WMName=nulli3-kde
+X-MateWMSettingsLibrary=nulli3-kde
+X-MATE-Autostart-Phase=WindowManager
+X-MATE-Provides=windowmanager
+X-MATE-Autostart-Notify=true
+
+Name[en_US]=nulli3-kde.desktop

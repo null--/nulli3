@@ -13,11 +13,11 @@ set $terminal       i3-sensible-terminal
 # set $rootfile       "unset DESKTOP_AUTOSTART_ID && caja --no-desktop"
 # set $file           "unset DESKTOP_AUTOSTART_ID && nemo --no-desktop"
 # set $rootfile       "unset DESKTOP_AUTOSTART_ID && nemo --no-desktop"
-set $file           "pcmanfm"
-set $rootfile       "pcmanfm"
+set $file           "dolphin"
+set $rootfile       "dolphin"
 set $browser        firefox
-set $editor         "pluma"
-set $sysmon         mate-system-monitor
+set $editor         "kate"
+set $sysmon         ksysguard
 set $audio          vlc
 
 # ------------------------------------- COLORSET ------------------------------------- #
@@ -130,14 +130,14 @@ bindsym $mod+Ctrl+s exec "i3-nagbar -x -t error -m 'Suspend' -b 'OK' 'systemctl 
 bindsym $mod+Ctrl+h exec "i3-nagbar -x -t error -m 'Hibernate' -b 'OK' 'systemctl hibernte'"
 
 # ---- Lock screen ---- #
-bindsym $alt+Ctrl+l exec i3lock
+bindsym $alt+Ctrl+l exec ~/.i3/scripts/kde-lock.sh
 
 # ---- Logout ---- #
 bindsym $mod+Ctrl+l exec "i3-nagbar -t error -m 'Log Out?' -b 'OK' 'i3-msg exit'"
 
 # -------------------------------- MATE BINDINGS ----------------------------------- #
 # ---- MATE Settings ---- #
-bindsym $mod+Ctrl+c exec mate-control-center
+bindsym $mod+Ctrl+c exec systemsettings5
 
 # ---- Print Screen ---- #
 bindsym Print exec mate-screenshot
@@ -341,37 +341,7 @@ colors {
 #	binding_mode_indicator no
 # }
 
-# -------------------------------------- STARTUP --------------------------------------- #
-exec --no-startup-id bash ~/.i3/scripts/init.sh
-exec --no-startup-id bash ~/.i3/scripts/healthy-bat.sh
-# ---- Settings Daemon ---- #
-# exec --no-startup-id  mate-settings-daemon
 
-# ---- Audio ---- #
-exec --no-startup-id start-pulseaudio-x11
-exec --no-startup-id volumeicon
 
-# ---- Network ---- #
-# exec --no-startup-id wicd-gtk -t
-exec --no-startup-id nm-applet
-exec --no-startup-id blueman-applet
-
-# ---- Keyboard ---- #
-# exec --no-startup-id gxneur
-
-# ---- Background ---- #
-# exec_always nitrogen --restore
-
-# ---- Other Apps ---- #
-# exec --no-startup-id disper-indicator
-# exec --no-startup-id tomboy --panel-applet
-exec --no-startup-id goldendict
-exec --no-startup-id glipper
-
-exec --no-startup-id bash ~/.i3/scripts/init.sh
-
-# -------------------------------------- Add New Keyboard Layout ------------------------------------- #
-# ---- US/Persian Keyboard ---- #
-# exec --no-startup-id setxkbmap -rules evdev -model pc105 -layout "us,ir" -option "grp:alt_shift_toggle"
-# ---- Startup Sound ---- #
-# exec --no-startup-id espeak -p 40 -s 150 -a 200 -v'!v/whisper' "lock n load"
+# for_window [class="plasmashell"] tabbed enable
+exec --no-startup-id nitrogen --restore
