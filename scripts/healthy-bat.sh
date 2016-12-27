@@ -11,10 +11,15 @@ HIGH=false
 
 while true
 do
-    sleep 30
+    sleep 60
 
     BAT=`upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -i perc | cut -d':' -f2 | tr -d '[[:space:]]' | cut -d '%' -f1`
-    echo $BAT
+    if [[ $BAT ]]; then
+      echo $BAT
+    else
+      BAT=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep -i perc | cut -d':' -f2 | tr -d '[[:space:]]' | cut -d '%' -f1`
+      echo $BAT
+    fi
 
     if ([ $BAT -gt $UP ] && [ $HIGH == false ]); then
         HIGH=true

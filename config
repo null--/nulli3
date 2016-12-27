@@ -273,26 +273,26 @@ bindsym $mod+Shift+r restart
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+  # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+  # Pressing left will shrink the window’s width.
+  # Pressing right will grow the window’s width.
+  # Pressing up will shrink the window’s height.
+  # Pressing down will grow the window’s height.
+  bindsym j resize shrink width 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym l resize shrink height 10 px or 10 ppt
+  bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+  # same bindings, but for the arrow keys
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -300,34 +300,32 @@ bindsym $mod+r mode "resize"
 # -------------------------------------- BAR -------------------------------------- #
 bar
 {
-	id top-bar
+  id top-bar
 
-	# xrandr | grep \ connected
-	# output DFP-0
-	# output LVDS-1
+  # xrandr | grep \ connected
+  # output DFP-0
+  # output LVDS-1
 
-	position top
-	# position bottom
+  position top
+  # position bottom
 
-	# ---- MATE DZEN/CONKY STATUS BAR ---- #
-	# output_format = "dzen2"
-	# status_command "~/.i3/scripts/status-mate.sh"
-	status_command i3status -c ~/.i3/scripts/i3status.conf
+  status_command "~/.i3/scripts/status.sh"
+  # status_command i3status -c ~/.i3/scripts/i3status.conf
 
-	# tray
-	tray_output none
-	# tray_output LVDS-1
-	# tray_output primary
+  # tray
+  tray_output none
+  # tray_output LVDS-1
+  # tray_output primary
 
-# ---- Workspace Colors ---- #
-# Uncomment the following lines in order to change default colors
-colors {
-      background $bg
-      statusline $status
-      focused_workspace  $bg                  $focused_ws
-      active_workspace   $active_ws           $bg
-      inactive_workspace $inactive_ws_bg      $bg
-      urgent_workspace   $bg                  $urgent_ws
+  # ---- Workspace Colors ---- #
+  # Uncomment the following lines in order to change default colors
+  colors {
+    background $bg
+    statusline $status
+    focused_workspace  $bg                  $focused_ws
+    active_workspace   $active_ws           $bg
+    inactive_workspace $inactive_ws_bg      $bg
+    urgent_workspace   $bg                  $urgent_ws
   }
 }
 

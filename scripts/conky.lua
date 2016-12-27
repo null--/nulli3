@@ -10,11 +10,19 @@
 
 
 function conky_dark( )
-  return "^fg(\\#afafaf)"
+  return "^fg(\\#F57F17)"
 end
 
 function conky_light( )
-  return "^fg(\\#F9F9F9)"
+  return "^fg(\\#FFA000)"
+end
+
+function conky_jsdark( )
+  return "\\#f57f17"
+end
+
+function conky_jslight( )
+  return "\\#ffa000)"
 end
 
 function conky_pad( number )
@@ -23,21 +31,21 @@ end
 
 function conky_gettemp( )
   tmp = conky_parse("${exec cat /sys/class/hwmon/hwmon0/temp1_input | cut -c-2 }")
-  
+
   if tmp == "" then
     tmp = conky_parse("${hwmon 1 temp 1}")
   end
-  
+
   return string.format( '%3s' , tostring(tmp))
 end
 
 function conky_getbat( )
   bat = conky_parse("${battery_percent BAT1}")
-  
+
   if bat == "0" then
     bat = conky_parse("${battery_percent BAT0}")
   end
-  
+
   return string.format( '%3i' , bat )
 end
 
