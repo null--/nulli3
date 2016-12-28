@@ -36,7 +36,8 @@ function conky_gettemp( )
     tmp = conky_parse("${hwmon 1 temp 1}")
   end
 
-  return string.format( '%3s' , tostring(tmp))
+  -- return string.format( '%3s' , tostring(tmp))
+  return tmp
 end
 
 function conky_getbat( )
@@ -46,7 +47,18 @@ function conky_getbat( )
     bat = conky_parse("${battery_percent BAT0}")
   end
 
-  return string.format( '%3i' , bat )
+  -- return string.format( '%3i' , bat )
+  return bat
+end
+
+function conky_getbattime( )
+  bat = conky_parse("${format_time ${battery_time BAT1} \"\\h:\\m\"}")
+
+  if bat == "" then
+    bat = conky_parse("${battery_time BAT0}")
+  end
+
+  return bat
 end
 
 function conky_spad( str )
