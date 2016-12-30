@@ -13,12 +13,14 @@ set $terminal       i3-sensible-terminal
 # set $rootfile       "unset DESKTOP_AUTOSTART_ID && caja --no-desktop"
 # set $file           "unset DESKTOP_AUTOSTART_ID && nemo --no-desktop"
 # set $rootfile       "unset DESKTOP_AUTOSTART_ID && nemo --no-desktop"
+set $terminal       "konsole"
 set $file           "dolphin"
 set $rootfile       "dolphin"
 set $browser        firefox
 set $editor         "kate"
 set $sysmon         ksysguard
 set $audio          vlc
+
 
 # ------------------------------------- COLORSET ------------------------------------- #
 # ---- ANARCHY RED ---- #
@@ -82,6 +84,32 @@ client.focused_inactive  $inactive_win_brd  $inactive_win_bg   $inactive_win_txt
 client.unfocused         $unfocused_win_brd $unfocused_win_bg $unfocused_win_txt
 client.urgent            $urgent_win_brd    $urgent_win_bg    $urgent_win_txt
 client.background        $bg
+
+# ---- Workspace name (Category) ---- #
+# set $w1 "1: GEN"
+# set $w2 "2: COD"
+# set $w3 "3: ACT"
+# set $w4 "4: DOC"
+# set $w5 "5: MMD"
+# set $w6 "6: GAM"
+# set $w7 "7: SYS"
+# set $w8 "8: CFG"
+# set $w9 "9: LOG"
+# set $w0 "0: TMP"
+# set $wk "m: KDE"
+
+# ---- Workspace name (Greek) ---- #
+# set $w1 "α"
+# set $w2 "β"
+# set $w3 "γ"
+# set $w4 "δ"
+# set $w5 "ε"
+# set $w6 "ζ"
+# set $w7 "η"
+# set $w8 "θ"
+# set $w9 "ι"
+# set $w0 "λ"
+# set $wk "π"
 
 # ---- Workspace name ---- #
 set $w1 "1"
@@ -147,7 +175,7 @@ bindsym Print exec spectacle
 # - File manager
 bindsym $mod+Shift+o exec $file
 # - Root File manager
-bindsym $mod+Shift+p exec gksu $rootfile
+bindsym $mod+Shift+p exec kdesudo $rootfile
 
 # - Web browser
 bindsym $mod+Shift+w exec $browser
@@ -177,7 +205,10 @@ bindsym $mod+Ctrl+Escape exec i3-input
 
 # ------------------------------------ I3WM BINDINGS ----------------------------------- #
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec $terminal
+# start a root terminal
+bindsym $mod++Shift+Return exec kdesudo $terminal
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -349,9 +380,9 @@ for_window [title="Desktop"] floating disable
 for_window [title="Desktop"] move window to workspace $wk
 for_window [title="Desktop — Plasma"] floating disable
 for_window [title="Desktop — Plasma"] move window to workspace $wk
-for_window [class="^.*"] border pixel 1
+# for_window [class="^.*"] border pixel 1
 
 # -------------------------------------- STARTUP --------------------------------------- #
 exec --no-startup-id bash ~/.i3/scripts/init.sh
 exec --no-startup-id bash ~/.i3/scripts/healthy-bat.sh
-exec --no-startup-id nitrogen --restore
+exec --no-startup-id "sleep 5; nitrogen --restore"
