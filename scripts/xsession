@@ -1,3 +1,2 @@
 exec dbus-launch --exit-with-session i3 -c ~/.i3/config
 # exec dbus-launch --exit-with-session i3 --force-xinerama -c ~/.i3/config
-

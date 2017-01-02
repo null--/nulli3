@@ -385,4 +385,4 @@ for_window [title="Desktop — Plasma"] move window to workspace $wk
 # -------------------------------------- STARTUP --------------------------------------- #
 exec --no-startup-id bash ~/.i3/scripts/init.sh
 exec --no-startup-id bash ~/.i3/scripts/healthy-bat.sh
-exec --no-startup-id "sleep 5; nitrogen --restore"
+exec --no-startup-id "nitrogen --restore"

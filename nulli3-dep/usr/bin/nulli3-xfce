@@ -1,4 +1,0 @@
-#!/bin/sh
-# exec dbus-launch --exit-with-session i3 -c ~/.i3/config.mate "$@"
-# i3 -c ~/.i3/config.xfce "$@"
-nulli3-xfce-start
