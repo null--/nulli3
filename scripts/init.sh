@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sleep 3
+
 # ---- First time init ---- #
 if ! [ -e ~/.i3/scripts/initialized ] 
 then
@@ -9,9 +11,4 @@ then
     # -- Set Wallpaper
     nitrogen --save --set-auto ~/.i3/wallpapers/anarchy-g.jpg
 fi
-
-# Floating "desktop" windows bug
-sleep 1
-i3-msg "workspace 1; layout tabbed"
-i3-msg "workspace 1"
 

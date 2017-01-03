@@ -4,8 +4,9 @@ GPLv3
 Version: 1.0.1b
 
 ---- Before you do anything ----
-  I'm running nulli3 at 1080p resolution on GNU\Linux Debian Sid machine
-  so things might seem a little magnified at lower resolutions. 
+  I'm running nulli3 at 1080p resolution on two GNU/Linux Arch and 
+  Debian/Sid machine so things might seem a little magnified at lower 
+  resolutions. 
   At this moment I'm using the config.kde.
   All that I'm offering is just a config and a couple of
   scripts, Nothing more, Nothing less.
@@ -74,28 +75,14 @@ Version: 1.0.1b
 
 ---- Requirements ----
   Core:
-    i3
-    mate-desktop-environment or mate-desktop-environment-extras
-    notification-daemon
-    dwm
+    i3wm
+    kde-base and plasma (or plasma-meta)
+    dwm (or dwmenu)
     nitrogen
     aumix
-    volumeicon
-    cinnamon-screensaver-command
+    spectacle
     xcalib
-    gtk-chtheme
-    dzen2
     conky
-	pcmanfm
-
-  My apt-get (MATE):
-    sudo apt-get install i3 caja-gksu caja-open-terminal caja-extensions-common dwm \
-      mate-tweak mate-desktop-environment nitrogen aumix volumeicon-alsa pcmanfm \
-      mate-screensaver xcalib gtk-chtheme dzen2 conky mate-tweak tree mate-optimus \
-      mate-system-monitor vlc terminator mate-tweak topmenu-gtk2 topmenu-gtk3 \
-      blueman lua5.2 acpi mate-screenshot lightdm-gtk-greeter lightdm-gtk-greeter-settings
-
-  Note: You can also apt the mate-desktop-environment-extras
 
 ---- Install the nulli3 Desktop ----
   * Link (ln -s) or copy ./nulli3 to ~/.i3
@@ -105,44 +92,34 @@ Version: 1.0.1b
   # sh ~/.i3/scripts/install.sh
 
 ---- Post Installation ----
-  * In kde add /usr/bin/nulli3-kde to your startup applications
+  * If you're using i3 alongside KDE then add /usr/bin/nulli3-kde to your 
+    startup applications:
     System Settings > Startup and Shutdown > Autostart > [Add Program]
 
   * You may want to set your default programs under the
-    "Default Programs" part at "DEFINE" section inside "config" file.
+    "Default Programs" part at "DEFINE" section inside config.kde file.
 
   * You can change i3 coloring profile by uncommenting color schemes
     at "COLORSET" section, uncommenting the entire "COLORS" section
     and finally uncommenting the "Workspace Colors" part of the "BAR" section.
 
-  * If you want to add program to your startup do it from
-    "System Settings" (bindkey= MCc) or add it at the bottom of the ".i3/config" file
-    you're currently using.
-
   * Take a look at "STARTUP" and "The Last Part" sections at
-    the end of ".i3/config" or ".i3/config.mate" file, you may want to change them
+    the end of ".i3/config" or ".i3/config.kde" file, you may want to change them
     to suit your needs.
 
 ---- FAQs and Troubles ----
-0. How can I log in?!
-    Log out and log into "MATE" or "nulli3: mate"
-
 1. How can I set a wallpaper?
-    You can change it in your "Control Center".
-	Note: Use "nitrogen" in the startx mode.
+    Use "nitrogen"!
 
-2. How can I change status bar?
-    Just edit ".i3/scripts/status.sh" or ".i3/scripts/status-mate.sh".
+2. How can I customize my status bar?
+    Just edit ".i3/scripts/status.sh", ".i3/scripts/conky-json.conf"" or 
+    ".i3/scripts/i3status.conf".
 
 3. Is it possible to change my desktop theme?
     Of course!
     a) Do it in your control center (MCc)
     b) GTK: Hit ME (or Md) then type "gtk-chtheme" and hit "Enter", now change
         your gtk theme.
-
-4. How can I prevent caja from showing desktop in Mate?
-   nulli3 will do it automatically for you AFTER the first run. You can also do
-   it yourself by using mate-tweak and check the "disable show desktop icons".
 
 5. Notifications are shown unthemed
    Try these:
@@ -174,5 +151,3 @@ Version: 1.0.1b
    # sudo xrandr --addmode eDP-1 2304x1296_60.00
    # sudo xrandr --output eDP-1 --mode 2048x1152_60.00
 
-7. Stausbar is not working properly
-  Please, check (and edit) scripts/i3status.conf

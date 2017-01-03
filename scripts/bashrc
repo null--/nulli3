@@ -82,7 +82,13 @@ fi
   export HISTCONTROL=ignoreboth
 fi
 
-# export ANDROID_HOME=/opt/android-sdk
-# export PATH=$PATH:/etc/alternatives/gem-bin:/opt/android-studio/bin/
-# export PATH=${PATH}:${ANDROID_HOME}/tools
-# export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+#export VISUAL="nano"
+#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+#export ANDROID_HOME=/opt/android-sdk
+#export PATH=$PATH:/opt/android-studio/bin/
+#export PATH=$PATH:/opt/bin/Telegram/
+#export PATH=$PATH:/etc/alternatives/gem-bin:/opt/android-studio/bin/
+#export PATH=${PATH}:${ANDROID_HOME}/tools
+#export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+#export PATH=$PATH:/opt/genymobile/genymotion 
+

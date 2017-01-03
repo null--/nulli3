@@ -4,4 +4,4 @@ echo '{"version":1}'
 echo '['
 echo '[],'
 
-exec conky -c ~/.i3/scripts/conky-json.cfg
+exec conky -c ~/.i3/scripts/conky-json.conf
