@@ -4,9 +4,9 @@ GPLv3
 Version: 1.0.1b
 
 ---- Before you do anything ----
-  I'm running nulli3 at 1080p resolution on two GNU/Linux Arch and 
-  Debian/Sid machine so things might seem a little magnified at lower 
-  resolutions. 
+  I'm running nulli3 at 1080p resolution on two GNU/Linux Arch and
+  Debian/Sid machine so things might seem a little magnified at lower
+  resolutions.
   At this moment I'm using the config.kde.
   All that I'm offering is just a config and a couple of
   scripts, Nothing more, Nothing less.
@@ -92,7 +92,7 @@ Version: 1.0.1b
   # sh ~/.i3/scripts/install.sh
 
 ---- Post Installation ----
-  * If you're using i3 alongside KDE then add /usr/bin/nulli3-kde to your 
+  * If you're using i3 alongside KDE then add /usr/bin/nulli3-kde to your
     startup applications:
     System Settings > Startup and Shutdown > Autostart > [Add Program]
 
@@ -112,8 +112,10 @@ Version: 1.0.1b
     Use "nitrogen"!
 
 2. How can I customize my status bar?
-    Just edit ".i3/scripts/status.sh", ".i3/scripts/conky-json.conf"" or 
+    Just edit ".i3/scripts/status.sh", ".i3/scripts/conky-json.conf"" or
     ".i3/scripts/i3status.conf".
+    You might need to change eth, wlan, tun and ppp variables at the top of
+    ".i3/scripts/conky.lua".
 
 3. Is it possible to change my desktop theme?
     Of course!
@@ -150,4 +152,3 @@ Version: 1.0.1b
    # sudo xrandr --newmode "2304x1296_60.00"  251.25  2304 2464 2712 3120  1296 1299 1304 1344 -hsync +vsync
    # sudo xrandr --addmode eDP-1 2304x1296_60.00
    # sudo xrandr --output eDP-1 --mode 2048x1152_60.00
-

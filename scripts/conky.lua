@@ -1,28 +1,30 @@
--- Wise Blue
---   #0099e6 #00e6e6
--- Anarchy Red
---   #c6262e #f75348
--- Cool Gray
---   #6a6a6a #9a9a9a
+-- Colors
+dark = "#FFA000"
+light = "#F57F17"
 
--- High Contrast
---   #afafaf #F9F9F9
-
+-- CHANE change ethernet interface name
+-- -- Ethernet Interface Name
+eth = "eth0" -- etn1s0
+-- -- WiFi Interface Name
+wlan = "wlp2s0" -- wlan0
+-- -- Other interfaces
+tun = "tun0"
+ppp = "ppp0"
 
 function conky_dark( )
-  return "^fg(\\#F57F17)"
+  return string.format("^fg(\\%s)", dark)
 end
 
 function conky_light( )
-  return "^fg(\\#FFA000)"
+  return string.format("^fg(\\%s)", light)
 end
 
 function conky_jsdark( )
-  return "\\#f57f17"
+  return string.format("\\%s", dark)
 end
 
 function conky_jslight( )
-  return "\\#ffa000)"
+  return string.format("\\%s", light)
 end
 
 function conky_pad( number )
@@ -66,9 +68,31 @@ function conky_spad( str )
 end
 
 function conky_geteth( )
-  return "enp9s0"
+  cstr = string.format("${if_existing /proc/net/route %s}${addr %s}${else}X${endif}" , eth, eth)
+  return conky_parse(cstr)
 end
 
 function conky_getwlan( )
-  return "wlp8s0"
+  cstr = string.format("${if_existing /proc/net/route %s}${addr %s}${else}X${endif}" , wlan, wlan)
+  return conky_parse(cstr)
+end
+
+function conky_gettun( )
+  cstr = string.format("${if_existing /proc/net/route %s}${addr %s}${else}down${endif}" , tun, tun)
+  return conky_parse(cstr)
+end
+
+function conky_getppp( )
+  cstr = string.format("${if_existing /proc/net/route %s}${addr %s}${else}down${endif}" , ppp, ppp)
+  return conky_parse(cstr)
+end
+
+function conky_getethspd( )
+  cstr = string.format("${if_existing /proc/net/route %s}${downspeed %s}:D.U:${upspeed %s}${else}X${endif}" , eth, eth, eth)
+  return conky_parse(cstr)
+end
+
+function conky_getwlanspd( )
+  cstr = string.format("${if_existing /proc/net/route %s}${downspeed %s}:D.U:${upspeed %s}${else}X${endif}" , wlan, wlan, wlan)
+  return conky_parse(cstr)
 end
