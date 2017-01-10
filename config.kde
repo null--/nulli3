@@ -178,7 +178,7 @@ bindsym $mod+Shift+w exec $browser
 bindsym $mod+Shift+a exec $music
 
 # - System Monitor
-bindsym $alt+Ctrl+Delete exec $sysmon
+bindsym $mod+Shift+z exec $sysmon
 
 # - run emacs daemon
 # bindsym $mod+Ctrl+x exec "i3-nagbar -x -t warning -m 'Do you want to run emacs' -b 'Oh, Yeah!' 'exec emacs --daemon'"

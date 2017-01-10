@@ -22,25 +22,28 @@ Version: 1.0.1b
   https://i3wm.org/docs/userguide.html
 
 ---- Bindings ----
-  * This "config" supports almost every default bindings of i3.
-  * It's recommended for you to read "config" file at least once,
+  * This "config" supports almost every default key bindings of originally 
+    defined by i3 window manager.
+  * I suggest that you may want to read "config" files at least once,
     line-by-line!
-
-  * E=Esc, M=Meta, A=Alt, C=Ctrl, S=Shift, T=Tab, D=Del
-  * >>> CaSe SeNsItIvE: C==Ctrl, c="The letter 'c'" <<<
+  * Here is a list of shortcodes for most used key bindings defined inside 
+    nulli3 config files. These shortcodes are written in EMACS-style format, so:
+      E=Esc, M=Meta, A=Alt, C=Ctrl, S=Shift, T=Tab, D=Del
+  * Key binding shortcodes are CaSe SeNsItIvE, for example 'C' is short 
+    for Ctrl while 'c' stands for the Engish letter 'c'.
   * Examples:
   *  ACc means Alt + Ctrl + c
   *  ACD means Alt + Ctrl + Del
   *  MSm means Meta + Shift + m
 
-  * Remember these 4 bindings!
+  * Remember these 4 bindings:
   Terminal:             M<Enter>
   Run a Command:        ME
   Run an App:           Md
   i3 Console:           MCE
   Emacs Daemon:         MCx
 
-  * Power and Display Control
+  * Power and Display:
   Poweroff:             MCp
   Reboot:               MCr
   Suspend:              MCs
@@ -48,19 +51,19 @@ Version: 1.0.1b
   Lock:                 ACl
   Logout:               MCl
 
-  * Frequently Used Applications
+  * Fast Run:
   Control Center:       MCc
+  System Monitor:       MSz
   File Manager:         MSo
   File Manager (root):  MSp
   Web Browser:          MSw
-  Music Player:         MSa
   Editor:               MSe
-  System Monitor:       ACD
+  Player:               MSa
 
   * Window Management
   Kill a window:                        A<F4> or MSq
-  Switch to another Workspace:          M<0-9>
-  Send A Window to another Workspace:   MS<0-9>
+  Switch to another Workspace:          M<0-9> or Mm
+  Send A Window to another Workspace:   MS<0-9> or MSm
   Move Between Windows:                 M<arrows>
   Move a Window:                        MS<arrows>
   Focus right:                          AT
@@ -73,6 +76,7 @@ Version: 1.0.1b
 
   * Other Bindings
   Invert Screen:        MSi
+  Restart i3:           MSr
 
 ---- Requirements ----
   Core:
