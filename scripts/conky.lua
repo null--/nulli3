@@ -54,13 +54,14 @@ function conky_getbat( )
 end
 
 function conky_getbattime( )
+  time_cmd = conky_parse("${exec acpi -a | awk -F\" \" '{print $3}' | sed s/on-line/+/g | sed s/off-line/-/g}")
   bat = conky_parse("${format_time ${battery_time BAT1} \"\\h:\\m\"}")
 
   if bat == "" then
-    bat = conky_parse("${battery_time BAT0}")
+    bat = conky_parse("${format_time ${battery_time BAT0} \"\\h:\\m\"}")
   end
 
-  return bat
+  return string.format("%s %s", time_cmd, bat)
 end
 
 function conky_spad( str )

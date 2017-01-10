@@ -6,7 +6,7 @@ sudo rm /usr/share/applications/nulli3*
 sudo rm /usr/share/xsessions/nulli3*
 sudo rm /usr/share/mate/wm-properties/nulli3*
 
-sudo cp -r nulli3-dep/* /
+sudo cp -rvf nulli3-dep/* /
 
 chmod 755 ~/.i3/scripts/*.sh
 sudo chmod 755 /usr/bin/nulli3*

@@ -4,14 +4,14 @@ GPLv3
 Version: 1.0.1b
 
 ---- Before you do anything ----
-  I'm running nulli3 at 1080p resolution on two GNU/Linux Arch and
-  Debian/Sid machine so things might seem a little magnified at lower
-  resolutions.
-  At this moment I'm using the config.kde.
-  All that I'm offering is just a config and a couple of
-  scripts, Nothing more, Nothing less.
+  I'm running nulli3 at a 1920x1080 display resolution on two GNU/Linux 
+  Arch and Debian/Sid machines so things might seem a little bit magnified 
+  at lower resolutions.
+  At this moment I'm using the config.kde alongside lightdm.
+  All that I'm offering is just a config and a bunch of scripts, 
+  Nothing more, Nothing less.
 
-  An introduction video: https://youtu.be/rBAgYa0zS30
+  An introduction video (old): https://youtu.be/rBAgYa0zS30
 
 ---- Download nulli3 ----
   # git clone --depth=1 https://github.com/null--/nulli3
@@ -30,7 +30,8 @@ Version: 1.0.1b
   * >>> CaSe SeNsItIvE: C==Ctrl, c="The letter 'c'" <<<
   * Examples:
   *  ACc means Alt + Ctrl + c
-  *  ACD means MSm means Meta + Shift + m
+  *  ACD means Alt + Ctrl + Del
+  *  MSm means Meta + Shift + m
 
   * Remember these 4 bindings!
   Terminal:             M<Enter>
@@ -75,14 +76,16 @@ Version: 1.0.1b
 
 ---- Requirements ----
   Core:
-    i3wm
+    i3wm 
     kde-base and plasma (or plasma-meta)
+    kdesudo (Arch users most install it from AUR)
     dwm (or dwmenu)
     nitrogen
-    aumix
     spectacle
-    xcalib
+    xcalib (Arch user most also install xorg meta-package
+            and xcalib from AUR)
     conky
+    acpi
 
 ---- Install the nulli3 Desktop ----
   * Link (ln -s) or copy ./nulli3 to ~/.i3

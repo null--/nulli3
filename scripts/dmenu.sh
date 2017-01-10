@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # dmenu_run -b -sb '#000000' -nf '#0099E6' -sf '#00FFFF' -nb '#000000' -fn "Monospace-8" -p "Cmd: "
-dmenu_run -b -fn "Monospace-10" -p "Execute: "
+dmenu_run -b -fn "Roboto-12" -p "Execute: "

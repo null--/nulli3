@@ -7,17 +7,18 @@ set $super Mod4
 # - Action Mod
 set $mod Mod4
 
+# ---- Font ---- #
+# font pango:DejaVu Terminus Semi-Condensed 12
+# font pango:Roboto Condensed 16
+font pango:Roboto Condensed 12
+
 # ---- Default Programs ---- #
 set $terminal       i3-sensible-terminal
-# set $file           "unset DESKTOP_AUTOSTART_ID && caja --no-desktop"
-# set $rootfile       "unset DESKTOP_AUTOSTART_ID && caja --no-desktop"
-# set $file           "unset DESKTOP_AUTOSTART_ID && nemo --no-desktop"
-# set $rootfile       "unset DESKTOP_AUTOSTART_ID && nemo --no-desktop"
 set $terminal       "konsole"
 set $file           "dolphin"
 set $rootfile       "dolphin"
 set $browser        firefox
-set $editor         "kate"
+set $editor         "atom"
 set $sysmon         ksysguard
 set $audio          vlc
 
@@ -128,14 +129,6 @@ set $wk "KDE"
 # - Turn off bell (Debian)
 exec xset b off
 
-# - Font
-# font pango:monospace 10
-font pango:DejaVu Sans Bold 11
-# font pango:Terminus Bold 11
-# font pango:DejaVu Terminus Semi-Condensed 10
-# font pango:DejaVu Terminus Semi-Condensed 11
-
-
 # - Disable Mouse Focus
 focus_follows_mouse no
 workspace_auto_back_and_forth yes
@@ -148,10 +141,10 @@ bindsym $mod+Ctrl+t exec "i3-nagbar -x -t warning -m 'TEST' -b 'OK' 'i3-msg exec
 
 # ------------------------------------ POWER AND DISPLAY CONTROL ----------------------- #
 # -- Poweroff --#
-bindsym $mod+Ctrl+p exec "i3-nagbar -x -t error -m 'Power Off' -b 'OK' 'systemctl poweroff'"
+bindsym $mod+Ctrl+p exec "qdbus org.kde.ksmserver /KSMServer logout 1 2 0"
 
 # -- Reboot -- #
-bindsym $mod+Ctrl+r exec "i3-nagbar -x -t error -m 'Reboot' -b 'OK' 'systemctl reboot'"
+bindsym $mod+Ctrl+r exec "qdbus org.kde.ksmserver /KSMServer logout 1 1 0"
 
 # -- Suspend -- #
 bindsym $mod+Ctrl+s exec "i3-nagbar -x -t error -m 'Suspend' -b 'OK' 'systemctl suspend'"
@@ -163,7 +156,7 @@ bindsym $mod+Ctrl+h exec "i3-nagbar -x -t error -m 'Hibernate' -b 'OK' 'systemct
 # bindsym $alt+Ctrl+l exec ~/.i3/scripts/kde-lock.sh
 
 # ---- Logout ---- #
-bindsym $mod+Ctrl+l exec "i3-nagbar -t error -m 'Log Out?' -b 'OK' 'i3-msg exit'"
+bindsym $mod+Ctrl+l exec "qdbus org.kde.ksmserver /KSMServer logout 1 0 0"
 
 # -------------------------------- MATE BINDINGS ----------------------------------- #
 # ---- KDE Settings ---- #

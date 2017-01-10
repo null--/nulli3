@@ -82,6 +82,8 @@ fi
   export HISTCONTROL=ignoreboth
 fi
 
+alias stun='sudo stunnel /etc/stunnel/stunnel.conf'
+
 #export VISUAL="nano"
 #export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 #export ANDROID_HOME=/opt/android-sdk
