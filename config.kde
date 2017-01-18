@@ -21,7 +21,7 @@ set $browser        firefox
 set $editor         "atom"
 set $sysmon         ksysguard
 set $audio          vlc
-
+set $sysinfo        kinfocenter
 
 # ------------------------------------- COLORSET ------------------------------------- #
 # ---- ANARCHY RED ---- #
@@ -158,12 +158,15 @@ bindsym $mod+Ctrl+h exec "i3-nagbar -x -t error -m 'Hibernate' -b 'OK' 'systemct
 # ---- Logout ---- #
 bindsym $mod+Ctrl+l exec "qdbus org.kde.ksmserver /KSMServer logout 1 0 0"
 
-# -------------------------------- MATE BINDINGS ----------------------------------- #
+# -------------------------------- KDE BINDINGS ----------------------------------- #
 # ---- KDE Settings ---- #
 bindsym $mod+Ctrl+c exec systemsettings5
 
 # ---- Print Screen ---- #
 bindsym Print exec spectacle
+
+# ---- KDE System Info ---- #
+bindsym $mod+Ctrl+i exec $sysinfo
 
 # ------------------------------------ FAST RUN ---------------------------------------- #
 # - File manager
@@ -378,5 +381,5 @@ for_window [title="Desktop — Plasma"] move window to workspace $wk
 
 # -------------------------------------- STARTUP --------------------------------------- #
 exec --no-startup-id bash "~/.i3/scripts/init.sh"
-exec --no-startup-id bash "~/.i3/scripts/healthy-bat.sh"
+# exec --no-startup-id bash "~/.i3/scripts/healthy-bat.sh"
 exec --no-startup-id "sleep 10 && nitrogen --restore"

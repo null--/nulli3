@@ -61,7 +61,8 @@ function conky_getbattime( )
     bat = conky_parse("${format_time ${battery_time BAT0} \"\\h:\\m\"}")
   end
 
-  return string.format("%s %s", time_cmd, bat)
+  return string.format("%s%s", time_cmd, bat)
+  -- return bat
 end
 
 function conky_spad( str )
@@ -69,31 +70,35 @@ function conky_spad( str )
 end
 
 function conky_geteth( )
-  cstr = string.format("${if_existing /proc/net/route %s}${addr %s}${else}X${endif}" , eth, eth)
+  -- cstr = string.format("${if_existing /proc/net/route %s}${addr %s}${else}x${endif}" , eth, eth)
+  cstr = string.format("${if_existing /proc/net/route %s}☗${else}☖${endif}" , eth, eth)
   return conky_parse(cstr)
 end
 
 function conky_getwlan( )
-  cstr = string.format("${if_existing /proc/net/route %s}${addr %s}${else}X${endif}" , wlan, wlan)
+  -- cstr = string.format("${if_existing /proc/net/route %s}${addr %s}${else}x${endif}" , wlan, wlan)
+  cstr = string.format("${if_existing /proc/net/route %s}☗${else}☖${endif}" , wlan, wlan)
   return conky_parse(cstr)
 end
 
 function conky_gettun( )
-  cstr = string.format("${if_existing /proc/net/route %s}${addr %s}${else}down${endif}" , tun, tun)
+  -- cstr = string.format("${if_existing /proc/net/route %s}${addr %s}${else}x${endif}" , tun, tun)
+  cstr = string.format("${if_existing /proc/net/route %s}☗${else}☖${endif}" , tun, tun)
   return conky_parse(cstr)
 end
 
 function conky_getppp( )
-  cstr = string.format("${if_existing /proc/net/route %s}${addr %s}${else}down${endif}" , ppp, ppp)
+  -- cstr = string.format("${if_existing /proc/net/route %s}${addr %s}${else}x${endif}" , ppp, ppp)
+  cstr = string.format("${if_existing /proc/net/route %s}☗${else}☖${endif}" , ppp, ppp)
   return conky_parse(cstr)
 end
 
 function conky_getethspd( )
-  cstr = string.format("${if_existing /proc/net/route %s}${downspeed %s}:D.U:${upspeed %s}${else}X${endif}" , eth, eth, eth)
+  cstr = string.format("${if_existing /proc/net/route %s}${downspeed %s}:D.U:${upspeed %s}${else}⚓${endif}" , eth, eth, eth)
   return conky_parse(cstr)
 end
 
 function conky_getwlanspd( )
-  cstr = string.format("${if_existing /proc/net/route %s}${downspeed %s}:D.U:${upspeed %s}${else}X${endif}" , wlan, wlan, wlan)
+  cstr = string.format("${if_existing /proc/net/route %s}${downspeed %s}:D.U:${upspeed %s}${else}⚓${endif}" , wlan, wlan, wlan)
   return conky_parse(cstr)
 end
