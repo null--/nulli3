@@ -2,9 +2,10 @@
 keycode 94  = Prior
 ! swap right alt with page down
 clear Mod1
-add Mod1 = Next Alt_R
-! swap scrlock with del
-keycode 135 = Delete
+add Mod1 = Alt_L Alt_L
+keycode 108 = Next
+! swap pause with del
+keycode 127 = Delete
 ! swap insert with home
 keycode 118  = Home
 ! swap del with end
