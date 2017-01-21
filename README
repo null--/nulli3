@@ -4,11 +4,11 @@ GPLv3
 Version: 1.0.1b
 
 ---- Before you do anything ----
-  I'm running nulli3 at a 1920x1080 display resolution on two GNU/Linux 
-  Arch and Debian/Sid machines so things might seem a little bit magnified 
+  I'm testing nulli3 at a 2560x1440 (WQHD) display resolution on two GNU/Linux 
+  Arch and Debian/Sid machines so things might seem a little bit magnified
   at lower resolutions.
   At this moment I'm using the config.kde alongside lightdm.
-  All that I'm offering is just a config and a bunch of scripts, 
+  All that I'm offering is just a config and a bunch of scripts,
   Nothing more, Nothing less.
 
   An introduction video (old): https://youtu.be/rBAgYa0zS30
@@ -22,14 +22,14 @@ Version: 1.0.1b
   https://i3wm.org/docs/userguide.html
 
 ---- Bindings ----
-  * This "config" supports almost every default key bindings of originally 
+  * This "config" supports almost every default key bindings of originally
     defined by i3 window manager.
   * I suggest that you may want to read "config" files at least once,
     line-by-line!
-  * Here is a list of shortcodes for most used key bindings defined inside 
+  * Here is a list of shortcodes for most used key bindings defined inside
     nulli3 config files. These shortcodes are written in EMACS-style format, so:
       E=Esc, M=Meta, A=Alt, C=Ctrl, S=Shift, T=Tab, D=Del
-  * Key binding shortcodes are CaSe SeNsItIvE, for example 'C' is short 
+  * Key binding shortcodes are CaSe SeNsItIvE, for example 'C' is short
     for Ctrl while 'c' stands for the Engish letter 'c'.
   * Examples:
   *  ACc means Alt + Ctrl + c
@@ -80,7 +80,7 @@ Version: 1.0.1b
 
 ---- Requirements ----
   Core:
-    i3wm 
+    i3wm
     kde-base and plasma (or plasma-meta)
     kdesudo (Arch users most install it from AUR)
     dwm (or dwmenu)
