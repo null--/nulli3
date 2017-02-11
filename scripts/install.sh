@@ -21,6 +21,8 @@ rm ~/.xsession
 ln -s ~/.i3/scripts/xsession ~/.xsession
 rm ~/.Xresources
 ln -s ~/.i3/scripts/Xresources ~/.Xresources
+# echo "requires powerdown, xorg-xset" and "pcie_aspm=force i915.i915_enable_rc6=1" option should be set in grub cmd line
+ln -s /home/null/nulli3/scripts/xinirc .xinirc
 
 echo "------------------------------ NOTE ------------------------------"
 echo "To uninstall don't forget to:"

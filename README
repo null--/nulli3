@@ -142,9 +142,9 @@ Version: 1.0.1b
 6. Custom resolution:
    Device name:
    # xrandr | grep -e " connected [^(]" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/"
-   Generate command line:
+   Generate a new xrandr mode:
    # cvt <Height> <Width> <Freq.>
-   New mode:
+   Add the generated new mode:
    # sudo xrandr --newmode <CVT Command>
    Apply:
    # sudo xrandr --addmode <Device Name> <Config Name>

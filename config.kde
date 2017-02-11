@@ -2,7 +2,7 @@
 
 # -------------------------------------- Setting Parameters -------------------------------------- #
 # ---- UI ---- #
-set $fontsize 16
+set $fontsize 12
 set $font pango:Roboto
 set $fontmode Condensed
 # ---- Theme: MR. ROBOT'S ORANGE ---- #
@@ -123,8 +123,8 @@ floating_modifier $mod
 
 # -------------------------------------- STARTUP --------------------------------------- #
 exec --no-startup-id bash "~/.i3/scripts/init.sh"
-# exec --no-startup-id bash "~/.i3/scripts/healthy-bat.sh"
-exec --no-startup-id "sleep 10 && nitrogen --restore"
+exec --no-startup-id bash "~/.i3/scripts/healthy-bat.sh"
+exec --no-startup-id "sleep 3 && nitrogen --restore"
 
 # ------------------------------------ POWER AND DISPLAY CONTROL ----------------------- #
 # ---- Poweroff ---- #

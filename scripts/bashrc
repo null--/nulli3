@@ -83,6 +83,7 @@ fi
 fi
 
 alias stun='sudo stunnel /etc/stunnel/stunnel.conf'
+alias rex='/etc/X11/xinit/xinitrc.d/90-xrandr.sh'
 
 # export VISUAL="nano"
 # export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
