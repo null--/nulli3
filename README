@@ -92,11 +92,16 @@ Version: 1.0.1b
     acpi
 
 ---- Install the nulli3 Desktop ----
-  * Link (ln -s) or copy ./nulli3 to ~/.i3
-  * If you're paranoid:
+  Link (ln -s) or copy ./nulli3 to ~/.i3
+  If you're paranoid:
   # cat ~/.i3/scripts/install.sh
-  * Finally:
+  
+  Finally:
   # sh ~/.i3/scripts/install.sh
+
+  Change network interfaces variables based on your system:
+  ('eth' and 'wlan' variables are defined somewhere near the begining of this file:)
+  # nano .i3/scripts/conky.lua
 
 ---- Post Installation ----
   * If you're using i3 alongside KDE then add /usr/bin/nulli3-kde to your

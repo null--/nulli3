@@ -94,3 +94,5 @@ alias rex='/etc/X11/xinit/xinitrc.d/90-xrandr.sh'
 # export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 # export PATH=$PATH:/opt/genymobile/genymotion 
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH=${PATH}:/usr/local/rvm/bin/

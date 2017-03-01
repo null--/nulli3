@@ -4,7 +4,7 @@ light = "#F57F17"
 
 -- CHANE change ethernet interface name
 -- -- Ethernet Interface Name
-eth = "eth0" -- etn1s0
+eth = "enp0s20u1" -- "eth0" -- etn1s0
 -- -- WiFi Interface Name
 wlan = "wlp2s0" -- wlan0
 -- -- Other interfaces
