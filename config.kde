@@ -1,6 +1,6 @@
 # _null_ i3wm Configuration
 
-# -------------------------------------- Setting Parameters -------------------------------------- #
+# -------------------------------------- Global Variables -------------------------------------- #
 # ---- UI ---- #
 set $fontsize 12
 set $font pango:Roboto

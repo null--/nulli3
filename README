@@ -4,14 +4,12 @@ GPLv3
 Version: 1.0.1b
 
 ---- Before you do anything ----
-  I'm testing nulli3 at a 2560x1440 (WQHD) display resolution on two GNU/Linux 
-  Arch and Debian/Sid machines so things might seem a little bit magnified
+  I'm testing nulli3 at two displays with 2560x1080, 2048x1152 resolutions on two 
+  GNU/Linux Arch and Debian/Sid machines so things might seem a little bit magnified
   at lower resolutions.
-  At this moment I'm using the config.kde alongside lightdm.
-  All that I'm offering is just a config and a bunch of scripts,
-  Nothing more, Nothing less.
+  At this moment I'm applying "config.kde".
 
-  An introduction video (old): https://youtu.be/rBAgYa0zS30
+  An introduction to i3/nulli3 (old): https://youtu.be/rBAgYa0zS30
 
 ---- Download nulli3 ----
   # git clone --depth=1 https://github.com/null--/nulli3
@@ -22,86 +20,81 @@ Version: 1.0.1b
   https://i3wm.org/docs/userguide.html
 
 ---- Bindings ----
-  * This "config" supports almost every default key bindings of originally
-    defined by i3 window manager.
-  * I suggest that you may want to read "config" files at least once,
-    line-by-line!
-  * Here is a list of shortcodes for most used key bindings defined inside
-    nulli3 config files. These shortcodes are written in EMACS-style format, so:
+  * The nulli3 supports almost every default key bindings originally defined by i3wm.
+  * Here, is a list of key-bindings of most used key bindings defined inside nulli3 
+    config files. These bindings are written in EMACS-style form, which means:
       E=Esc, M=Meta, A=Alt, C=Ctrl, S=Shift, T=Tab, D=Del
-  * Key binding shortcodes are CaSe SeNsItIvE, for example 'C' is short
-    for Ctrl while 'c' stands for the Engish letter 'c'.
+  * Key bindings are CaSe SeNsItIvE, for example 'C' stands for Ctrl while 'c' stands 
+    for the English letter 'c'.
   * Examples:
-  *  ACc means Alt + Ctrl + c
-  *  ACD means Alt + Ctrl + Del
-  *  MSm means Meta + Shift + m
+      - ACc means Alt + Ctrl + c
+      - ACD means Alt + Ctrl + Del
+      - MSm means Meta + Shift + m
 
   * Remember these 4 bindings:
-  Terminal:             M<Enter>
-  Run a Command:        ME
-  Run an App:           Md
-  i3 Console:           MCE
-  Emacs Daemon:         MCx
+    - Terminal:             M<Enter>
+    - Run a Command:        ME
+    - Run an App:           Md
+    - File Manager:         MSo
 
-  * Power and Display:
-  Poweroff:             MCp
-  Reboot:               MCr
-  Suspend:              MCs
-  Hibernate:            MCh
-  Lock:                 ACl
-  Logout:               MCl
+  * Power, Display and Session Management:
+    - Poweroff:             MCp
+    - Reboot:               MCr
+    - Suspend:              MCs
+    - Hibernate:            MCh
+    - Lock:                 ACl
+    - Logout:               MCl
 
   * Fast Run:
-  Control Center:       MCc
-  System Monitor:       MSz
-  File Manager:         MSo
-  File Manager (root):  MSp
-  Web Browser:          MSw
-  Editor:               MSe
-  Player:               MSa
+    - Control Center:       MCc
+    - System Monitor:       MSz
+    - File Manager (root):  MSp
+    - Web Browser:          MSw
+    - Editor:               MSe
+    - Player:               MSa
 
   * Window Management
-  Kill a window:                        A<F4> or MSq
-  Switch to another Workspace:          M<0-9> or Mm
-  Send A Window to another Workspace:   MS<0-9> or MSm
-  Move Between Windows:                 M<arrows>
-  Move a Window:                        MS<arrows>
-  Focus right:                          AT
-  Fullscreen:                           Mf
-  Floating mode:                        MS<space>
-  Change Focus (floating <-> tiling):   M<space>
-  Tabbed mode:                          Mw
-  Split mode:                           Me
-  Stack mode:                           Ms
+    - Kill a window:                        A<F4> or MSq
+    - Switch to another Workspace:          M<0-9> or Mm
+    - Send A Window to another Workspace:   MS<0-9> or MSm
+    - Move Between Windows:                 M<arrows>
+    - Move a Window:                        MS<arrows>
+    - Focus right:                          AT
+    - Fullscreen:                           Mf
+    - Floating mode:                        MS<space>
+    - Change Focus (floating <-> tiling):   M<space>
+    - Tabbed mode:                          Mw
+    - Split mode:                           Me
+    - Stack mode:                           Ms
 
   * Other Bindings
-  Invert Screen:        MSi
-  Restart i3:           MSr
+    - Invert Screen:        MSi
+    - Restart i3:           MSr
+    - i3 Console:           MCE
 
 ---- Requirements ----
-  Core:
-    i3wm
-    kde-base and plasma (or plasma-meta)
-    kdesudo (Arch users most install it from AUR)
-    dwm (or dwmenu)
-    nitrogen
-    spectacle
-    xcalib (Arch user most also install xorg meta-package
+  * Core:
+      - i3wm
+      - kde-base and plasma (or plasma-meta)
+      - kdesudo (Arch users must get it from AUR)
+      - dwm (or dwmenu)
+      - nitrogen
+      - spectacle
+      - xcalib (Arch user most also install xorg meta-package
             and xcalib from AUR)
-    conky
-    acpi
+      - conky
+      - acpi
 
 ---- Install the nulli3 Desktop ----
-  Link (ln -s) or copy ./nulli3 to ~/.i3
-  If you're paranoid:
-  # cat ~/.i3/scripts/install.sh
+  * Link (ln -s) or copy ./nulli3 to ~/.i3
+    # cat ~/.i3/scripts/install.sh
   
-  Finally:
-  # sh ~/.i3/scripts/install.sh
+  * Finally:
+    # sh ~/.i3/scripts/install.sh
 
-  Change network interface variables based on your linux distro:
-  ('eth' and 'wlan' variables are defined somewhere near the begining of this file:)
-  # nano .i3/scripts/conky.lua
+  * Change network interface variables based on your linux distro:
+    ("eth" and "wlan" variables are defined somewhere near the begining of this file:)
+    # nano .i3/scripts/conky.lua
 
 ---- Post Installation ----
   * If you're using i3 alongside KDE then add /usr/bin/nulli3-kde to your
@@ -111,56 +104,58 @@ Version: 1.0.1b
   * You may want to set your default programs under the
     "Default Programs" part at "DEFINE" section inside config.kde file.
 
-  * You can change i3 coloring profile by uncommenting color schemes
-    at "COLORSET" section, uncommenting the entire "COLORS" section
-    and finally uncommenting the "Workspace Colors" part of the "BAR" section.
+  * You can change nulli3 theme by uncommenting or changing color schemes
+    at the "UI" and "Theme" sections of the config file.
 
   * Take a look at "STARTUP" and "The Last Part" sections at
     the end of ".i3/config" or ".i3/config.kde" file, you may want to change them
     to suit your needs.
 
 ---- FAQs and Troubles ----
-1. How can I set a wallpaper?
+  * How can I set a custom wallpaper?
     Use "nitrogen"!
 
-2. How can I customize my status bar?
+  * How can I customize my status bar?
     Just edit ".i3/scripts/status.sh", ".i3/scripts/conky-json.conf"" or
     ".i3/scripts/i3status.conf".
     You might need to change eth, wlan, tun and ppp variables at the top of
     ".i3/scripts/conky.lua".
 
-3. Is it possible to change my desktop theme?
-    Of course!
+  * Is it possible to change my desktop's theme?
     a) Do it in your control center (MCc)
     b) GTK: Hit ME (or Md) then type "gtk-chtheme" and hit "Enter", now change
         your gtk theme.
 
-5. Notifications are shown unthemed
-   Try these:
-   # sudo apt-get purge dunst
-   # killall -9 dunst
-   # notify-send "Hello"
-   If these doesn't fixed it try
-   # sudo apt-get remove notification-daemon
-   # sudo dpkg-reconfigure notify-osd
+  * If notifications are shown unthemed, Try these:
+      # sudo apt-get purge dunst
+      # killall -9 dunst
+      # notify-send "Hello"
+    
+    If these doesn't fixed it try:
+      # sudo apt-get remove notification-daemon
+      # sudo dpkg-reconfigure notify-osd
 
-6. Custom resolution:
-   Device name:
-   # xrandr | grep -e " connected [^(]" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/"
-   Generate a new xrandr mode:
-   # cvt <Height> <Width> <Freq.>
-   Add the generated new mode:
-   # sudo xrandr --newmode <CVT Command>
-   Apply:
-   # sudo xrandr --addmode <Device Name> <Config Name>
-   Make it permanent:
-   # sudo nano /etc/X11/Xsession.d/45custom_xrandr
-   # xrandr --newmode <CVT Command>
-   # xrandr --addmode <Device Name> <Config Name>
-   # xrandr --output <Device Name> --mode <Config Name>
+  * Custom resolution:
+      Device name:
+        # xrandr | grep -e " connected [^(]" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/"
+   
+      Generate a new xrandr mode:
+        # cvt <Height> <Width> <Freq.>
+   
+      Add the generated new mode:
+        # sudo xrandr --newmode <CVT Command>
+   
+      Apply:
+        # sudo xrandr --addmode <Device Name> <Config Name>
+   
+      Make it permanent:
+        # sudo nano /etc/X11/Xsession.d/45custom_xrandr
+        >> xrandr --newmode <CVT Command>
+        >> xrandr --addmode <Device Name> <Config Name>
+        >> xrandr --output <Device Name> --mode <Config Name>
 
-   Example:
-   # cvt 2304 1296 60
-   # sudo xrandr --newmode "2304x1296_60.00"  251.25  2304 2464 2712 3120  1296 1299 1304 1344 -hsync +vsync
-   # sudo xrandr --addmode eDP-1 2304x1296_60.00
-   # sudo xrandr --output eDP-1 --mode 2048x1152_60.00
+      Example:
+        # cvt 2304 1296 60
+        # sudo xrandr --newmode "2304x1296_60.00"  251.25  2304 2464 2712 3120  1296 1299 1304 1344 -hsync +vsync
+        # sudo xrandr --addmode eDP-1 2304x1296_60.00
+        # sudo xrandr --output eDP-1 --mode 2048x1152_60.00
