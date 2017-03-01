@@ -99,7 +99,7 @@ Version: 1.0.1b
   Finally:
   # sh ~/.i3/scripts/install.sh
 
-  Change network interfaces variables based on your system:
+  Change network interface variables based on your linux distro:
   ('eth' and 'wlan' variables are defined somewhere near the begining of this file:)
   # nano .i3/scripts/conky.lua
 
