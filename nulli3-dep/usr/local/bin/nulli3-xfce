@@ -1,0 +1,6 @@
+#!/bin/sh
+
+killall -9 xfwm4
+# exec dbus-launch --exit-with-session i3 -c ~/.i3/config.xfce "$@"
+i3 -c ~/.i3/config.xfce "$@"
+

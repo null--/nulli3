@@ -49,7 +49,7 @@ set $w7 "7"
 set $w8 "8"
 set $w9 "9"
 set $w0 "λ"
-set $wk "KDE"
+set $wk "MATE"
 
 # -------------------------------------- COLORS -------------------------------------- #
 # ---- Apply Theme Colors ---- #
@@ -79,9 +79,9 @@ bar
 	status_command "~/.i3/scripts/status.sh"
 	# status_command i3status -c ~/.i3/scripts/i3status.conf
 	# ---- Tray mode ---- #
-	# tray_output none
+	tray_output none
 	# tray_output LVDS-1
-	tray_output primary
+	# tray_output primary
 	# ---- Colors ---- #
 	colors {
               background $bg
@@ -102,13 +102,13 @@ bar
 #	  binding_mode_indicator no
 # }
 
-# -------------------------------------- KDE Settings -------------------------------------- #
+# -------------------------------------- Mate Settings -------------------------------------- #
 # ---- Move plasma desktop to another workspace ---- #
 # Command > xprop | grep -i name
 # for_window [title="Desktop"] floating disable
 # for_window [title="Desktop"] move window to workspace $wk
-for_window [title="Desktop — Plasma"] floating disable
-for_window [title="Desktop — Plasma"] move window to workspace $wk
+for_window [title="x-caja-desktop"] floating disable
+for_window [title="x-caja-desktop"] move window to workspace $wk
 
 # -------------------------------------- GENERAL -------------------------------------- #
 # ---- Turn off bell (Debian) ---- #
@@ -124,7 +124,7 @@ floating_modifier $mod
 # -------------------------------------- STARTUP --------------------------------------- #
 exec --no-startup-id bash "~/.i3/scripts/init.sh"
 exec --no-startup-id bash "~/.i3/scripts/healthy-bat.sh"
-exec --no-startup-id "sleep 10 && nitrogen --restore"
+exec --no-startup-id "sleep 3 && nitrogen --restore"
 
 # ------------------------------------ POWER AND DISPLAY CONTROL ----------------------- #
 # ---- Poweroff ---- #
