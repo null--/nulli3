@@ -3,7 +3,7 @@ if [[ -n "$PS1" ]]; then
 
 HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
-HISTSIZE=99999
+HISTSIZE=9999
 HISTFILESIZE=20000
 
 shopt -s checkwinsize
@@ -28,23 +28,54 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# Anarchy Red
-clr1="\[\033[0;37m\]"
-clr2="\[\033[1;33m\]"
-clr3="\[\033[1;31m\]" 
-noclr="\[\033[00m\]"
 
-# Cool Gray
+# Console Coloring
+# https://unix.stackexchange.com/questions/55423/how-to-change-cursor-shape-color-and-blinkrate-of-linux-console
+blink="\E[5m"
+reset="\e[0m"
+
+# Ocean Blue
+# clr1="\e[38;5;039m"
+# clr2="\e[38;5;027m"
+# clr3="\e[38;5;111m"
+# outclr="\e[38;5;039m"
+# noclr="\[\033[00m\]"
+# if [ "$color_prompt" = yes ]; then
+#     PS1="$clr3/─$clr3(A)"$clr1"narchy$clr3───($clr1\u$clr3)───($clr1\W$clr3)───o\n$clr3\─"$clr3"0"$clr1"rders$clr3─── $nocolor"
+# else
+#     PS1="❨A❩┬narchy─◓─❮\u❭─◒─❬\W❭─◉\n   ╰─❨❩rders─◈─▶ "
+# fi
+# if [ "$color_prompt" = yes ]; then
+#     # Unicode Chars: https://en.wikipedia.org/wiki/List_of_Unicode_characters
+#     PS1="$clr2◉─$clr1❨A❩$clr2┬$clr1"narchy"$clr2─❨$clr3\u$clr2❩─❨$clr3\W$clr2❩─◉─$clr1❨❩rders$clr2─▶ $noclr"
+# else
+#     PS1="❨A❩┬narchy─◓─❮\u❭─◒─❬\W❭─◉\n   ╰─❨❩rders─◈─▶ "
+# fi
+
+# Anarchy Red
+clr1="\[\033[0;36m\]"
+clr2="\[\033[1;33m\]"
+clr3="\[\033[1;34m\]"
+noclr="\[\033[00m\]"
+outclr="\e[38;5;214m"
+# PROMPT_COMMAND='echo -e "'$reset$outclr'-=-=-=-=-=-=-=-=-=-=-'$blink$outclr'<3X3C>'$reset$outclr'-=-=-=-=-=-=-=-=-=-=-'$reset'"'
+if [ "$color_prompt" = yes ]; then
+    PS1="$clr3/─$clr3(A)"$clr1"narchy$clr3───($clr1\u$clr3)───($clr1\W$clr3)───o\n$clr3\─"$clr3"0"$clr1"rders$clr3───$noclr "
+else
+    PS1="❨A❩┬narchy─◓─❮\u❭─◒─❬\W❭─◉\n   ╰─❨❩rders─◈─▶ "
+fi
+
+# Elderly Gray
 # clr1="\[\033[2;49;97m\]"
 # clr2="\[\033[4;49;90m\]"
 # clr3="\[\033[2;49;37m\]"
 # noclr="\[\033[00m\]"
+# if [ "$color_prompt" = yes ]; then
+#     PS1="$clr3/─$clr3(A)"$clr1"narchy$clr3───($clr1\u$clr3)───($clr1\W$clr3)───o\n$clr3\─"$clr3"0"$clr1"rders$clr3───$noclr $outclr"
+# else
+#     PS1="❨A❩┬narchy─◓─❮\u❭─◒─❬\W❭─◉\n   ╰─❨❩rders─◈─▶ "
+# fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1="$clr3/─$clr3(A)"$clr1"narchy$clr3───($clr1\u$clr3)───($clr1\W$clr3)───o\n$clr3\─"$clr3"0"$clr1"rders$clr3─── $noclr"
-else
-    PS1="❨A❩┬narchy─◓─❮\u❭─◒─❬\W❭─◉\n   ╰─❨❩rders─◈─▶ "
-fi
 unset color_prompt force_color_prompt
 
 # enable color support of ls and also add handy aliases
@@ -92,7 +123,9 @@ alias stun='sudo stunnel /etc/stunnel/stunnel.conf'
 # export PATH=$PATH:/etc/alternatives/gem-bin:/opt/android-studio/bin/
 # export PATH=${PATH}:${ANDROID_HOME}/tools
 # export PATH=${PATH}:${ANDROID_HOME}/platform-tools
-# export PATH=$PATH:/opt/genymobile/genymotion 
+# export PATH=$PATH:/opt/genymobile/genymotion
+
+export PATH="/home/null/.cask/bin:$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 export PATH=${PATH}:/usr/local/rvm/bin/

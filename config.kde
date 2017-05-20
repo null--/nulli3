@@ -5,29 +5,33 @@
 set $fontsize 12
 set $font pango:Roboto
 set $fontmode Condensed
-# ---- Theme: MR. ROBOT'S ORANGE ---- #
+# ---- Theme: OCEAN BLUE ---- #
 set $bg                 "#000000"
-set $status             "#FFA000"
-set $focused_ws         "#FFA000"
-set $active_ws          "#F57F17"
-set $inactive_ws_bg     "#FFC107"
-set $urgent_ws          "#E64A19"
-set $focused_win_bg     "#FFA000"
+set $status             "#0099E6"
+set $focused_ws         "#000000"
+set $focused_ws_bg			"#0099E6"
+set $active_ws          "#99EEEE"
+set $active_ws_bg       "#004499"
+set $inactive_ws	      "#0099E6"
+set $inactive_ws_bg	    "#000000"
+set $urgent_ws          "#000000"
+set $urgent_ws_bg       "#E53935"
+set $focused_win_bg     "#0099E6"
 set $focused_win_txt    "#000000"
-set $inactive_win_bg    "#000000"
-set $inactive_win_brd   "#FFB74D"
-set $inactive_win_txt   "#FFC107"
-set $unfocused_win_brd  "#FFB74D"
-set $unfocused_win_txt  "#F57F17"
-set $unfocused_win_bg   "#212121"
-set $urgent_win_brd     "#e53935"
-set $urgent_win_bg      "#e53935"
+set $inactive_win_bg    "#004499"
+set $inactive_win_brd   "#004499"
+set $inactive_win_txt   "#DDDDDD"
+set $unfocused_win_bg   "#222222"
+set $unfocused_win_brd  "#004499"
+set $unfocused_win_txt  "#DDDDDD"
+set $urgent_win_brd     "#E53935"
+set $urgent_win_bg      "#E53935"
 set $urgent_win_txt     "#000000"
 # ---- Modifiers ---- #
-set $alt Mod1
-set $super Mod4
+set $alt		Mod1
+set $super	Mod4
 # - Action Mod
-set $mod Mod4
+set $mod 		Mod4
 # ---- Default Programs ---- #
 set $terminal       i3-sensible-terminal
 set $terminal       "konsole"
@@ -63,8 +67,7 @@ client.background        $bg
 font $font $fontmode $fontsize
 
 # -------------------------------------- Status Bar -------------------------------------- #
-bar
-{
+bar {
   # ---- ID ---- #
 	id top-bar
 	# ---- Output ---- #
@@ -79,22 +82,21 @@ bar
 	status_command "~/.i3/scripts/status.sh"
 	# status_command i3status -c ~/.i3/scripts/i3status.conf
 	# ---- Tray mode ---- #
-	# tray_output none
+	tray_output none
 	# tray_output LVDS-1
 	tray_output primary
 	# ---- Colors ---- #
 	colors {
-              background $bg
-              statusline $status
-	      focused_workspace  $bg                  $focused_ws
-	      active_workspace   $active_ws           $bg
-	      inactive_workspace $inactive_ws_bg      $bg
-	      urgent_workspace   $bg                  $urgent_ws
-	  }
+    background $bg
+    statusline $status
+		focused_workspace  $focused_ws       		$focused_ws_bg
+		active_workspace   $active_ws           $active_ws_bg
+		inactive_workspace $inactive_ws         $inactive_ws_bg
+		urgent_workspace   $urgent_ws           $urgent_ws_bg
 	}
+}
 # ---- Bottom Empty Bar ---- #
-# bar
-# {
+# bar {
 #	  id bot-bar
 #	  position bottom
 #	  tray_output none
@@ -251,55 +253,21 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # ---- resize window (you can also use the mouse for that) ---- #
 mode "resize" {
-        # ---- Resize ---- #
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-        # ---- Resize (using arrows) ---- #
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-        # ---- Finish/Cancel resizing ---- #
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+	# ---- Resize ---- #
+	bindsym j resize shrink width 10 px or 10 ppt
+	bindsym k resize grow height 10 px or 10 ppt
+	bindsym l resize shrink height 10 px or 10 ppt
+	bindsym semicolon resize grow width 10 px or 10 ppt
+	# ---- Resize (using arrows) ---- #
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
+	# ---- Finish/Cancel resizing ---- #
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-
-# ------------------------------------- Other Themes ------------------------------------- #
-# ---- ANARCHY RED ---- #
-# set $bg                 "#000000"
-# set $status             "#00CC00"
-# set $focused_ws         "#c6262e"
-# set $active_ws          "#c6262e"
-# set $inactive_ws_bg     "#c6262e"
-# set $urgent_ws          "#00CC00"
-# set $focused_win_bg     "#901322"
-# set $focused_win_txt    "#FFFFFF"
-# set $inactive_win_brd   "#901322"
-# set $inactive_win_txt   "#901322"
-# set $unfocused_win_brd  "#901322"
-# set $unfocused_win_txt  "#AAAAAA"
-# set $urgent_win_brd     "#00CC00"
-# set $urgent_win_bg      "#00CC00"
-# set $urgent_win_txt     "#FFFFFF"
-# ---- WISE BLUE ---- #
-# set $bg                 "#000000"
-# set $status             "#00CC00"
-# set $focused_ws         "#0099e6"
-# set $active_ws          "#e69900"
-# set $inactive_ws_bg     "#0099e6"
-# set $urgent_ws          "#00CC00"
-# set $focused_win_bg     "#004499"
-# set $focused_win_txt    "#FFFFFF"
-# set $inactive_win_brd   "#004499"
-# set $inactive_win_txt   "#0099e6"
-# set $unfocused_win_brd  "#004499"
-# set $unfocused_win_txt  "#AAAAAA"
-# set $urgent_win_brd     "#00CC00"
-# set $urgent_win_bg      "#00CC00"
-# set $urgent_win_txt     "#FFFFFF"
 
 # ------------------------------------- Alternative Workspace Names ------------------------------------- #
 # ---- Workspace name (Category) ---- #
@@ -326,3 +294,57 @@ bindsym $mod+r mode "resize"
 # set $w9 "ι"
 # set $w0 "λ"
 # set $wk "π"
+
+# ------------------------------------- Other Themes ------------------------------------- #
+# ---- Theme: MR. ROBOT'S ORANGE 2 ---- #
+# set $bg                 "#000000"
+# set $status             "#FFA000"
+# set $focused_ws         "#FFA000"
+# set $active_ws          "#F57F17"
+# set $inactive_ws_bg     "#FFC107"
+# set $urgent_ws          "#E64A19"
+# set $focused_win_bg     "#FFA000"
+# set $focused_win_txt    "#000000"
+# set $inactive_win_bg    "#000000"
+# set $inactive_win_brd   "#FFB74D"
+# set $inactive_win_txt   "#FFC107"
+# set $unfocused_win_brd  "#FFB74D"
+# set $unfocused_win_txt  "#F57F17"
+# set $unfocused_win_bg   "#212121"
+# set $urgent_win_brd     "#e53935"
+# set $urgent_win_bg      "#e53935"
+# set $urgent_win_txt     "#000000"
+# ---- Theme: MR. ROBOT'S ORANGE ---- #
+# set $bg                 "#000000"
+# set $status             "#FFA000"
+# set $focused_ws         "#FFA000"
+# set $active_ws          "#F57F17"
+# set $inactive_ws_bg     "#FFC107"
+# set $urgent_ws          "#E64A19"
+# set $focused_win_bg     "#FFA000"
+# set $focused_win_txt    "#000000"
+# set $inactive_win_bg    "#000000"
+# set $inactive_win_brd   "#FFB74D"
+# set $inactive_win_txt   "#FFC107"
+# set $unfocused_win_brd  "#FFB74D"
+# set $unfocused_win_txt  "#F57F17"
+# set $unfocused_win_bg   "#212121"
+# set $urgent_win_brd     "#e53935"
+# set $urgent_win_bg      "#e53935"
+# set $urgent_win_txt     "#000000"
+# ---- Theme: ANARCHY RED ---- #
+# set $bg                 "#000000"
+# set $status             "#00CC00"
+# set $focused_ws         "#c6262e"
+# set $active_ws          "#c6262e"
+# set $inactive_ws_bg     "#c6262e"
+# set $urgent_ws          "#00CC00"
+# set $focused_win_bg     "#901322"
+# set $focused_win_txt    "#FFFFFF"
+# set $inactive_win_brd   "#901322"
+# set $inactive_win_txt   "#901322"
+# set $unfocused_win_brd  "#901322"
+# set $unfocused_win_txt  "#AAAAAA"
+# set $urgent_win_brd     "#00CC00"
+# set $urgent_win_bg      "#00CC00"
+# set $urgent_win_txt     "#FFFFFF"
