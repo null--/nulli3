@@ -6,27 +6,28 @@ set $fontsize 12
 set $font pango:Roboto
 set $fontmode Condensed
 # ---- Theme: OCEAN BLUE ---- #
-set $bg                 "#000000"
-set $status             "#0099E6"
-set $focused_ws         "#000000"
-set $focused_ws_bg			"#0099E6"
-set $active_ws          "#002222"
-set $active_ws_bg       "#999999"
-set $inactive_ws	      "#0099E6"
-set $inactive_ws_bg	    "#000000"
-set $urgent_ws          "#000000"
-set $urgent_ws_bg       "#E53935"
-set $focused_win_bg     "#0099E6"
-set $focused_win_txt    "#000000"
-set $inactive_win_bg    "#004499"
-set $inactive_win_brd   "#004499"
-set $inactive_win_txt   "#DDDDDD"
-set $unfocused_win_bg   "#222222"
-set $unfocused_win_brd  "#004499"
-set $unfocused_win_txt  "#DDDDDD"
-set $urgent_win_brd     "#E53935"
-set $urgent_win_bg      "#E53935"
-set $urgent_win_txt     "#000000"
+set $bg                 "#263238"
+set $status             "#039be5"
+set $focused_ws         "#263238"
+set $focused_ws_bg			"#039be5"
+set $active_ws          "#263238"
+set $active_ws_bg       "#b3e5fc"
+set $inactive_ws	 			"#b3e5fc"
+set $inactive_ws_bg			"#455a64"
+set $urgent_ws          "#263238"
+set $urgent_ws_bg       "#18ffff"
+set $focused_win_bg     "#039be5"
+set $focused_win_brd    "#039be5"
+set $focused_win_txt    "#263238"
+set $inactive_win_bg    "#01579b"
+set $inactive_win_brd   "#039be5"
+set $inactive_win_txt   "#e1f5fe"
+set $unfocused_win_bg   "#263238"
+set $unfocused_win_brd  "#039be5"
+set $unfocused_win_txt  "#e1f5fe"
+set $urgent_win_brd     "#18ffff"
+set $urgent_win_bg      "#18ffff"
+set $urgent_win_txt     "#263238"
 # ---- Modifiers ---- #
 set $alt		Mod1
 set $super	Mod4
@@ -58,7 +59,7 @@ set $wk "KDE"
 # -------------------------------------- COLORS -------------------------------------- #
 # ---- Apply Theme Colors ---- #
 # class                  border         backgr.         text
-client.focused           $bg                $focused_win_bg   $focused_win_txt
+client.focused           $focused_win_brd   $focused_win_bg   $focused_win_txt
 client.focused_inactive  $inactive_win_brd  $inactive_win_bg   $inactive_win_txt
 client.unfocused         $unfocused_win_brd $unfocused_win_bg $unfocused_win_txt
 client.urgent            $urgent_win_brd    $urgent_win_bg    $urgent_win_txt
@@ -304,6 +305,7 @@ bindsym $mod+r mode "resize"
 # set $inactive_ws_bg     "#FFC107"
 # set $urgent_ws          "#E64A19"
 # set $focused_win_bg     "#FFA000"
+# set $focused_win_brd    "#FFB74D"
 # set $focused_win_txt    "#000000"
 # set $inactive_win_bg    "#000000"
 # set $inactive_win_brd   "#FFB74D"
@@ -322,6 +324,7 @@ bindsym $mod+r mode "resize"
 # set $inactive_ws_bg     "#FFC107"
 # set $urgent_ws          "#E64A19"
 # set $focused_win_bg     "#FFA000"
+# set $focused_win_bg     "#000000"
 # set $focused_win_txt    "#000000"
 # set $inactive_win_bg    "#000000"
 # set $inactive_win_brd   "#FFB74D"
@@ -340,6 +343,7 @@ bindsym $mod+r mode "resize"
 # set $inactive_ws_bg     "#c6262e"
 # set $urgent_ws          "#00CC00"
 # set $focused_win_bg     "#901322"
+# set $focused_win_brd    "#901322
 # set $focused_win_txt    "#FFFFFF"
 # set $inactive_win_brd   "#901322"
 # set $inactive_win_txt   "#901322"

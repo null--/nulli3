@@ -1,6 +1,6 @@
 -- Colors
-dark = "#0099E6"
-light = "#0070E9"
+dark = "#b3e5fc"
+light = "#039be5"
 
 -- CHANE change ethernet interface name
 -- -- Ethernet Interface Name
